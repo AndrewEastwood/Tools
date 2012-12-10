@@ -1,6 +1,5 @@
 console.log("********** style grabber *********");
 var system = require("system");
-var pageUrl = "http://reviews.pull-ups.com/bvstaging/4123-en_us/test1/reviews.htm?format=embedded" || system.args[1];
 var elementsMap = {
     'Review Titles' : {
         'path' : '.BVRRReviewTitle',
@@ -75,6 +74,13 @@ page.open(pageUrl, function(status){
     }
 
 });
+
+function getPageLink(clientName, host, displayCode, isApiHostname) {
+    var externalProductID = "test1";
+    //http://reviews.pull-ups.com/bvstaging/4123-en_us/test1/reviews.htm?format=embedded
+    var standartLink = "http://" + ( host ||  ) + "/bvstaging/" + displayCode + "/" + externalProductID + "/reviews.htm?format=embedded"
+
+}
 
 function onPageSuccess() {
     var elementsStyles = grabCssProperties(page, elementsMap);

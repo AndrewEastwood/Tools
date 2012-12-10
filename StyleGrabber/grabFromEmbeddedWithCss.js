@@ -72,11 +72,15 @@ page.open("http://www.somepage.com/index.html",
             cl.setAttribute('href', 'http://www.somesite.com/styling.css');
             cl.setAttribute('rel', 'stylesheet');
 
-            b = window.getComputedStyle(document.getElementById('BVRRContentContainerID')).getPropertyValue('color');
+            //var a = window.getComputedStyle(document.getElementById('BVRRContentContainerID')).getPropertyValue('color');
 
             document.head.appendChild(cl);
 
-            a = window.getComputedStyle(document.getElementById('BVRRContentContainerID')).getPropertyValue('color');
+            //var b = window.getComputedStyle(document.getElementById('BVRRContentContainerID')).getPropertyValue('color');
+
+            page.render(new Date().getTime() + ".png");
+            
+            //return [a, b];
         });
 
         console.log(h); // Will print [rgb(0,0,0), rgb(0,0,0)]
