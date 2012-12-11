@@ -18,7 +18,7 @@
         resourceFolder : "customers/"
     };
     var settings = {
-        elementsMap : {
+        elementsMap_bhive : {
             ratingIcons: {
                 'summaryStars.subStyles.full.color': {
                     'path' : '.BVRRSecondaryRatingsContainer'
@@ -34,7 +34,7 @@
                 'cssProps' : ['font-size']
             }
         },
-        elementsMap_one : {
+        elementsMap : {
             'Review Titles' : {
                 'path' : '.BVRRReviewTitle',
                 'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
@@ -78,11 +78,22 @@
             }
         }
     };
+    var grabberTasks = {
+        grabCssProperties : {
+            state: false,
+            data :false
+        },
+        grabRatingStars : {
+            state: false,
+            data: false
+        }
+    };
+    var rerunThreshold = 3;
 
     bvSG.init = function (config) {
         extend(settingsPublic, config);
         return bvSG;
-    }
+    };
 
     bvSG.grabLink = function (pageUrl) {
         innerLog("--- using page url: " + pageUrl, "info");
@@ -91,7 +102,7 @@
             innerLog("Working with: " + pageObj.getUrl(), "info");
             grabber(pageObj); 
         }
-    }
+    };
 
     bvSG.grab = function (clientName, displayCode, isApiHostname, productExternalID, testEnvironment, host, updateSettings) {
 
@@ -131,7 +142,7 @@
             innerLog("Working with: " + pageObj.getUrl(), "info");
             grabber(pageObj); 
         }
-    }
+    };
 
     function grabber(pageObj) {
         // create web page
@@ -156,7 +167,7 @@
                 if (!onPageSuccessCalled) {
                     innerLog("Page is downloaded", "info");
                     //console.log(page);
-                    window.setInterval(function(){onPageSuccess(pageObj);}, 10000);
+                    window.setInterval(function(){ onPageSuccess(pageObj); }, 5000);
                     onPageSuccessCalled = true;
                 }
             } else {
@@ -168,14 +179,37 @@
 
     function onPageSuccess(pageObj) {
         innerLog("Event Triggered: onPageSuccess", "info");
-        var elementsStyles = grabCssProperties(pageObj, settings.elementsMap);
-        var ratingStars = grabRatingStarts(pageObj, settings.elementsMap.ratingIcons);
-        // print result
-        innerLog(JSON.stringify(elementsStyles), "info");
-        // save results
-        saveData(pageObj, elementsStyles);
-        // exit
-        phantom.exit();
+        var needToRerun = false;
+        // get css properties
+        if (grabberTasks.grabCssProperties.state === false) {
+            var cssProp = grabCssProperties(pageObj, settings.elementsMap);
+            if (typeof(cssProp) == "object")
+                innerLog("grabCssProperties: skips: " + cssProp.skips + "; processed: " + cssProp.processed, "info");
+            else
+                needTorerun = true;
+        }
+
+        // get rating starts colors
+        if (grabberTasks.grabRatingStars.state === false) {
+            var imgProp = grabRatingStars(pageObj);
+            if (typeof(imgProp) == "object")
+                innerLog("grabRatingStars: skips: " + imgProp.skips + "; processed: " + imgProp.processed, "info");
+        }
+
+        saveDataAndExit(pageObj);
+
+        //
+        if (needToRerun) {
+            innerLog("threshold: " + rerunThreshold, "info");
+            rerunThreshold--;
+            if (rerunThreshold < 0) {
+                innerLog("maximum re-runs were reached.", "error");
+                phantom.exit();
+            } else
+                window.setInterval(function(){ onPageSuccess(pageObj); }, 5000);
+            return;
+        }
+
     }
 
     function getPageObject(clientName, displayCode, isApiHostname, productExternalID, testEnvironment, host, pageFormat) {
@@ -205,88 +239,100 @@
             },
             getImageUrl : function (name) {
                 name = name || "rating.gif";
-                return this.scheme + "://" + this.host + (this.testEnvironment ? ("/" + this.testEnvironment) : "") + "/" + this.displayCode + "/3_0/5/" + name;
+                return "/" + this.displayCode + "/3_0/5/" + name;
             },
             webPageObject : false,
             customPageUrl : customPageUrl
         }
     }
 
-    function grabRatingStarts(pageObj, elMap) {
-        innerLog("Start grabbing reating start properties", "info");
+    function grabRatingStars(pageObj) {
+        innerLog("Start grabbing rating stars properties", "info");
 
-        var cRImg = document.createElement('canvas');
-        var cRSImg = document.createElement('canvas');
+        var imgPropsObj = pageObj.webPageObject.evaluate(function(colorToHexFn, isCustomLink, overallImage, secondaryImage) {
+            var cRImg = document.createElement('canvas');
+            var cRSImg = document.createElement('canvas');
 
-        var imgRating = new Image();
-        var imgRatingSecondary = new Image();
+            var imgRating = new Image();
+            var imgRatingSecondary = new Image();
 
-        if (pageObj.isCustomLink()) {
-            imgRating.src = pageObj.webPageObject.evaluate(function(elMap) {
-                return document.querySelector('.BVRROverallRatingContainer .BVRRRatingNormalImage img').getAttribute('src'); //THIS
-            });
-            imgRatingSecondary.src = pageObj.webPageObject.evaluate(function(elMap) {
-                return document.querySelector('.BVRRSecondaryRatingsContainer .BVRRRatingNormalImage img').getAttribute('src'); //THIS
-            });
-        }
-        else {
-            imgRating.src = pageObj.getImageUrl();
-            imgRatingSecondary.src = pageObj.getImageUrl('ratingSecondary.gif');
-        }
+            var ratingImages = {};
+            var _skips = 0;
+            var _processed = 0
+            
+            
         
-        // append attributes
+            if (isCustomLink) {
+                var ratingStarOverallImg = document.querySelector('.BVRROverallRatingContainer .BVRRRatingNormalImage img');
+                var ratingStarSecondaryImg = document.querySelector('.BVRRSecondaryRatingsContainer .BVRRRatingNormalImage img');
+                if (ratingStarOverallImg != null)
+                    imgRating.src = ratingStarOverallImg.getAttribute('src');
+                if (ratingStarSecondaryImg != null)
+                    imgRatingSecondary.src = ratingStarSecondaryImg.getAttribute('src');
+            } else {
+                imgRating.src = overallImage;
+                imgRatingSecondary.src = secondaryImage;
+            }
 
-        cRImg.setAttribute('id', 'myCanvasRating');
-        cRImg.setAttribute('width', imgRating.width);
-        cRImg.setAttribute('height', imgRating.height);
+            console.log(imgRating.src);
+            console.log("overall rating star image [with: " + imgRating.width + ", height: " + imgRating.height + "]");
+            console.log(imgRatingSecondary.src);
+            console.log("secondary rating star image [width: " + imgRatingSecondary.width + ", height: " + imgRatingSecondary.height + "]");
 
-        cRSImg.setAttribute('id', 'myCanvasRatingSecondary');
-        cRSImg.setAttribute('width', imgRatingSecondary.width);
-        cRSImg.setAttribute('height', imgRatingSecondary.height);
+            // get colors from overall rating image
+            if (imgRating.src !== "" && imgRating.width !== 0 && imgRating.height !== 0) {
+                console.log("Using overall rating starts image ");
+                var contextRatingImage = cRImg.getContext('2d');
+                cRImg.setAttribute('id', 'myCanvasRating');
+                cRImg.setAttribute('width', imgRating.width);
+                cRImg.setAttribute('height', imgRating.height);
+                document.body.appendChild(cRImg);
+                contextRatingImage.drawImage(imgRating, 0, 0);
+                var imgDataFilledR = contextRatingImage.getImageData(imgRating.width / 10, imgRating.height / 2, 1, 1);
+                var imgDataUnfilledR = contextRatingImage.getImageData(imgRating.width - (imgRating.width / 10), imgRating.height / 2, 1, 1);
+                ratingImages['overall'] = {
+                    full: colorToHexFn("rgb(" + imgDataFilledR.data[0] + ", " + imgDataFilledR.data[1] + ", " + imgDataFilledR.data[2] + ")"),
+                    empty: colorToHexFn("rgb(" + imgDataUnfilledR.data[0] + ", " + imgDataUnfilledR.data[1] + ", " + imgDataUnfilledR.data[2] + ")")
+                };
+                _processed++;
+            } else
+                _skips++;
 
-        document.body.appendChild(cRImg);
-        document.body.appendChild(cRSImg);
+            if (imgRatingSecondary.src !== "" && imgRatingSecondary.width !== 0 && imgRatingSecondary.height !== 0) {
+                console.log("Using secondary rating starts image ");
+                var contextRatingSecondaryImage = cRSImg.getContext('2d');
+                cRSImg.setAttribute('id', 'myCanvasRatingSecondary');
+                cRSImg.setAttribute('width', imgRatingSecondary.width);
+                cRSImg.setAttribute('height', imgRatingSecondary.height);
+                document.body.appendChild(cRSImg);
+                contextRatingSecondaryImage.drawImage(imgRatingSecondary, 0, 0);
+                var imgDataFilledRS = contextRatingSecondaryImage.getImageData(imgRatingSecondary.width / 10, imgRatingSecondary.height / 2, 1, 1);
+                var imgDataUnfilledRS = contextRatingSecondaryImage.getImageData(imgRatingSecondary.width - (imgRatingSecondary.width / 10), imgRatingSecondary.height / 2, 1, 1);
+                ratingImages['secondary'] = {
+                    full: colorToHexFn("rgb(" + imgDataFilledRS.data[0] + ", " + imgDataFilledRS.data[1] + ", " + imgDataFilledRS.data[2] + ")"),
+                    empty: colorToHexFn("rgb(" + imgDataUnfilledRS.data[0] + ", " + imgDataUnfilledRS.data[1] + ", " + imgDataUnfilledRS.data[2] + ")")
+                };
+                _processed++;
+            } else
+                _skips++;
 
-        var contextRatingImage = cRImg.getContext('2d');
-        var contextRatingSecondaryImage = cRSImg.getContext('2d');
+            return {data : ratingImages, skips : _skips, processed : _processed};
 
-        contextRatingImage.drawImage(imgRating, 0, 0);
-        contextRatingSecondaryImage.drawImage(imgRatingSecondary, 0, 0);
+        }, colorToHex, pageObj.isCustomLink(), pageObj.getImageUrl(), pageObj.getImageUrl('ratingSecondary.gif'));
 
-        //context.fillStyle = "#FFFFFF";
-        //context.fillRect(0, 0, imgNew.width, imgNew.height);
+        if (imgPropsObj.skips > 0 && imgPropsObj.processed == 0)
+            return false;
 
-        var ratingImages = {
-            'overall' : {}, 'secondary' : {}
-        };
-
-        var imgDataFilledR = contextRatingImage.getImageData(imgRating.width / 10, imgRating.height / 2, 1, 1);
-        var imgDataUnfilledR = contextRatingImage.getImageData(imgRating.width - (imgRating.width / 10), imgRating.height / 2, 1, 1);
-
-        var imgDataFilledRS = contextRatingSecondaryImage.getImageData(imgRatingSecondary.width / 10, imgRatingSecondary.height / 2, 1, 1);
-        var imgDataUnfilledRS = contextRatingSecondaryImage.getImageData(imgRatingSecondary.width - (imgRatingSecondary.width / 10), imgRatingSecondary.height / 2, 1, 1);
-
-        ratingImages.overall = {
-            full: "rgb(" + imgDataFilledR.data[0] + "," + imgDataFilledR.data[1] + "," + imgDataFilledR.data[2] + ")",
-            empty: "rgb(" + imgDataUnfilledR.data[0] + "," + imgDataUnfilledR.data[1] + "," + imgDataUnfilledR.data[2] + ")"
-        };
-        ratingImages.secondary = {
-            full: "rgb(" + imgDataFilledRS.data[0] + "," + imgDataFilledRS.data[1] + "," + imgDataFilledRS.data[2] + ")",
-            empty: "rgb(" + imgDataUnfilledRS.data[0] + "," + imgDataUnfilledRS.data[1] + "," + imgDataUnfilledRS.data[2] + ")"
-        };
-        
-
-        /*var res =       "Filled: R "    + imgDataFilled.data[0]   + " G " + imgDataFilled.data[1]    + " B " + imgDataFilled.data[2]+"   A " + imgDataFilled.data[3];
-        res = res + "Unfilled: R "  + imgDataUnfilled.data[0] + " G " + imgDataUnfilled.data[1]  + " B " + imgDataUnfilled.data[2] + "   A " + imgDataUnfilled.data[3];*/
+        grabberTasks.grabRatingStars.state = true;
+        grabberTasks.grabRatingStars.data = imgPropsObj;
+        return imgPropsObj;
     }
 
     function grabCssProperties(pageObj, elMap) {
-        /*page.evaluate(function() {
-        });*/
         // fetch css properties usign elementsMap
         innerLog("Start grabbing css properties", "info");
         //console.log(elMap);
-        return pageObj.webPageObject.evaluate(function(elMap) {
+        var cssPropsObj = pageObj.webPageObject.evaluate(function(colorToHexFn, elMap) {
 
             // is taken from http://haacked.com/archive/2009/12/29/convert-rgb-to-hex.aspx
             function colorToHex(color) {
@@ -294,11 +340,11 @@
                     return color;
                 }
                 var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
-                
+
                 var red = parseInt(digits[2]);
                 var green = parseInt(digits[3]);
                 var blue = parseInt(digits[4]);
-                
+
                 var rgb = blue | (green << 8) | (red << 16);
                 return digits[1] + '#' + rgb.toString(16);
             };
@@ -314,6 +360,9 @@
 
             // inner style container
             var _fetchedStyles = {};
+            var _skips = 0;
+            var _processed = 0;
+            var _skippedItems = [];
             // loop by elemenets
             for(var elKey in elMap) {
                 // current element alias
@@ -323,6 +372,8 @@
 
                 if (!!!elem) {
                     console.log("Could not access to element using path: " + currElem.path);
+                    _skippedItems.push("Could not access to element using path: " + currElem.path);
+                    _skips++;
                     continue;
                 }
 
@@ -343,6 +394,7 @@
                             if (currElem.cssProps[i] === "color")
                                 cssProp = colorToHex(cssProp);
                             _fetchedStyles[elKey][currElem.states[j]][currElem.cssProps[i]] = cssProp;
+                            _processed++;
                         }
                     }
                     else {
@@ -350,11 +402,19 @@
                         if (currElem.cssProps[i] === "color")
                             cssProp = colorToHex(cssProp);
                         _fetchedStyles[elKey][currElem.cssProps[i]] = cssProp;
+                        _processed++;
                     }
                 }
             }
-            return _fetchedStyles;
-        }, elMap);
+            return {data : _fetchedStyles, skips : _skips, processed : _processed, skippedItems : _skippedItems};
+        }, colorToHex, elMap);
+
+        if (cssPropsObj.skips > 0 && cssPropsObj.processed == 0)
+            return false;
+
+        grabberTasks.grabCssProperties.state = true;
+        grabberTasks.grabCssProperties.data = cssPropsObj;
+        return cssPropsObj;
     }
 
     /** Simple version of jQuery.extend(false, target, args..) since jQuery hasn't loaded yet. */
@@ -373,19 +433,52 @@
     }
 
     function innerLog(msg, type) {
-        console.log("["+type.toUpperCase()+"] " + new Date().toJSON() + ": " + msg);
+        console.log("["+type.toUpperCase()+"] " + new Date().toLocaleTimeString() + ": " + msg);
     }
 
-    function saveData (pageObj, jsonData) {
-        innerLog("Saving Data", "info");
-        var fs = require('fs');
-        var f = false;
-        if (pageObj.isCustomLink())
-            f = fs.open(settingsPublic.resourceFolder + getHostName(pageObj.getUrl()) + ".json", 'w');
-        else
-            f = fs.open(settingsPublic.resourceFolder + pageObj.clientName + ".json", 'w');
-        f.write(JSON.stringify(jsonData));
-        f.close();
+    function saveDataAndExit (pageObj) {
+        innerLog("Checking if all steps were done", "info");
+        var isReadyToSave = true;
+        for (var taskGroup in grabberTasks)
+            isReadyToSave &= grabberTasks[taskGroup].state;
+        // save all data
+        if (isReadyToSave) {
+            innerLog("Saving Data", "info");
+            var allData = [];
+            for (var taskGroup in grabberTasks)
+                allData.push(grabberTasks[taskGroup].data.data);
+            // print result
+            innerLog("Results:", "info");
+            innerLog("========================================", "info");
+            innerLog(JSON.stringify(allData), "info");
+            innerLog("========================================", "info");
+            innerLog("Completed with:", "info");
+            for (var taskGroup in grabberTasks) {
+                innerLog("Task: @" + taskGroup + " [skips: " + grabberTasks[taskGroup].data.skips + "; processed: " + grabberTasks[taskGroup].data.processed + "]", "info");
+                if (grabberTasks[taskGroup].data.skippedItems)
+                    for (var i = 0; i < grabberTasks[taskGroup].data.skippedItems.length; i++)
+                        innerLog("|- " + grabberTasks[taskGroup].data.skippedItems[i], "warn");
+            }
+            // save results
+            var fs = require('fs');
+            var f = false;
+            var fileName = false;
+            //innerLog(pageObj, "info");
+            if (pageObj.isCustomLink())
+                fileName = settingsPublic.resourceFolder + getHostName(pageObj.getUrl()) + ".json";
+            else
+                fileName = settingsPublic.resourceFolder + pageObj.clientName + ".json";
+            f = fs.open(fileName, 'w');
+            f.write(JSON.stringify(allData));
+            f.close();
+            innerLog("Data is saved into the file: " + fileName, "info");
+            // exit
+            phantom.exit();
+        } else {
+            innerLog("Not all tasks were completed:", "info");
+            for (var taskGroup in grabberTasks)
+                innerLog(taskGroup + " - " + (grabberTasks[taskGroup].state?"ok":"not ok"), "info");
+        }
     }
 
     function getHostName (url) {
@@ -393,21 +486,54 @@
         return url.split('/')[2].replace(/\./g, '_');
     }
 
+    function jsonToKeypathValue (jsonObject, runningKey) {
+        var list = [];
+        for (var key in jsonObject) {
+            var currentKeypath = (runningKey ? (runningKey + "." + key) : key);
+            console.log("running key is: " + currentKeypath);
+            if (typeof(jsonObject[key]) === "object")
+                list = list.concat(jsonToKeypathValue(jsonObject[key], currentKeypath));
+            else {
+                console.log("value reached: " + jsonObject[key]);
+                list[currentKeypath] = jsonObject[key];
+            }
+        }
+        console.log(list);
+        return list;
+    }
+
     // is taken from http://haacked.com/archive/2009/12/29/convert-rgb-to-hex.aspx
     function colorToHex(color) {
+        console.log("colorToHex: translating "  + color + " to hex");
+
         if (color.substr(0, 1) === '#') {
             return color;
         }
+
+        //pads left
+        function lpad (str, padString, length) {
+            while (str.length < length)
+                str = padString + str;
+            return str;
+        }
+
+        //pads right
+        function rpad (str, padString, length) {
+            while (str.length < length)
+                str = str + padString;
+            return str;
+        }
+
         var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
-        
+
         var red = parseInt(digits[2]);
         var green = parseInt(digits[3]);
         var blue = parseInt(digits[4]);
-        
+
         var rgb = blue | (green << 8) | (red << 16);
-        return digits[1] + '#' + rgb.toString(16);
+        return digits[1] + '#' + lpad(rgb.toString(16), "0", 6);
     };
-            
+
     // inject into window object
     w.bvStyleGrabber = bvSG;
 })(window);
