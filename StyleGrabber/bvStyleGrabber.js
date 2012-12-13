@@ -827,9 +827,10 @@
         // save all data
         if (isReadyToSave) {
             innerLog("Saving Data", "info");
-            var allData = [];
+            var allData = {};
             for (var taskGroup in grabberTasks)
-                allData.push(grabberTasks[taskGroup].data);
+                for (var dataKey in grabberTasks[taskGroup].data)
+                    allData[dataKey] = grabberTasks[taskGroup].data[dataKey];
             // print result
             innerLog("Results:", "info");
             innerLog("========================================", "info");
