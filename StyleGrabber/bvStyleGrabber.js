@@ -15,7 +15,8 @@
         productExternalID : "test1",
         testEnvironment : "bvstaging",
         pageFormat : "noscript",
-        resourceFolder : "customers/"
+        resourceFolder : "customers/",
+        outputFormats 
     };
     var documents = {
         elementsMap_bhive : {
@@ -23,20 +24,20 @@
             ratingIcons : {
                 summaryStars : {
                     subStyles : {
-                        full : { color: false, size: false },
-                        empty : { color: false, size: false }
+                        full : { color: '@images.OverallRating.full', size: '@images.OverallRating.size' },
+                        empty : { color: '@images.OverallRating.empty', size: '@images.OverallRating.size' }
                     }
                 },
                 bars: {
                     subStyles : {
-                        full : { color: false, size: false },
-                        empty : { color: false, size: false }
+                        full : { color: '@images.SecondaryRating.full', size: '@images.SecondaryRating.size' },
+                        empty : { color: '@images.SecondaryRating.empty', size: '@images.SecondaryRating.size' }
                     }
                 },
                 reviewStars: {
                     subStyles : {
-                        full : { color: false, size: false },
-                        empty : { color: false, size: false }
+                        full : { color: '@images.OverallRating.full', size: '@images.OverallRating.size' },
+                        empty : { color: '@images.OverallRating.empty', size: '@images.OverallRating.size' }
                     }
                 }
             },
@@ -198,7 +199,6 @@
                             sampleBackgroundColor: "white",
                             color: "#2A5A97",
                             family: "Arial, sans-serif",
-                            familyID: "sniffedFontFamily1637882686",
                             textTransform: "none",
                             characterStyles: [ ],
                             size: 12
@@ -211,7 +211,6 @@
                     sampleBackgroundColor: "white",
                     color: "#4B4B4B",
                     family: "Arial, sans-serif",
-                    familyID: "sniffedFontFamily1637882686",
                     textTransform: "none",
                     characterStyles: [ ],
                     size: 12
@@ -221,7 +220,6 @@
                     sampleBackgroundColor: "white",
                     color: "#4B4B4B",
                     family: "Arial, sans-serif",
-                    familyID: "sniffedFontFamily1637882686",
                     textTransform: "none",
                     characterStyles: [ ],
                     size: 12
@@ -231,7 +229,6 @@
                     sampleBackgroundColor: "white",
                     color: "#4B4B4B",
                     family: "Arial, sans-serif",
-                    familyID: "sniffedFontFamily1637882686",
                     textTransform: "none",
                     characterStyles: [ ],
                     size: 12
@@ -241,7 +238,6 @@
                     sampleBackgroundColor: "white",
                     color: "#2A5A97",
                     family: "Arial, sans-serif",
-                    familyID: "sniffedFontFamily1637882686",
                     textTransform: "none",
                     characterStyles: [ "bold" ],
                     size: 12
@@ -481,6 +477,11 @@
 
     /********* PUBLIC METHODS *********/
 
+    bvSG.setupWithArguments = function (args) {
+        
+        return bvSG;
+    }
+    
     bvSG.init = function (config) {
         extend(settingsPublic, config);
         return bvSG;
@@ -849,7 +850,7 @@
             else
                 fileName = settingsPublic.resourceFolder + pageObj.clientName;
             saveIntoFile(fileName + ".json", JSON.stringify(allData));
-            saveIntoFile(fileName + ".bhive", JSON.stringify(linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive)));
+            saveIntoFile(fileName + ".bhive", linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive, "inline"));
             saveIntoFile(fileName + ".log", logCache);
             // exit
             phantom.exit();
@@ -862,10 +863,10 @@
     }
 
     function saveIntoFile(fileName, data) {
-        
+
         if (data == "")
             return;
-    
+
         var fs = require('fs');
         var f = false;
         f = fs.open(fileName, 'w');
@@ -874,8 +875,47 @@
         innerLog("Data is saved into the file: " + fileName, "info");
     }
 
-    function linkJsonValuesToBhiveDoc(jsonData, bhiveDoc) {
-        
+    function linkJsonValuesToBhiveDoc(jsonData, bhiveDoc, format) {
+
+        // get list of key : value
+        innerLog("Transforming bhive structure into key:value strings", "info");
+        innerLog("Transforming fetched data structure into key:value strings", "info");
+        var bhiveListOfKeysValues = {};
+        var dataListOfKeysValues = {};
+        jsonToKeypathValue(bhiveDoc, false, bhiveListOfKeysValues);
+        jsonToKeypathValue(jsonData, false, dataListOfKeysValues);
+
+        //console.log("BHIVE LIST : ");
+        //console.log(bhiveListOfKeysValues);
+        //console.log("JSON LIST : ");
+        //console.log(dataListOfKeysValues);
+
+        // update bhive document values
+        for (var key in bhiveListOfKeysValues)
+            if (typeof(bhiveListOfKeysValues[key][0]) !== "undefined" &&
+                bhiveListOfKeysValues[key][0] === '@' &&
+                typeof(dataListOfKeysValues[bhiveListOfKeysValues[key].substr(1)]) !== "undefined")
+                bhiveListOfKeysValues[key] = dataListOfKeysValues[bhiveListOfKeysValues[key].substr(1)];
+
+        var output = false;
+        switch (format) {
+            case "inline" : {
+                output = "";
+                for (var key in bhiveListOfKeysValues)
+                    output += bhiveListOfKeysValues[key] + "\n";
+                break;
+            }
+            case "raw" : {
+                output = bhiveListOfKeysValues;
+                break;
+            }
+            case "json" :
+            default : {
+                output = JSON.stringify(bhiveListOfKeysValues);
+            }
+        }
+        // return updated document
+        return output;
     }
 
     function getHostName (url) {
@@ -883,19 +923,20 @@
         return url.split('/')[2].replace(/\./g, '_');
     }
 
-    function jsonToKeypathValue (jsonObject, runningKey) {
-        var list = [];
+    function jsonToKeypathValue (jsonObject, runningKey, list) {
+        //var list = {};
         for (var key in jsonObject) {
             var currentKeypath = (runningKey ? (runningKey + "." + key) : key);
-            console.log("running key is: " + currentKeypath);
+            //innerLog("jsonToKeypathValue: running key is: " + currentKeypath, "info");
             if (typeof(jsonObject[key]) === "object")
-                list = list.concat(jsonToKeypathValue(jsonObject[key], currentKeypath));
+                jsonToKeypathValue(jsonObject[key], currentKeypath, list);
             else {
-                console.log("value reached: " + jsonObject[key]);
+                //innerLog("jsonToKeypathValue: value reached: " + jsonObject[key], "info");
                 list[currentKeypath] = jsonObject[key];
+                innerLog("jsonToKeypathValue: [" + currentKeypath + " : " + jsonObject[key] + "]", "info");
             }
         }
-        console.log(list);
+        //console.log(list);
         return list;
     }
 
@@ -964,5 +1005,5 @@ if (sys.args.length == 2) {
 if (sys.args.length < 3) {
     //console.log("Wrong argument count");
     phantom.exit();
-} else
+} else 
     bvStyleGrabber.grab(sys.args[1],sys.args[2],sys.args[3],sys.args[4],sys.args[5],sys.args[6]);
