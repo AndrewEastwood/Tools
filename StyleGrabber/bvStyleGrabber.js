@@ -10,85 +10,476 @@
             clientName: "",
             host: "",
             displayCode: "",
-            isApiHostname: false
+            isApiHostname: true
         },
         productExternalID : "test1",
         testEnvironment : "bvstaging",
         pageFormat : "noscript",
         resourceFolder : "customers/"
     };
-    var settings = {
+    var documents = {
         elementsMap_bhive : {
-            ratingIcons: {
-                'summaryStars.subStyles.full.color': {
-                    'path' : '.BVRRSecondaryRatingsContainer'
+            /* TODO: use elementsMap values to fill this json */
+            ratingIcons : {
+                summaryStars : {
+                    subStyles : {
+                        full : { color: false, size: false },
+                        empty : { color: false, size: false }
+                    }
                 },
-                'summaryStars.subStyles.empty.color': {
-                    'path' : '.BVRRSecondaryRatingsContainer'
+                bars: {
+                    subStyles : {
+                        full : { color: false, size: false },
+                        empty : { color: false, size: false }
+                    }
                 },
-                bars: {},
-                reviewStars: {}
+                reviewStars: {
+                    subStyles : {
+                        full : { color: false, size: false },
+                        empty : { color: false, size: false }
+                    }
+                }
             },
-            'configuredStyles.fonts.body.size' : {
-                'path' : '.BVRRRootElement',
-                'cssProps' : ['font-size']
+            backgroundTab : {
+                "section-header" : {color : "transparent"},
+                "prs-container" : {color : "transparent"},
+                "section-header-controls" : {color : "transparent"},
+                button : {
+                    color : "transparent",
+                    subStyles: {
+                        primary: { color: "#0B5681" },
+                        hover: { color: "#0B5681" }
+                    }
+                },
+                "content-summary": {color: "transparent" },
+                "content-item": {color: "transparent" },
+                "content-header": {color: "transparent" }
+            },
+            marginAndPadding: {
+                "prs-container": {
+                    margin: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 },
+                    padding: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 }
+                },
+                "content-summary": {
+                    margin: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 },
+                    padding: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 }
+                },
+                "content-item": {
+                    margin: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 },
+                    padding: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 }
+                },
+                "content-header": {
+                    margin: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 },
+                    padding: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 }
+                }
+            },
+            fonts: {
+                body: {
+                    lineHeight: 16.5,
+                    sampleBackgroundColor: "white",
+                    color: "#4B4B4B",
+                    family: "Arial, sans-serif",
+                    familyID: "sniffedFontFamily1637882686",
+                    textTransform: "none",
+                    characterStyles: [ ],
+                    size: 12
+                },
+                button: {
+                    lineHeight: 19.5,
+                    sampleBackgroundColor: "black",
+                    color: "#FFFFFF",
+                    family: "Arial, Helvetica, sans-serif",
+                    familyID: "fontFamily2",
+                    textTransform: "none",
+                    characterStyles: [ "bold" ],
+                    subStyles: {
+                        button: {
+                            lineHeight: 16.5,
+                            sampleBackgroundColor: "white",
+                            color: "#FFF",
+                            family: "Arial, sans-serif",
+                            familyID: "sniffedFontFamily1637882686",
+                            textTransform: "uppercase",
+                            characterStyles: [ "bold" ],
+                            size: 12
+                        },
+                        active: {
+                            lineHeight: 16.5,
+                            sampleBackgroundColor: "white",
+                            color: "#FFF",
+                            family: "Arial, sans-serif",
+                            familyID: "sniffedFontFamily1637882686",
+                            textTransform: "uppercase",
+                            characterStyles: [ "bold" ],
+                            size: 12
+                        },
+                        hover: {
+                            lineHeight: 16.5,
+                            sampleBackgroundColor: "white",
+                            color: "#FFF",
+                            family: "Arial, sans-serif",
+                            familyID: "sniffedFontFamily1637882686",
+                            textTransform: "uppercase",
+                            characterStyles: [ "bold" ],
+                            size: 12
+                        }
+                    },
+                    size: 13
+                },
+                pageHeader: {
+                    lineHeight: 16.5,
+                    sampleBackgroundColor: "white",
+                    color: "#4B4B4B",
+                    family: "Arial, sans-serif",
+                    familyID: "sniffedFontFamily1637882686",
+                    textTransform: "none",
+                    characterStyles: [ "bold" ],
+                    size: 14
+                },
+                ugcDate: {
+                    lineHeight: 16.5,
+                    sampleBackgroundColor: "white",
+                    color: "#4B4B4B",
+                    family: "Arial, sans-serif",
+                    familyID: "sniffedFontFamily1637882686",
+                    textTransform: "none",
+                    characterStyles: [ ],
+                    size: 11
+                },
+                sectionHeader: {
+                    lineHeight: 16.5,
+                    sampleBackgroundColor: "white",
+                    color: "#4B4B4B",
+                    family: "Arial, sans-serif",
+                    familyID: "sniffedFontFamily1637882686",
+                    textTransform: "none",
+                    characterStyles: [ "bold" ],
+                    size: 12
+                },
+                link: {
+                    lineHeight: 19.5,
+                    family: "Arial, Helvetica, sans-serif",
+                    familyID: "fontFamily2",
+                    textTransform: "none",
+                    characterStyles: [ ],
+                    subStyles: {
+                        visited: {
+                            lineHeight: 16.5,
+                            sampleBackgroundColor: "white",
+                            color: "#2A5A97",
+                            family: "Arial, sans-serif",
+                            familyID: "sniffedFontFamily1637882686",
+                            textTransform: "none",
+                            characterStyles: [ ],
+                            size: 12
+                        },
+                        link: {
+                            lineHeight: 16.5,
+                            sampleBackgroundColor: "white",
+                            color: "#2A5A97",
+                            family: "Arial, sans-serif",
+                            familyID: "sniffedFontFamily1637882686",
+                            textTransform: "none",
+                            characterStyles: [ ],
+                            size: 12
+                        },
+                        active: {
+                            lineHeight: 16.5,
+                            sampleBackgroundColor: "white",
+                            color: "#2A5A97",
+                            family: "Arial, sans-serif",
+                            familyID: "sniffedFontFamily1637882686",
+                            textTransform: "none",
+                            characterStyles: [ ],
+                            size: 12
+                        },
+                        hover: {
+                            lineHeight: 16.5,
+                            sampleBackgroundColor: "white",
+                            color: "#2A5A97",
+                            family: "Arial, sans-serif",
+                            familyID: "sniffedFontFamily1637882686",
+                            textTransform: "none",
+                            characterStyles: [ ],
+                            size: 12
+                        }
+                    },
+                    size: 13
+                },
+                labels: {
+                    lineHeight: 16.5,
+                    sampleBackgroundColor: "white",
+                    color: "#4B4B4B",
+                    family: "Arial, sans-serif",
+                    familyID: "sniffedFontFamily1637882686",
+                    textTransform: "none",
+                    characterStyles: [ ],
+                    size: 12
+                },
+                dimensionValues: {
+                    lineHeight: 16.5,
+                    sampleBackgroundColor: "white",
+                    color: "#4B4B4B",
+                    family: "Arial, sans-serif",
+                    familyID: "sniffedFontFamily1637882686",
+                    textTransform: "none",
+                    characterStyles: [ ],
+                    size: 12
+                },
+                sectionHeaderControls: {
+                    lineHeight: 16.5,
+                    sampleBackgroundColor: "white",
+                    color: "#4B4B4B",
+                    family: "Arial, sans-serif",
+                    familyID: "sniffedFontFamily1637882686",
+                    textTransform: "none",
+                    characterStyles: [ ],
+                    size: 12
+                },
+                ugcName: {
+                    lineHeight: 16.5,
+                    sampleBackgroundColor: "white",
+                    color: "#2A5A97",
+                    family: "Arial, sans-serif",
+                    familyID: "sniffedFontFamily1637882686",
+                    textTransform: "none",
+                    characterStyles: [ "bold" ],
+                    size: 12
+                }
+            },
+            borders: {
+                "button-primary": {
+                    bottomRightRadius: 3,
+                    bottomLeftRadius: 3,
+                    topRightRadius: 3,
+                    bottom: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    left: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    right: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    topLeftRadius: 3,
+                    radiiLocked: true,
+                    top: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    }
+                },
+                "prs-container": {
+                    bottomRightRadius: 0,
+                    bottomLeftRadius: 0,
+                    topRightRadius: 0,
+                    bottom: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    left: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    right: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    topLeftRadius: 0,
+                    radiiLocked: false,
+                    top: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    }
+                },
+                "button-secondary": {
+                    bottomRightRadius: 0,
+                    bottomLeftRadius: 0,
+                    topRightRadius: 0,
+                    bottom: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    left: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    right: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    topLeftRadius: 0,
+                    radiiLocked: false,
+                    top: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    }
+                },
+                "content-summary": {
+                    bottomRightRadius: 0,
+                    bottomLeftRadius: 0,
+                    topRightRadius: 0,
+                    bottom: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    left: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    right: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    topLeftRadius: 0,
+                    radiiLocked: false,
+                    top: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    }
+                },
+                "content-item": {
+                    bottomRightRadius: 0,
+                    bottomLeftRadius: 0,
+                    topRightRadius: 0,
+                    bottom: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    left: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    right: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    topLeftRadius: 0,
+                    radiiLocked: false,
+                    top: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    }
+                },
+                "content-header": {
+                    bottomRightRadius: 0,
+                    bottomLeftRadius: 0,
+                    topRightRadius: 0,
+                    bottom: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    left: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    right: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    },
+                    topLeftRadius: 0,
+                    radiiLocked: false,
+                    top: {
+                        style: "none",
+                        color: "transparent",
+                        width: 0
+                    }
+                }
             }
         },
         elementsMap : {
-            'Review Titles' : {
-                'path' : '.BVRRReviewTitle',
-                'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+            images : {
+                'OverallRating' : { name : "rating.gif", path : '.BVRROverallRatingContainer .BVRRRatingNormalImage img' },
+                'SecondaryRating' : { name : "ratingSecondary.gif", path : '.BVRRSecondaryRatingsContainer .BVRRRatingNormalImage img' }
             },
-            'Section Header' : {
-                'path' : '.BVDITitle ',
-                'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
-            },
-            'Section Header Controls' : {
-                'path' : '#BVRRDisplayContentHeaderID ',
-                'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
-            },
-            'Review Text' : {
-                'path' : '.BVRRReviewTextContainer',
-                'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
-            },
-            'Review Dates' : {
-                'path' : '.BVRRReviewDate',
-                'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
-            },
-            'Reviewer Name' : {
-                'path' : '.BVRRUserNickname',
-                'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
-            },
-            'Lables' : {
-                'path' : '.BVRRLabel',
-                'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
-            },
-            'Dimension Values' : {
-                'path' : '.BVRRRatingNormalOutOf',
-                'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
-            },
-            'Links' : {
-                'path' : '.BVRRRootElement a',
-                'states' : ['hover', 'active', 'visited'],
-                'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
-            },
-            'Buttons' : {
-                'path' : '.BVRRDisplayContentLinkWrite a',
-                'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+            text: {
+                'ReviewTitles' : {
+                    'path' : '.BVRRReviewTitle',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                },
+                'SectionHeader' : {
+                    'path' : '.BVDITitle ',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                },
+                'SectionHeaderControls' : {
+                    'path' : '#BVRRDisplayContentHeaderID ',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                },
+                'ReviewText' : {
+                    'path' : '.BVRRReviewTextContainer',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                },
+                'ReviewDates' : {
+                    'path' : '.BVRRReviewDate',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                },
+                'ReviewerName' : {
+                    'path' : '.BVRRUserNickname',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                },
+                'Lables' : {
+                    'path' : '.BVRRLabel',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                },
+                'DimensionValues' : {
+                    'path' : '.BVRRRatingNormalOutOf',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                },
+                'Links' : {
+                    'path' : '.BVRRRootElement a',
+                    'states' : ['hover', 'active', 'visited'],
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                },
+                'Buttons' : {
+                    'path' : '.BVRRDisplayContentLinkWrite a',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                }
             }
         }
     };
     var grabberTasks = {
         grabCssProperties : {
             state: false,
-            data :false
+            data : {},
+            log : false
         },
         grabRatingStars : {
             state: false,
-            data: false
+            data: {},
+            log : false
         }
     };
     var rerunThreshold = 3;
+    var isSavingData = false;
+    var isNeedToRerun = false;
+    var logCache = "";
+
+    /********* PUBLIC METHODS *********/
 
     bvSG.init = function (config) {
         extend(settingsPublic, config);
@@ -104,10 +495,10 @@
         }
     };
 
-    bvSG.grab = function (clientName, displayCode, isApiHostname, productExternalID, testEnvironment, host, updateSettings) {
+    bvSG.grab = function (clientName, displayCode, isApiHostname, productExternalID, testEnvironment, host, updatedocuments) {
 
-        // update settings
-        if (updateSettings) {
+        // update documents
+        if (updatedocuments) {
             if (!!clientName)
                 settingsPublic.client.clientName = clientName;
             if (!!displayCode)
@@ -144,6 +535,8 @@
         }
     };
 
+    /********* INTERNAL METHODS *********/
+
     function grabber(pageObj) {
         // create web page
         pageObj.webPageObject = require('webpage').create();
@@ -151,27 +544,22 @@
         pageObj.webPageObject.onConsoleMessage = function (msg){
             innerLog(msg, "info");
         };
-        // use auth settings
+        // use auth documents
         if (settingsPublic.auth.user) {
             innerLog("Auth is required. Using user login to connect: " + settingsPublic.auth.user, "info");
-            page.settings.userName = settingsPublic.auth.user;
+            page.documents.userName = settingsPublic.auth.user;
         }
         if (settingsPublic.auth.pwd) {
-            page.settings.password = settingsPublic.auth.pwd;
+            page.documents.password = settingsPublic.auth.pwd;
         }
         // start
-        var onPageSuccessCalled = false;
         pageObj.webPageObject.open(pageObj.getUrl(), function(status) {
-            innerLog("Status received = " + status, "info");
+            innerLog("Status received = " + status, status);
             if (status == "success") { 
-                if (!onPageSuccessCalled) {
-                    innerLog("Page is downloaded", "info");
-                    //console.log(page);
-                    window.setInterval(function(){ onPageSuccess(pageObj); }, 5000);
-                    onPageSuccessCalled = true;
-                }
+                //window.setInterval(function(){ onPageSuccess(pageObj); }, 5000);
+                onPageSuccess(pageObj);
             } else {
-                innerLog("Unable to fetch data from the url", "failed");
+                innerLog("Unable to fetch data from the url", "error");
                 phantom.exit();
             }
         });
@@ -179,28 +567,31 @@
 
     function onPageSuccess(pageObj) {
         innerLog("Event Triggered: onPageSuccess", "info");
-        var needToRerun = false;
         // get css properties
         if (grabberTasks.grabCssProperties.state === false) {
-            var cssProp = grabCssProperties(pageObj, settings.elementsMap);
-            if (typeof(cssProp) == "object")
-                innerLog("grabCssProperties: skips: " + cssProp.skips + "; processed: " + cssProp.processed, "info");
-            else
-                needTorerun = true;
+            var cssProp = grabCssProperties(pageObj, documents.elementsMap, "text");
+            if (typeof(cssProp) == "object") {
+                innerLog("grabCssProperties: skips: " + cssProp.log.skips + "; processed: " + cssProp.log.processed, "info");
+                if (cssProp.log.processed == 0) isNeedToRerun = true;
+            } else
+                isNeedToRerun = true;
         }
 
-        // get rating starts colors
+        // get rating stars colors
         if (grabberTasks.grabRatingStars.state === false) {
-            var imgProp = grabRatingStars(pageObj);
-            if (typeof(imgProp) == "object")
-                innerLog("grabRatingStars: skips: " + imgProp.skips + "; processed: " + imgProp.processed, "info");
+            var imgProp = grabRatingStars(pageObj, documents.elementsMap, "images");
+            if (typeof(imgProp) == "object") {
+                innerLog("grabRatingStars: skips: " + imgProp.log.skips + "; processed: " + imgProp.log.processed, "info");
+                if (imgProp.log.processed == 0) isNeedToRerun = true;
+            } else
+                isNeedToRerun = true;
         }
 
         saveDataAndExit(pageObj);
-
         //
-        if (needToRerun) {
-            innerLog("threshold: " + rerunThreshold, "info");
+        if (isNeedToRerun && !isSavingData) {
+            innerLog("Need to re-run : " + (isNeedToRerun?"yes":"no"), "demo");
+            innerLog("Thresholds left: " + rerunThreshold, "info");
             rerunThreshold--;
             if (rerunThreshold < 0) {
                 innerLog("maximum re-runs were reached.", "error");
@@ -235,119 +626,99 @@
             getUrl : function() {
                 if (this.isCustomLink())
                     return this.customPageUrl;
-                return this.scheme + "://" + this.host + (this.testEnvironment ? ("/" + this.testEnvironment) : "") + "/" + this.displayCode + "/" + this.productExternalID + "/reviews.htm?format=" + pageFormat;
+                return this.scheme + "://" + this.host  + (this.testEnvironment ? ("/" + this.testEnvironment) : "") + "/" + this.displayCode + "/" + this.productExternalID + "/reviews.htm?format=" + pageFormat;
             },
             getImageUrl : function (name) {
                 name = name || "rating.gif";
-                return "/" + this.displayCode + "/3_0/5/" + name;
+                return (this.testEnvironment ? ("/" + this.testEnvironment) : "") + "/" + this.displayCode + "/3_0/5/" + name;
             },
             webPageObject : false,
             customPageUrl : customPageUrl
         }
     }
 
-    function grabRatingStars(pageObj) {
+    function grabRatingStars(pageObj, elMap, elementsKey) {
         innerLog("Start grabbing rating stars properties", "info");
 
-        var imgPropsObj = pageObj.webPageObject.evaluate(function(colorToHexFn, isCustomLink, overallImage, secondaryImage) {
-            var cRImg = document.createElement('canvas');
-            var cRSImg = document.createElement('canvas');
+        var imgsToGrab = {};
+        for (var imgId in elMap[elementsKey]) {
+            if (pageObj.isCustomLink())
+                imgsToGrab[imgId] = { path : elMap[elementsKey][imgId].path, isCustom : true }
+            else
+                imgsToGrab[imgId] = { url : pageObj.getImageUrl(elMap[elementsKey][imgId].name), isCustom : false }
+        }
 
-            var imgRating = new Image();
-            var imgRatingSecondary = new Image();
+        var imgPropsObj = pageObj.webPageObject.evaluate(function(colorToHexFn, imgsToGrab, isCustomLink, overallImage, secondaryImage) {
 
-            var ratingImages = {};
             var _skips = 0;
-            var _processed = 0
-            
-            
-        
-            if (isCustomLink) {
-                var ratingStarOverallImg = document.querySelector('.BVRROverallRatingContainer .BVRRRatingNormalImage img');
-                var ratingStarSecondaryImg = document.querySelector('.BVRRSecondaryRatingsContainer .BVRRRatingNormalImage img');
-                if (ratingStarOverallImg != null)
-                    imgRating.src = ratingStarOverallImg.getAttribute('src');
-                if (ratingStarSecondaryImg != null)
-                    imgRatingSecondary.src = ratingStarSecondaryImg.getAttribute('src');
-            } else {
-                imgRating.src = overallImage;
-                imgRatingSecondary.src = secondaryImage;
+            var _processed = 0;
+            var ratingImages = {};
+
+            // run over provided images
+            for (var imgItemKey in imgsToGrab) {
+
+                console.log(imgsToGrab[imgItemKey].isCustom?imgsToGrab[imgItemKey].path:imgsToGrab[imgItemKey].url);
+
+                var canvas = document.createElement('canvas');
+                var imgContext = canvas.getContext('2d');
+                var imgRating = new Image();
+
+                if (imgsToGrab[imgItemKey].isCustom) {
+                    //console.log("Using custom page url with path to image: " + imgsToGrab[imgItemKey].path);
+                    var imageHtmlElement = document.querySelector(imgsToGrab[imgItemKey].path);
+                    if (imageHtmlElement != null)
+                        imgRating.src = imageHtmlElement.getAttribute('src');
+                } else {
+                    //console.log("Using standart page with url to image: " + imgsToGrab[imgItemKey].url);
+                    imgRating.src = imgsToGrab[imgItemKey].url;
+                }
+
+                console.log("Using " + imgItemKey + " image");
+                console.log("Image url: " + imgRating.src);
+                console.log("Image dimensions [with: " + imgRating.width + ", height: " + imgRating.height + "]");
+
+                // get colors from overall rating image
+                if (imgRating.src !== "" && imgRating.width !== 0 && imgRating.height !== 0) {
+                    console.log("Setting with attribute");
+                    canvas.setAttribute('width', imgRating.width);
+                    console.log("Setting height attribute");
+                    canvas.setAttribute('height', imgRating.height);
+                    console.log("Appending image into the document body");
+                    document.body.appendChild(canvas);
+                    console.log("Drawing rating stars image");
+                    imgContext.drawImage(imgRating, 0, 0);
+                    var imgDataFull = imgContext.getImageData(imgRating.width / 10, imgRating.height / 2, 1, 1);
+                    var imgDataEmpty = imgContext.getImageData(imgRating.width - (imgRating.width / 10), imgRating.height / 2, 1, 1);
+                    ratingImages[imgItemKey] = {
+                        full: colorToHexFn("rgb(" + imgDataFull.data[0] + ", " + imgDataFull.data[1] + ", " + imgDataFull.data[2] + ")"),
+                        empty: colorToHexFn("rgb(" + imgDataEmpty.data[0] + ", " + imgDataEmpty.data[1] + ", " + imgDataEmpty.data[2] + ")"),
+                        size: imgRating.height
+                    };
+                    _processed++;
+                } else
+                    _skips++;
             }
 
-            console.log(imgRating.src);
-            console.log("overall rating star image [with: " + imgRating.width + ", height: " + imgRating.height + "]");
-            console.log(imgRatingSecondary.src);
-            console.log("secondary rating star image [width: " + imgRatingSecondary.width + ", height: " + imgRatingSecondary.height + "]");
+            return {data : ratingImages, log : {skips : _skips, processed : _processed}};
+        }, colorToHex, imgsToGrab);
 
-            // get colors from overall rating image
-            if (imgRating.src !== "" && imgRating.width !== 0 && imgRating.height !== 0) {
-                console.log("Using overall rating starts image ");
-                var contextRatingImage = cRImg.getContext('2d');
-                cRImg.setAttribute('id', 'myCanvasRating');
-                cRImg.setAttribute('width', imgRating.width);
-                cRImg.setAttribute('height', imgRating.height);
-                document.body.appendChild(cRImg);
-                contextRatingImage.drawImage(imgRating, 0, 0);
-                var imgDataFilledR = contextRatingImage.getImageData(imgRating.width / 10, imgRating.height / 2, 1, 1);
-                var imgDataUnfilledR = contextRatingImage.getImageData(imgRating.width - (imgRating.width / 10), imgRating.height / 2, 1, 1);
-                ratingImages['overall'] = {
-                    full: colorToHexFn("rgb(" + imgDataFilledR.data[0] + ", " + imgDataFilledR.data[1] + ", " + imgDataFilledR.data[2] + ")"),
-                    empty: colorToHexFn("rgb(" + imgDataUnfilledR.data[0] + ", " + imgDataUnfilledR.data[1] + ", " + imgDataUnfilledR.data[2] + ")")
-                };
-                _processed++;
-            } else
-                _skips++;
-
-            if (imgRatingSecondary.src !== "" && imgRatingSecondary.width !== 0 && imgRatingSecondary.height !== 0) {
-                console.log("Using secondary rating starts image ");
-                var contextRatingSecondaryImage = cRSImg.getContext('2d');
-                cRSImg.setAttribute('id', 'myCanvasRatingSecondary');
-                cRSImg.setAttribute('width', imgRatingSecondary.width);
-                cRSImg.setAttribute('height', imgRatingSecondary.height);
-                document.body.appendChild(cRSImg);
-                contextRatingSecondaryImage.drawImage(imgRatingSecondary, 0, 0);
-                var imgDataFilledRS = contextRatingSecondaryImage.getImageData(imgRatingSecondary.width / 10, imgRatingSecondary.height / 2, 1, 1);
-                var imgDataUnfilledRS = contextRatingSecondaryImage.getImageData(imgRatingSecondary.width - (imgRatingSecondary.width / 10), imgRatingSecondary.height / 2, 1, 1);
-                ratingImages['secondary'] = {
-                    full: colorToHexFn("rgb(" + imgDataFilledRS.data[0] + ", " + imgDataFilledRS.data[1] + ", " + imgDataFilledRS.data[2] + ")"),
-                    empty: colorToHexFn("rgb(" + imgDataUnfilledRS.data[0] + ", " + imgDataUnfilledRS.data[1] + ", " + imgDataUnfilledRS.data[2] + ")")
-                };
-                _processed++;
-            } else
-                _skips++;
-
-            return {data : ratingImages, skips : _skips, processed : _processed};
-
-        }, colorToHex, pageObj.isCustomLink(), pageObj.getImageUrl(), pageObj.getImageUrl('ratingSecondary.gif'));
-
-        if (imgPropsObj.skips > 0 && imgPropsObj.processed == 0)
+        if (imgPropsObj.log.skips > 0 && imgPropsObj.log.processed == 0)
             return false;
 
         grabberTasks.grabRatingStars.state = true;
-        grabberTasks.grabRatingStars.data = imgPropsObj;
+        grabberTasks.grabRatingStars.log = imgPropsObj.log;
+        grabberTasks.grabRatingStars.data[elementsKey] = imgPropsObj.data;
+
+        //console.log(JSON.stringify(grabberTasks.grabRatingStars.data));
+
         return imgPropsObj;
     }
 
-    function grabCssProperties(pageObj, elMap) {
+    function grabCssProperties(pageObj, elMap, elementsKey) {
         // fetch css properties usign elementsMap
         innerLog("Start grabbing css properties", "info");
         //console.log(elMap);
         var cssPropsObj = pageObj.webPageObject.evaluate(function(colorToHexFn, elMap) {
-
-            // is taken from http://haacked.com/archive/2009/12/29/convert-rgb-to-hex.aspx
-            function colorToHex(color) {
-                if (color.substr(0, 1) === '#') {
-                    return color;
-                }
-                var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
-
-                var red = parseInt(digits[2]);
-                var green = parseInt(digits[3]);
-                var blue = parseInt(digits[4]);
-
-                var rgb = blue | (green << 8) | (red << 16);
-                return digits[1] + '#' + rgb.toString(16);
-            };
 
             /*
             !!! does not work with pahantomjs 1.7.0v
@@ -363,7 +734,7 @@
             var _skips = 0;
             var _processed = 0;
             var _skippedItems = [];
-            // loop by elemenets
+            // loop by elements
             for(var elKey in elMap) {
                 // current element alias
                 var currElem = elMap[elKey];
@@ -392,7 +763,7 @@
                         for (var j = 0; j < currElem.states.length; j++) {
                             var cssProp = window.getComputedStyle(elem, currElem.states[j]).getPropertyValue(currElem.cssProps[i]);
                             if (currElem.cssProps[i] === "color")
-                                cssProp = colorToHex(cssProp);
+                                cssProp = colorToHexFn(cssProp);
                             _fetchedStyles[elKey][currElem.states[j]][currElem.cssProps[i]] = cssProp;
                             _processed++;
                         }
@@ -400,20 +771,19 @@
                     else {
                         var cssProp = window.getComputedStyle(elem, null).getPropertyValue(currElem.cssProps[i]);
                         if (currElem.cssProps[i] === "color")
-                            cssProp = colorToHex(cssProp);
+                            cssProp = colorToHexFn(cssProp);
                         _fetchedStyles[elKey][currElem.cssProps[i]] = cssProp;
                         _processed++;
                     }
                 }
             }
-            return {data : _fetchedStyles, skips : _skips, processed : _processed, skippedItems : _skippedItems};
-        }, colorToHex, elMap);
-
-        if (cssPropsObj.skips > 0 && cssPropsObj.processed == 0)
+            return {data : _fetchedStyles, log : {skips : _skips, processed : _processed, skippedItems : _skippedItems}};
+        }, colorToHex, elMap[elementsKey]);
+        if (cssPropsObj.log.skips > 0 && cssPropsObj.log.processed == 0)
             return false;
-
         grabberTasks.grabCssProperties.state = true;
-        grabberTasks.grabCssProperties.data = cssPropsObj;
+        grabberTasks.grabCssProperties.log = cssPropsObj.log;
+        grabberTasks.grabCssProperties.data[elementsKey] = cssPropsObj.data;
         return cssPropsObj;
     }
 
@@ -433,10 +803,23 @@
     }
 
     function innerLog(msg, type) {
-        console.log("["+type.toUpperCase()+"] " + new Date().toLocaleTimeString() + ": " + msg);
+        var sign = " "
+        // show short signs with messages
+        if (type === 'warn') sign = "!";
+        if (type === 'error') sign = "*";
+        if (type === 'fail') sign = "X";
+        // log message
+        var message = "["+type.toUpperCase()+"] " + new Date().toLocaleTimeString() + " " + sign + " : " + msg;
+        console.log(message);
+        // will be stored into the file
+        logCache += "\n" + message;
     }
 
     function saveDataAndExit (pageObj) {
+        if (isSavingData)
+            return;
+        isSavingData = true;
+
         innerLog("Checking if all steps were done", "info");
         var isReadyToSave = true;
         for (var taskGroup in grabberTasks)
@@ -446,39 +829,52 @@
             innerLog("Saving Data", "info");
             var allData = [];
             for (var taskGroup in grabberTasks)
-                allData.push(grabberTasks[taskGroup].data.data);
+                allData.push(grabberTasks[taskGroup].data);
             // print result
             innerLog("Results:", "info");
             innerLog("========================================", "info");
-            innerLog(JSON.stringify(allData), "info");
+            innerLog("\n" + JSON.stringify(allData), "info");
             innerLog("========================================", "info");
             innerLog("Completed with:", "info");
             for (var taskGroup in grabberTasks) {
-                innerLog("Task: @" + taskGroup + " [skips: " + grabberTasks[taskGroup].data.skips + "; processed: " + grabberTasks[taskGroup].data.processed + "]", "info");
-                if (grabberTasks[taskGroup].data.skippedItems)
-                    for (var i = 0; i < grabberTasks[taskGroup].data.skippedItems.length; i++)
-                        innerLog("|- " + grabberTasks[taskGroup].data.skippedItems[i], "warn");
+                innerLog("Task: @" + taskGroup + " [skips: " + grabberTasks[taskGroup].log.skips + "; processed: " + grabberTasks[taskGroup].log.processed + "]", "info");
+                if (grabberTasks[taskGroup].log.skippedItems)
+                    for (var i = 0; i < grabberTasks[taskGroup].log.skippedItems.length; i++)
+                        innerLog("   " + grabberTasks[taskGroup].log.skippedItems[i], "warn");
             }
             // save results
-            var fs = require('fs');
-            var f = false;
-            var fileName = false;
-            //innerLog(pageObj, "info");
             if (pageObj.isCustomLink())
-                fileName = settingsPublic.resourceFolder + getHostName(pageObj.getUrl()) + ".json";
+                fileName = settingsPublic.resourceFolder + getHostName(pageObj.getUrl());
             else
-                fileName = settingsPublic.resourceFolder + pageObj.clientName + ".json";
-            f = fs.open(fileName, 'w');
-            f.write(JSON.stringify(allData));
-            f.close();
-            innerLog("Data is saved into the file: " + fileName, "info");
+                fileName = settingsPublic.resourceFolder + pageObj.clientName;
+            saveIntoFile(fileName + ".json", JSON.stringify(allData));
+            saveIntoFile(fileName + ".bhive", JSON.stringify(linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive)));
+            saveIntoFile(fileName + ".log", logCache);
             // exit
             phantom.exit();
         } else {
             innerLog("Not all tasks were completed:", "info");
             for (var taskGroup in grabberTasks)
-                innerLog(taskGroup + " - " + (grabberTasks[taskGroup].state?"ok":"not ok"), "info");
+                innerLog(taskGroup + " - " + (grabberTasks[taskGroup].state?"ok":"not ok"), (grabberTasks[taskGroup].state?"info":"warn"));
+            isSavingData = false;
         }
+    }
+
+    function saveIntoFile(fileName, data) {
+        
+        if (data == "")
+            return;
+    
+        var fs = require('fs');
+        var f = false;
+        f = fs.open(fileName, 'w');
+        f.write(data);
+        f.close();
+        innerLog("Data is saved into the file: " + fileName, "info");
+    }
+
+    function linkJsonValuesToBhiveDoc(jsonData, bhiveDoc) {
+        
     }
 
     function getHostName (url) {
@@ -550,9 +946,22 @@ var sys = require("system");
 // 5 - testEnvironment
 // 6 - host
 if (sys.args.length == 2) {
-    bvStyleGrabber.grabLink(sys.args[1]);
-} else if (sys.args.length < 3) {
-    console.log("Wrong argument count");
+    if (sys.args[1] == '?' || sys.args[1] == 'help') {
+        console.log('-----------------------------');
+        console.log('');
+        console.log('bvStyleGrabber.js <clientName> <displayCode> [isApiHostname] [productExternalID] [testEnvironment]');
+        console.log('bvStyleGrabber.js <productPageUrl>');
+        console.log('');
+        console.log('isApiHostname       - true | false (default is true)');
+        console.log('productExternalID   - product id with reviews (default is test1)');
+        console.log('testEnvironment     - [<empty> | <bvstaging>] (default is bvstaging)');
+        console.log('');
+        phantom.exit();
+    } else
+        bvStyleGrabber.grabLink(sys.args[1]);
+}
+if (sys.args.length < 3) {
+    //console.log("Wrong argument count");
     phantom.exit();
 } else
     bvStyleGrabber.grab(sys.args[1],sys.args[2],sys.args[3],sys.args[4],sys.args[5],sys.args[6]);
