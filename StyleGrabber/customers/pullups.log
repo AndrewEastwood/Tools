@@ -1,75 +1,75 @@
 
-[INFO] 10:10:43   : --- client name: pullups
-[INFO] 10:10:43   : --- host name: pullups.ugc.bazaarvoice.com
-[INFO] 10:10:43   : --- display code: 4123
-[INFO] 10:10:43   : --- using api host name: yes
-[INFO] 10:10:43   : --- test environment : bvstaging
-[INFO] 10:10:43   : --- product external id : test1
-[INFO] 10:10:43   : Working with: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/test1/reviews.htm?format=noscript
-[SUCCESS] 10:10:45   : Status received = success
-[INFO] 10:10:45   : Event Triggered: onPageSuccess
-[INFO] 10:10:45   : Start grabbing css properties
-[INFO] 10:10:45   : colorToHex: translating rgb(110, 17, 159) to hex
-[INFO] 10:10:45   : colorToHex: translating rgb(255, 255, 255) to hex
-[INFO] 10:10:45   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 10:10:45   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 10:10:45   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 10:10:45   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 10:10:45   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 10:10:45   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 10:10:45   : colorToHex: translating rgb(113, 19, 153) to hex
-[INFO] 10:10:45   : colorToHex: translating rgb(113, 19, 153) to hex
-[INFO] 10:10:45   : colorToHex: translating rgb(113, 19, 153) to hex
-[INFO] 10:10:45   : Could not access to element using path: .BVRRDisplayContentLinkWrite a
-[INFO] 10:10:45   : grabCssProperties: skips: 1; processed: 66
-[INFO] 10:10:45   : Start grabbing rating stars properties
-[INFO] 10:10:45   : /bvstaging/4123/3_0/5/rating.gif
-[INFO] 10:10:45   : Using OverallRating image
-[INFO] 10:10:45   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
-[INFO] 10:10:45   : Image dimensions [with: 0, height: 0]
-[INFO] 10:10:45   : /bvstaging/4123/3_0/5/ratingSecondary.gif
-[INFO] 10:10:45   : Using SecondaryRating image
-[INFO] 10:10:45   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
-[INFO] 10:10:45   : Image dimensions [with: 0, height: 0]
-[INFO] 10:10:45   : Checking if all steps were done
-[INFO] 10:10:45   : Not all tasks were completed:
-[INFO] 10:10:45   : grabCssProperties - ok
-[WARN] 10:10:45 ! : grabRatingStars - not ok
-[DEMO] 10:10:45   : Need to re-run : yes
-[INFO] 10:10:45   : Thresholds left: 3
-[INFO] 10:10:50   : Event Triggered: onPageSuccess
-[INFO] 10:10:50   : Start grabbing rating stars properties
-[INFO] 10:10:50   : /bvstaging/4123/3_0/5/rating.gif
-[INFO] 10:10:50   : Using OverallRating image
-[INFO] 10:10:50   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
-[INFO] 10:10:50   : Image dimensions [with: 125, height: 20]
-[INFO] 10:10:50   : Setting with attribute
-[INFO] 10:10:50   : Setting height attribute
-[INFO] 10:10:50   : Appending image into the document body
-[INFO] 10:10:50   : Drawing rating stars image
-[INFO] 10:10:50   : colorToHex: translating rgb(126, 33, 162) to hex
-[INFO] 10:10:50   : colorToHex: translating rgb(210, 215, 217) to hex
-[INFO] 10:10:50   : /bvstaging/4123/3_0/5/ratingSecondary.gif
-[INFO] 10:10:50   : Using SecondaryRating image
-[INFO] 10:10:51   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
-[INFO] 10:10:51   : Image dimensions [with: 155, height: 9]
-[INFO] 10:10:51   : Setting with attribute
-[INFO] 10:10:51   : Setting height attribute
-[INFO] 10:10:51   : Appending image into the document body
-[INFO] 10:10:51   : Drawing rating stars image
-[INFO] 10:10:51   : colorToHex: translating rgb(0, 128, 34) to hex
-[INFO] 10:10:51   : colorToHex: translating rgb(179, 179, 179) to hex
-[INFO] 10:10:51   : grabRatingStars: skips: 0; processed: 2
-[INFO] 10:10:51   : Checking if all steps were done
-[INFO] 10:10:51   : Saving Data
-[INFO] 10:10:51   : Results:
-[INFO] 10:10:51   : ========================================
-[INFO] 10:10:51   : 
-[{"text":{"DimensionValues":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"15px","font-style":"normal","line-height":"22px","text-transform":"none"},"Lables":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"Links":{"active":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"},"hover":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"},"visited":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"}},"ReviewDates":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"ReviewText":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"ReviewTitles":{"color":"#6e119f","font-family":"BPreplayBold, Helvetica, Arial, sans-serif","font-size":"20px","font-style":"normal","line-height":"30px","text-transform":"none"},"ReviewerName":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"SectionHeader":{"color":"#ffffff","font-family":"Helvetica, Arial, sans-serif","font-size":"18px","font-style":"normal","line-height":"26px","text-transform":"none"},"SectionHeaderControls":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"}}},{"images":{"OverallRating":{"empty":"#d2d7d9","full":"#7e21a2","size":20},"SecondaryRating":{"empty":"#b3b3b3","full":"#008022","size":9}}}]
-[INFO] 10:10:52   : ========================================
-[INFO] 10:10:52   : Completed with:
-[INFO] 10:10:52   : Task: @grabCssProperties [skips: 1; processed: 66]
-[WARN] 10:10:52 ! :    Could not access to element using path: .BVRRDisplayContentLinkWrite a
-[INFO] 10:10:52   : Task: @grabRatingStars [skips: 0; processed: 2]
-[INFO] 10:10:52   : Data is saved into the file: customers/pullups.json
-[INFO] 10:10:52   : Data is saved into the file: customers/pullups.bhive
+[INFO] 11:40:15 AM   : --- client name: pullups
+[INFO] 11:40:15 AM   : --- host name: pullups.ugc.bazaarvoice.com
+[INFO] 11:40:15 AM   : --- display code: 4123
+[INFO] 11:40:15 AM   : --- using api host name: yes
+[INFO] 11:40:15 AM   : --- test environment : bvstaging
+[INFO] 11:40:15 AM   : --- product external id : test1
+[INFO] 11:40:15 AM   : Working with: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/test1/reviews.htm?format=noscript
+[SUCCESS] 11:40:18 AM   : Status received = success
+[INFO] 11:40:18 AM   : Event Triggered: onPageSuccess
+[INFO] 11:40:18 AM   : Start grabbing css properties
+[INFO] 11:40:18 AM   : colorToHex: translating rgb(110, 17, 159) to hex
+[INFO] 11:40:18 AM   : colorToHex: translating rgb(255, 255, 255) to hex
+[INFO] 11:40:18 AM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 11:40:18 AM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 11:40:18 AM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 11:40:18 AM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 11:40:18 AM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 11:40:18 AM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 11:40:18 AM   : colorToHex: translating rgb(113, 19, 153) to hex
+[INFO] 11:40:18 AM   : colorToHex: translating rgb(113, 19, 153) to hex
+[INFO] 11:40:18 AM   : colorToHex: translating rgb(113, 19, 153) to hex
+[INFO] 11:40:18 AM   : Could not access to element using path: .BVRRDisplayContentLinkWrite a
+[INFO] 11:40:18 AM   : grabCssProperties: skips: 1; processed: 66
+[INFO] 11:40:18 AM   : Start grabbing rating stars properties
+[INFO] 11:40:18 AM   : /bvstaging/4123/3_0/5/rating.gif
+[INFO] 11:40:18 AM   : Using OverallRating image
+[INFO] 11:40:18 AM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
+[INFO] 11:40:18 AM   : Image dimensions [with: 0, height: 0]
+[INFO] 11:40:18 AM   : /bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 11:40:18 AM   : Using SecondaryRating image
+[INFO] 11:40:18 AM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 11:40:18 AM   : Image dimensions [with: 0, height: 0]
+[INFO] 11:40:18 AM   : Checking if all steps were done
+[INFO] 11:40:18 AM   : Not all tasks were completed:
+[INFO] 11:40:18 AM   : grabCssProperties - ok
+[WARN] 11:40:18 AM ! : grabRatingStars - not ok
+[DEMO] 11:40:18 AM   : Need to re-run : yes
+[INFO] 11:40:18 AM   : Thresholds left: 3
+[INFO] 11:40:23 AM   : Event Triggered: onPageSuccess
+[INFO] 11:40:23 AM   : Start grabbing rating stars properties
+[INFO] 11:40:23 AM   : /bvstaging/4123/3_0/5/rating.gif
+[INFO] 11:40:23 AM   : Using OverallRating image
+[INFO] 11:40:23 AM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
+[INFO] 11:40:23 AM   : Image dimensions [with: 125, height: 20]
+[INFO] 11:40:23 AM   : Setting with attribute
+[INFO] 11:40:23 AM   : Setting height attribute
+[INFO] 11:40:23 AM   : Appending image into the document body
+[INFO] 11:40:23 AM   : Drawing rating stars image
+[INFO] 11:40:23 AM   : colorToHex: translating rgb(126, 33, 162) to hex
+[INFO] 11:40:23 AM   : colorToHex: translating rgb(210, 215, 217) to hex
+[INFO] 11:40:23 AM   : /bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 11:40:23 AM   : Using SecondaryRating image
+[INFO] 11:40:23 AM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 11:40:23 AM   : Image dimensions [with: 155, height: 9]
+[INFO] 11:40:23 AM   : Setting with attribute
+[INFO] 11:40:23 AM   : Setting height attribute
+[INFO] 11:40:23 AM   : Appending image into the document body
+[INFO] 11:40:23 AM   : Drawing rating stars image
+[INFO] 11:40:23 AM   : colorToHex: translating rgb(0, 128, 34) to hex
+[INFO] 11:40:23 AM   : colorToHex: translating rgb(179, 179, 179) to hex
+[INFO] 11:40:23 AM   : grabRatingStars: skips: 0; processed: 2
+[INFO] 11:40:23 AM   : Checking if all steps were done
+[INFO] 11:40:23 AM   : Saving Data
+[INFO] 11:40:23 AM   : Results:
+[INFO] 11:40:23 AM   : ========================================
+[INFO] 11:40:23 AM   : 
+{"text":{"DimensionValues":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"15px","font-style":"normal","line-height":"22px","text-transform":"none"},"Lables":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"Links":{"active":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"},"hover":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"},"visited":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"}},"ReviewDates":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"ReviewText":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"ReviewTitles":{"color":"#6e119f","font-family":"BPreplayBold, Helvetica, Arial, sans-serif","font-size":"20px","font-style":"normal","line-height":"30px","text-transform":"none"},"ReviewerName":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"SectionHeader":{"color":"#ffffff","font-family":"Helvetica, Arial, sans-serif","font-size":"18px","font-style":"normal","line-height":"26px","text-transform":"none"},"SectionHeaderControls":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"}},"images":{"OverallRating":{"empty":"#d2d7d9","full":"#7e21a2","size":20},"SecondaryRating":{"empty":"#b3b3b3","full":"#008022","size":9}}}
+[INFO] 11:40:23 AM   : ========================================
+[INFO] 11:40:23 AM   : Completed with:
+[INFO] 11:40:23 AM   : Task: @grabCssProperties [skips: 1; processed: 66]
+[WARN] 11:40:23 AM ! :    Could not access to element using path: .BVRRDisplayContentLinkWrite a
+[INFO] 11:40:23 AM   : Task: @grabRatingStars [skips: 0; processed: 2]
+[INFO] 11:40:23 AM   : Data is saved into the file: customers/pullups.json
+[INFO] 11:40:23 AM   : Data is saved into the file: customers/pullups.bhive
