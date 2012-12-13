@@ -477,6 +477,11 @@
 
     /********* PUBLIC METHODS *********/
 
+    bvSG.setupWithArguments = function (args) {
+        
+        return bvSG;
+    }
+    
     bvSG.init = function (config) {
         extend(settingsPublic, config);
         return bvSG;
