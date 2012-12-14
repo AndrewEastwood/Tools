@@ -2,21 +2,18 @@
 
     var bvSG = {};
     var settingsPublic = {
-        auth: {
-            user: "",
-            pwd: ""
-        },
-        client: {
-            clientName: "",
-            host: "",
-            displayCode: "",
-            isApiHostname: true
-        },
+        authUser: "",
+        authPwd: "",
+        clientName: "",
+        host: "",
+        displayCode: "",
+        isApiHostname: true,
         productExternalID : "test1",
         testEnvironment : "bvstaging",
         pageFormat : "noscript",
         resourceFolder : "customers/",
-        outputFormats 
+        //outputFmt : "",
+        docID : ""
     };
     var documents = {
         elementsMap_bhive : {
@@ -478,8 +475,22 @@
     /********* PUBLIC METHODS *********/
 
     bvSG.setupWithArguments = function (args) {
-        
-        return bvSG;
+
+        var kvArgs = {};
+
+        if ((args.length - 1) % 2 !== 0) {
+            innerLog("Wrong argument count passed: " + args.length, "error");
+            return;
+        }
+
+        for (var i = 1; i < args.length; i+=2)
+            kvArgs[args[i].substr(1)] = args[i + 1];
+
+        //innerLog(kvArgs, "info");
+
+        extend(settingsPublic, kvArgs);
+
+        return this;
     }
     
     bvSG.init = function (config) {
@@ -501,26 +512,26 @@
         // update documents
         if (updatedocuments) {
             if (!!clientName)
-                settingsPublic.client.clientName = clientName;
+                settingsPublic.clientName = clientName;
             if (!!displayCode)
-                settingsPublic.client.displayCode = displayCode;
+                settingsPublic.displayCode = displayCode;
             if (!!isApiHostname)
-                settingsPublic.client.isApiHostname = !!isApiHostname;
+                settingsPublic.isApiHostname = !!isApiHostname;
             if (!!productExternalID)
                 settingsPublic.productExternalID = productExternalID;
             if (!!testEnvironment)
                 settingsPublic.testEnvironment = testEnvironment;
             if (!!host)
-                settingsPublic.client.host = host;
+                settingsPublic.host = host;
         }
 
         var pageObj = getPageObject(
-                clientName || settingsPublic.client.clientName,
-                displayCode || settingsPublic.client.displayCode,
-                !!(isApiHostname || settingsPublic.client.isApiHostname),
+                clientName || settingsPublic.clientName,
+                displayCode || settingsPublic.displayCode,
+                !!(isApiHostname || settingsPublic.isApiHostname),
                 productExternalID || settingsPublic.productExternalID,
                 testEnvironment || settingsPublic.testEnvironment,
-                host || settingsPublic.client.host,
+                host || settingsPublic.host,
                 settingsPublic.pageFormat);
 
         innerLog("--- client name: " + pageObj.clientName, "info");
@@ -529,6 +540,7 @@
         innerLog("--- using api host name: " + ((pageObj.isApiHostname)? "yes" : "no"), "info");
         innerLog("--- test environment : " + pageObj.testEnvironment, "info");
         innerLog("--- product external id : " + pageObj.productExternalID, "info");
+        innerLog("--- implementation id : " + settingsPublic.docID, "info");
 
         if (pageObj.isValid()) {
             innerLog("Working with: " + pageObj.getUrl(), "info");
@@ -546,12 +558,12 @@
             innerLog(msg, "info");
         };
         // use auth documents
-        if (settingsPublic.auth.user) {
-            innerLog("Auth is required. Using user login to connect: " + settingsPublic.auth.user, "info");
-            page.documents.userName = settingsPublic.auth.user;
+        if (settingsPublic.authUser) {
+            innerLog("Auth is required. Using user login to connect: " + settingsPublic.authUser, "info");
+            page.documents.userName = settingsPublic.authUser;
         }
-        if (settingsPublic.auth.pwd) {
-            page.documents.password = settingsPublic.auth.pwd;
+        if (settingsPublic.authPwd) {
+            page.documents.password = settingsPublic.authPwd;
         }
         // start
         pageObj.webPageObject.open(pageObj.getUrl(), function(status) {
@@ -878,8 +890,8 @@
     function linkJsonValuesToBhiveDoc(jsonData, bhiveDoc, format) {
 
         // get list of key : value
-        innerLog("Transforming bhive structure into key:value strings", "info");
-        innerLog("Transforming fetched data structure into key:value strings", "info");
+        //innerLog("Transforming bhive structure into key:value strings", "info");
+        //innerLog("Transforming fetched data structure into key:value strings", "info");
         var bhiveListOfKeysValues = {};
         var dataListOfKeysValues = {};
         jsonToKeypathValue(bhiveDoc, false, bhiveListOfKeysValues);
@@ -894,15 +906,17 @@
         for (var key in bhiveListOfKeysValues)
             if (typeof(bhiveListOfKeysValues[key][0]) !== "undefined" &&
                 bhiveListOfKeysValues[key][0] === '@' &&
-                typeof(dataListOfKeysValues[bhiveListOfKeysValues[key].substr(1)]) !== "undefined")
+                typeof(dataListOfKeysValues[bhiveListOfKeysValues[key].substr(1)]) !== "undefined") {
+                innerLog("Modified: " + key + " : " + dataListOfKeysValues[bhiveListOfKeysValues[key].substr(1)], "info");
                 bhiveListOfKeysValues[key] = dataListOfKeysValues[bhiveListOfKeysValues[key].substr(1)];
+        }
 
         var output = false;
         switch (format) {
             case "inline" : {
                 output = "";
                 for (var key in bhiveListOfKeysValues)
-                    output += bhiveListOfKeysValues[key] + "\n";
+                    output += "modifyImplementation.sh " + settingsPublic.docID + " " + key + " " + bhiveListOfKeysValues[key] + "\n";
                 break;
             }
             case "raw" : {
@@ -933,7 +947,7 @@
             else {
                 //innerLog("jsonToKeypathValue: value reached: " + jsonObject[key], "info");
                 list[currentKeypath] = jsonObject[key];
-                innerLog("jsonToKeypathValue: [" + currentKeypath + " : " + jsonObject[key] + "]", "info");
+                //innerLog("jsonToKeypathValue: [" + currentKeypath + " : " + jsonObject[key] + "]", "info");
             }
         }
         //console.log(list);
@@ -1006,4 +1020,4 @@ if (sys.args.length < 3) {
     //console.log("Wrong argument count");
     phantom.exit();
 } else 
-    bvStyleGrabber.grab(sys.args[1],sys.args[2],sys.args[3],sys.args[4],sys.args[5],sys.args[6]);
+    bvStyleGrabber.setupWithArguments(sys.args).grab();

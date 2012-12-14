@@ -1,282 +1,282 @@
-#7e21a2
-20
-#d2d7d9
-20
-#008022
-9
-#b3b3b3
-9
-#7e21a2
-20
-#d2d7d9
-20
-transparent
-transparent
-transparent
-transparent
-#0B5681
-#0B5681
-transparent
-transparent
-transparent
-false
-0
-0
-0
-0
-false
-0
-0
-0
-0
-false
-0
-0
-0
-0
-false
-0
-0
-0
-0
-false
-0
-0
-0
-0
-false
-0
-0
-0
-0
-false
-0
-0
-0
-0
-false
-0
-0
-0
-0
-16.5
-white
-#4B4B4B
-Arial, sans-serif
-sniffedFontFamily1637882686
-none
-12
-19.5
-black
-#FFFFFF
-Arial, Helvetica, sans-serif
-fontFamily2
-none
-bold
-16.5
-white
-#FFF
-Arial, sans-serif
-sniffedFontFamily1637882686
-uppercase
-bold
-12
-16.5
-white
-#FFF
-Arial, sans-serif
-sniffedFontFamily1637882686
-uppercase
-bold
-12
-16.5
-white
-#FFF
-Arial, sans-serif
-sniffedFontFamily1637882686
-uppercase
-bold
-12
-13
-16.5
-white
-#4B4B4B
-Arial, sans-serif
-sniffedFontFamily1637882686
-none
-bold
-14
-16.5
-white
-#4B4B4B
-Arial, sans-serif
-sniffedFontFamily1637882686
-none
-11
-16.5
-white
-#4B4B4B
-Arial, sans-serif
-sniffedFontFamily1637882686
-none
-bold
-12
-19.5
-Arial, Helvetica, sans-serif
-fontFamily2
-none
-16.5
-white
-#2A5A97
-Arial, sans-serif
-sniffedFontFamily1637882686
-none
-12
-16.5
-white
-#2A5A97
-Arial, sans-serif
-sniffedFontFamily1637882686
-none
-12
-16.5
-white
-#2A5A97
-Arial, sans-serif
-sniffedFontFamily1637882686
-none
-12
-16.5
-white
-#2A5A97
-Arial, sans-serif
-none
-12
-13
-16.5
-white
-#4B4B4B
-Arial, sans-serif
-none
-12
-16.5
-white
-#4B4B4B
-Arial, sans-serif
-none
-12
-16.5
-white
-#4B4B4B
-Arial, sans-serif
-none
-12
-16.5
-white
-#2A5A97
-Arial, sans-serif
-none
-bold
-12
-3
-3
-3
-none
-transparent
-0
-none
-transparent
-0
-none
-transparent
-0
-3
-true
-none
-transparent
-0
-0
-0
-0
-none
-transparent
-0
-none
-transparent
-0
-none
-transparent
-0
-0
-false
-none
-transparent
-0
-0
-0
-0
-none
-transparent
-0
-none
-transparent
-0
-none
-transparent
-0
-0
-false
-none
-transparent
-0
-0
-0
-0
-none
-transparent
-0
-none
-transparent
-0
-none
-transparent
-0
-0
-false
-none
-transparent
-0
-0
-0
-0
-none
-transparent
-0
-none
-transparent
-0
-none
-transparent
-0
-0
-false
-none
-transparent
-0
-0
-0
-0
-none
-transparent
-0
-none
-transparent
-0
-none
-transparent
-0
-0
-false
-none
-transparent
-0
+modifyImplementation.sh test-and-demo-client-id ratingIcons.summaryStars.subStyles.full.color #7e21a2
+modifyImplementation.sh test-and-demo-client-id ratingIcons.summaryStars.subStyles.full.size 20
+modifyImplementation.sh test-and-demo-client-id ratingIcons.summaryStars.subStyles.empty.color #d2d7d9
+modifyImplementation.sh test-and-demo-client-id ratingIcons.summaryStars.subStyles.empty.size 20
+modifyImplementation.sh test-and-demo-client-id ratingIcons.bars.subStyles.full.color #008022
+modifyImplementation.sh test-and-demo-client-id ratingIcons.bars.subStyles.full.size 9
+modifyImplementation.sh test-and-demo-client-id ratingIcons.bars.subStyles.empty.color #b3b3b3
+modifyImplementation.sh test-and-demo-client-id ratingIcons.bars.subStyles.empty.size 9
+modifyImplementation.sh test-and-demo-client-id ratingIcons.reviewStars.subStyles.full.color #7e21a2
+modifyImplementation.sh test-and-demo-client-id ratingIcons.reviewStars.subStyles.full.size 20
+modifyImplementation.sh test-and-demo-client-id ratingIcons.reviewStars.subStyles.empty.color #d2d7d9
+modifyImplementation.sh test-and-demo-client-id ratingIcons.reviewStars.subStyles.empty.size 20
+modifyImplementation.sh test-and-demo-client-id backgroundTab.section-header.color transparent
+modifyImplementation.sh test-and-demo-client-id backgroundTab.prs-container.color transparent
+modifyImplementation.sh test-and-demo-client-id backgroundTab.section-header-controls.color transparent
+modifyImplementation.sh test-and-demo-client-id backgroundTab.button.color transparent
+modifyImplementation.sh test-and-demo-client-id backgroundTab.button.subStyles.primary.color #0B5681
+modifyImplementation.sh test-and-demo-client-id backgroundTab.button.subStyles.hover.color #0B5681
+modifyImplementation.sh test-and-demo-client-id backgroundTab.content-summary.color transparent
+modifyImplementation.sh test-and-demo-client-id backgroundTab.content-item.color transparent
+modifyImplementation.sh test-and-demo-client-id backgroundTab.content-header.color transparent
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.prs-container.margin.uniform false
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.prs-container.margin.bottom 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.prs-container.margin.left 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.prs-container.margin.right 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.prs-container.margin.top 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.prs-container.padding.uniform false
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.prs-container.padding.bottom 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.prs-container.padding.left 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.prs-container.padding.right 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.prs-container.padding.top 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-summary.margin.uniform false
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-summary.margin.bottom 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-summary.margin.left 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-summary.margin.right 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-summary.margin.top 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-summary.padding.uniform false
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-summary.padding.bottom 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-summary.padding.left 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-summary.padding.right 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-summary.padding.top 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-item.margin.uniform false
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-item.margin.bottom 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-item.margin.left 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-item.margin.right 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-item.margin.top 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-item.padding.uniform false
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-item.padding.bottom 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-item.padding.left 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-item.padding.right 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-item.padding.top 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-header.margin.uniform false
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-header.margin.bottom 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-header.margin.left 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-header.margin.right 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-header.margin.top 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-header.padding.uniform false
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-header.padding.bottom 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-header.padding.left 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-header.padding.right 0
+modifyImplementation.sh test-and-demo-client-id marginAndPadding.content-header.padding.top 0
+modifyImplementation.sh test-and-demo-client-id fonts.body.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.body.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.body.color #4B4B4B
+modifyImplementation.sh test-and-demo-client-id fonts.body.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.body.familyID sniffedFontFamily1637882686
+modifyImplementation.sh test-and-demo-client-id fonts.body.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.body.size 12
+modifyImplementation.sh test-and-demo-client-id fonts.button.lineHeight 19.5
+modifyImplementation.sh test-and-demo-client-id fonts.button.sampleBackgroundColor black
+modifyImplementation.sh test-and-demo-client-id fonts.button.color #FFFFFF
+modifyImplementation.sh test-and-demo-client-id fonts.button.family Arial, Helvetica, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.button.familyID fontFamily2
+modifyImplementation.sh test-and-demo-client-id fonts.button.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.button.characterStyles.0 bold
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.button.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.button.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.button.color #FFF
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.button.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.button.familyID sniffedFontFamily1637882686
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.button.textTransform uppercase
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.button.characterStyles.0 bold
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.button.size 12
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.active.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.active.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.active.color #FFF
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.active.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.active.familyID sniffedFontFamily1637882686
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.active.textTransform uppercase
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.active.characterStyles.0 bold
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.active.size 12
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.hover.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.hover.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.hover.color #FFF
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.hover.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.hover.familyID sniffedFontFamily1637882686
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.hover.textTransform uppercase
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.hover.characterStyles.0 bold
+modifyImplementation.sh test-and-demo-client-id fonts.button.subStyles.hover.size 12
+modifyImplementation.sh test-and-demo-client-id fonts.button.size 13
+modifyImplementation.sh test-and-demo-client-id fonts.pageHeader.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.pageHeader.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.pageHeader.color #4B4B4B
+modifyImplementation.sh test-and-demo-client-id fonts.pageHeader.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.pageHeader.familyID sniffedFontFamily1637882686
+modifyImplementation.sh test-and-demo-client-id fonts.pageHeader.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.pageHeader.characterStyles.0 bold
+modifyImplementation.sh test-and-demo-client-id fonts.pageHeader.size 14
+modifyImplementation.sh test-and-demo-client-id fonts.ugcDate.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.ugcDate.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.ugcDate.color #4B4B4B
+modifyImplementation.sh test-and-demo-client-id fonts.ugcDate.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.ugcDate.familyID sniffedFontFamily1637882686
+modifyImplementation.sh test-and-demo-client-id fonts.ugcDate.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.ugcDate.size 11
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeader.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeader.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeader.color #4B4B4B
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeader.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeader.familyID sniffedFontFamily1637882686
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeader.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeader.characterStyles.0 bold
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeader.size 12
+modifyImplementation.sh test-and-demo-client-id fonts.link.lineHeight 19.5
+modifyImplementation.sh test-and-demo-client-id fonts.link.family Arial, Helvetica, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.link.familyID fontFamily2
+modifyImplementation.sh test-and-demo-client-id fonts.link.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.visited.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.visited.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.visited.color #2A5A97
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.visited.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.visited.familyID sniffedFontFamily1637882686
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.visited.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.visited.size 12
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.link.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.link.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.link.color #2A5A97
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.link.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.link.familyID sniffedFontFamily1637882686
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.link.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.link.size 12
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.active.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.active.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.active.color #2A5A97
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.active.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.active.familyID sniffedFontFamily1637882686
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.active.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.active.size 12
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.hover.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.hover.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.hover.color #2A5A97
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.hover.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.hover.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.link.subStyles.hover.size 12
+modifyImplementation.sh test-and-demo-client-id fonts.link.size 13
+modifyImplementation.sh test-and-demo-client-id fonts.labels.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.labels.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.labels.color #4B4B4B
+modifyImplementation.sh test-and-demo-client-id fonts.labels.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.labels.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.labels.size 12
+modifyImplementation.sh test-and-demo-client-id fonts.dimensionValues.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.dimensionValues.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.dimensionValues.color #4B4B4B
+modifyImplementation.sh test-and-demo-client-id fonts.dimensionValues.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.dimensionValues.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.dimensionValues.size 12
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeaderControls.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeaderControls.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeaderControls.color #4B4B4B
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeaderControls.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeaderControls.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.sectionHeaderControls.size 12
+modifyImplementation.sh test-and-demo-client-id fonts.ugcName.lineHeight 16.5
+modifyImplementation.sh test-and-demo-client-id fonts.ugcName.sampleBackgroundColor white
+modifyImplementation.sh test-and-demo-client-id fonts.ugcName.color #2A5A97
+modifyImplementation.sh test-and-demo-client-id fonts.ugcName.family Arial, sans-serif
+modifyImplementation.sh test-and-demo-client-id fonts.ugcName.textTransform none
+modifyImplementation.sh test-and-demo-client-id fonts.ugcName.characterStyles.0 bold
+modifyImplementation.sh test-and-demo-client-id fonts.ugcName.size 12
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.bottomRightRadius 3
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.bottomLeftRadius 3
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.topRightRadius 3
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.bottom.style none
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.bottom.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.bottom.width 0
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.left.style none
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.left.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.left.width 0
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.right.style none
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.right.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.right.width 0
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.topLeftRadius 3
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.radiiLocked true
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.top.style none
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.top.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.button-primary.top.width 0
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.bottomRightRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.bottomLeftRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.topRightRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.bottom.style none
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.bottom.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.bottom.width 0
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.left.style none
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.left.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.left.width 0
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.right.style none
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.right.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.right.width 0
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.topLeftRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.radiiLocked false
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.top.style none
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.top.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.prs-container.top.width 0
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.bottomRightRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.bottomLeftRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.topRightRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.bottom.style none
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.bottom.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.bottom.width 0
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.left.style none
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.left.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.left.width 0
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.right.style none
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.right.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.right.width 0
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.topLeftRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.radiiLocked false
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.top.style none
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.top.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.button-secondary.top.width 0
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.bottomRightRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.bottomLeftRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.topRightRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.bottom.style none
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.bottom.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.bottom.width 0
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.left.style none
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.left.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.left.width 0
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.right.style none
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.right.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.right.width 0
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.topLeftRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.radiiLocked false
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.top.style none
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.top.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.content-summary.top.width 0
+modifyImplementation.sh test-and-demo-client-id borders.content-item.bottomRightRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.content-item.bottomLeftRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.content-item.topRightRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.content-item.bottom.style none
+modifyImplementation.sh test-and-demo-client-id borders.content-item.bottom.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.content-item.bottom.width 0
+modifyImplementation.sh test-and-demo-client-id borders.content-item.left.style none
+modifyImplementation.sh test-and-demo-client-id borders.content-item.left.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.content-item.left.width 0
+modifyImplementation.sh test-and-demo-client-id borders.content-item.right.style none
+modifyImplementation.sh test-and-demo-client-id borders.content-item.right.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.content-item.right.width 0
+modifyImplementation.sh test-and-demo-client-id borders.content-item.topLeftRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.content-item.radiiLocked false
+modifyImplementation.sh test-and-demo-client-id borders.content-item.top.style none
+modifyImplementation.sh test-and-demo-client-id borders.content-item.top.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.content-item.top.width 0
+modifyImplementation.sh test-and-demo-client-id borders.content-header.bottomRightRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.content-header.bottomLeftRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.content-header.topRightRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.content-header.bottom.style none
+modifyImplementation.sh test-and-demo-client-id borders.content-header.bottom.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.content-header.bottom.width 0
+modifyImplementation.sh test-and-demo-client-id borders.content-header.left.style none
+modifyImplementation.sh test-and-demo-client-id borders.content-header.left.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.content-header.left.width 0
+modifyImplementation.sh test-and-demo-client-id borders.content-header.right.style none
+modifyImplementation.sh test-and-demo-client-id borders.content-header.right.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.content-header.right.width 0
+modifyImplementation.sh test-and-demo-client-id borders.content-header.topLeftRadius 0
+modifyImplementation.sh test-and-demo-client-id borders.content-header.radiiLocked false
+modifyImplementation.sh test-and-demo-client-id borders.content-header.top.style none
+modifyImplementation.sh test-and-demo-client-id borders.content-header.top.color transparent
+modifyImplementation.sh test-and-demo-client-id borders.content-header.top.width 0

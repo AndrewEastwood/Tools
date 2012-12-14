@@ -1,508 +1,89 @@
 
-<<<<<<< HEAD
-[INFO] 11:40:15 AM   : --- client name: pullups
-[INFO] 11:40:15 AM   : --- host name: pullups.ugc.bazaarvoice.com
-[INFO] 11:40:15 AM   : --- display code: 4123
-[INFO] 11:40:15 AM   : --- using api host name: yes
-[INFO] 11:40:15 AM   : --- test environment : bvstaging
-[INFO] 11:40:15 AM   : --- product external id : test1
-[INFO] 11:40:15 AM   : Working with: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/test1/reviews.htm?format=noscript
-[SUCCESS] 11:40:18 AM   : Status received = success
-[INFO] 11:40:18 AM   : Event Triggered: onPageSuccess
-[INFO] 11:40:18 AM   : Start grabbing css properties
-[INFO] 11:40:18 AM   : colorToHex: translating rgb(110, 17, 159) to hex
-[INFO] 11:40:18 AM   : colorToHex: translating rgb(255, 255, 255) to hex
-[INFO] 11:40:18 AM   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 11:40:18 AM   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 11:40:18 AM   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 11:40:18 AM   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 11:40:18 AM   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 11:40:18 AM   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 11:40:18 AM   : colorToHex: translating rgb(113, 19, 153) to hex
-[INFO] 11:40:18 AM   : colorToHex: translating rgb(113, 19, 153) to hex
-[INFO] 11:40:18 AM   : colorToHex: translating rgb(113, 19, 153) to hex
-[INFO] 11:40:18 AM   : Could not access to element using path: .BVRRDisplayContentLinkWrite a
-[INFO] 11:40:18 AM   : grabCssProperties: skips: 1; processed: 66
-[INFO] 11:40:18 AM   : Start grabbing rating stars properties
-[INFO] 11:40:18 AM   : /bvstaging/4123/3_0/5/rating.gif
-[INFO] 11:40:18 AM   : Using OverallRating image
-[INFO] 11:40:18 AM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
-[INFO] 11:40:18 AM   : Image dimensions [with: 0, height: 0]
-[INFO] 11:40:18 AM   : /bvstaging/4123/3_0/5/ratingSecondary.gif
-[INFO] 11:40:18 AM   : Using SecondaryRating image
-[INFO] 11:40:18 AM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
-[INFO] 11:40:18 AM   : Image dimensions [with: 0, height: 0]
-[INFO] 11:40:18 AM   : Checking if all steps were done
-[INFO] 11:40:18 AM   : Not all tasks were completed:
-[INFO] 11:40:18 AM   : grabCssProperties - ok
-[WARN] 11:40:18 AM ! : grabRatingStars - not ok
-[DEMO] 11:40:18 AM   : Need to re-run : yes
-[INFO] 11:40:18 AM   : Thresholds left: 3
-[INFO] 11:40:23 AM   : Event Triggered: onPageSuccess
-[INFO] 11:40:23 AM   : Start grabbing rating stars properties
-[INFO] 11:40:23 AM   : /bvstaging/4123/3_0/5/rating.gif
-[INFO] 11:40:23 AM   : Using OverallRating image
-[INFO] 11:40:23 AM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
-[INFO] 11:40:23 AM   : Image dimensions [with: 125, height: 20]
-[INFO] 11:40:23 AM   : Setting with attribute
-[INFO] 11:40:23 AM   : Setting height attribute
-[INFO] 11:40:23 AM   : Appending image into the document body
-[INFO] 11:40:23 AM   : Drawing rating stars image
-[INFO] 11:40:23 AM   : colorToHex: translating rgb(126, 33, 162) to hex
-[INFO] 11:40:23 AM   : colorToHex: translating rgb(210, 215, 217) to hex
-[INFO] 11:40:23 AM   : /bvstaging/4123/3_0/5/ratingSecondary.gif
-[INFO] 11:40:23 AM   : Using SecondaryRating image
-[INFO] 11:40:23 AM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
-[INFO] 11:40:23 AM   : Image dimensions [with: 155, height: 9]
-[INFO] 11:40:23 AM   : Setting with attribute
-[INFO] 11:40:23 AM   : Setting height attribute
-[INFO] 11:40:23 AM   : Appending image into the document body
-[INFO] 11:40:23 AM   : Drawing rating stars image
-[INFO] 11:40:23 AM   : colorToHex: translating rgb(0, 128, 34) to hex
-[INFO] 11:40:23 AM   : colorToHex: translating rgb(179, 179, 179) to hex
-[INFO] 11:40:23 AM   : grabRatingStars: skips: 0; processed: 2
-[INFO] 11:40:23 AM   : Checking if all steps were done
-[INFO] 11:40:23 AM   : Saving Data
-[INFO] 11:40:23 AM   : Results:
-[INFO] 11:40:23 AM   : ========================================
-[INFO] 11:40:23 AM   : 
+[INFO] 17:52:57   : [object Object]
+[INFO] 17:52:57   : --- client name: pullups
+[INFO] 17:52:57   : --- host name: pullups.ugc.bazaarvoice.com
+[INFO] 17:52:57   : --- display code: 4123
+[INFO] 17:52:57   : --- using api host name: yes
+[INFO] 17:52:57   : --- test environment : bvstaging
+[INFO] 17:52:57   : --- product external id : test1
+[INFO] 17:52:57   : --- implementation id : test-and-demo-client-id
+[INFO] 17:52:57   : Working with: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/test1/reviews.htm?format=noscript
+[SUCCESS] 17:52:58   : Status received = success
+[INFO] 17:52:58   : Event Triggered: onPageSuccess
+[INFO] 17:52:58   : Start grabbing css properties
+[INFO] 17:52:58   : colorToHex: translating rgb(110, 17, 159) to hex
+[INFO] 17:52:58   : colorToHex: translating rgb(255, 255, 255) to hex
+[INFO] 17:52:58   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 17:52:59   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 17:52:59   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 17:52:59   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 17:52:59   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 17:52:59   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 17:52:59   : colorToHex: translating rgb(113, 19, 153) to hex
+[INFO] 17:52:59   : colorToHex: translating rgb(113, 19, 153) to hex
+[INFO] 17:52:59   : colorToHex: translating rgb(113, 19, 153) to hex
+[INFO] 17:52:59   : Could not access to element using path: .BVRRDisplayContentLinkWrite a
+[INFO] 17:52:59   : grabCssProperties: skips: 1; processed: 66
+[INFO] 17:52:59   : Start grabbing rating stars properties
+[INFO] 17:52:59   : /bvstaging/4123/3_0/5/rating.gif
+[INFO] 17:52:59   : Using OverallRating image
+[INFO] 17:52:59   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
+[INFO] 17:52:59   : Image dimensions [with: 0, height: 0]
+[INFO] 17:52:59   : /bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 17:52:59   : Using SecondaryRating image
+[INFO] 17:52:59   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 17:52:59   : Image dimensions [with: 0, height: 0]
+[INFO] 17:52:59   : Checking if all steps were done
+[INFO] 17:52:59   : Not all tasks were completed:
+[INFO] 17:52:59   : grabCssProperties - ok
+[WARN] 17:52:59 ! : grabRatingStars - not ok
+[DEMO] 17:52:59   : Need to re-run : yes
+[INFO] 17:52:59   : Thresholds left: 3
+[INFO] 17:53:04   : Event Triggered: onPageSuccess
+[INFO] 17:53:04   : Start grabbing rating stars properties
+[INFO] 17:53:04   : /bvstaging/4123/3_0/5/rating.gif
+[INFO] 17:53:04   : Using OverallRating image
+[INFO] 17:53:04   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
+[INFO] 17:53:04   : Image dimensions [with: 125, height: 20]
+[INFO] 17:53:04   : Setting with attribute
+[INFO] 17:53:04   : Setting height attribute
+[INFO] 17:53:04   : Appending image into the document body
+[INFO] 17:53:04   : Drawing rating stars image
+[INFO] 17:53:04   : colorToHex: translating rgb(126, 33, 162) to hex
+[INFO] 17:53:04   : colorToHex: translating rgb(210, 215, 217) to hex
+[INFO] 17:53:04   : /bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 17:53:04   : Using SecondaryRating image
+[INFO] 17:53:04   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 17:53:04   : Image dimensions [with: 155, height: 9]
+[INFO] 17:53:04   : Setting with attribute
+[INFO] 17:53:04   : Setting height attribute
+[INFO] 17:53:04   : Appending image into the document body
+[INFO] 17:53:04   : Drawing rating stars image
+[INFO] 17:53:04   : colorToHex: translating rgb(0, 128, 34) to hex
+[INFO] 17:53:04   : colorToHex: translating rgb(179, 179, 179) to hex
+[INFO] 17:53:04   : grabRatingStars: skips: 0; processed: 2
+[INFO] 17:53:04   : Checking if all steps were done
+[INFO] 17:53:04   : Saving Data
+[INFO] 17:53:04   : Results:
+[INFO] 17:53:04   : ========================================
+[INFO] 17:53:04   : 
 {"text":{"DimensionValues":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"15px","font-style":"normal","line-height":"22px","text-transform":"none"},"Lables":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"Links":{"active":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"},"hover":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"},"visited":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"}},"ReviewDates":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"ReviewText":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"ReviewTitles":{"color":"#6e119f","font-family":"BPreplayBold, Helvetica, Arial, sans-serif","font-size":"20px","font-style":"normal","line-height":"30px","text-transform":"none"},"ReviewerName":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"SectionHeader":{"color":"#ffffff","font-family":"Helvetica, Arial, sans-serif","font-size":"18px","font-style":"normal","line-height":"26px","text-transform":"none"},"SectionHeaderControls":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"}},"images":{"OverallRating":{"empty":"#d2d7d9","full":"#7e21a2","size":20},"SecondaryRating":{"empty":"#b3b3b3","full":"#008022","size":9}}}
-[INFO] 11:40:23 AM   : ========================================
-[INFO] 11:40:23 AM   : Completed with:
-[INFO] 11:40:23 AM   : Task: @grabCssProperties [skips: 1; processed: 66]
-[WARN] 11:40:23 AM ! :    Could not access to element using path: .BVRRDisplayContentLinkWrite a
-[INFO] 11:40:23 AM   : Task: @grabRatingStars [skips: 0; processed: 2]
-[INFO] 11:40:23 AM   : Data is saved into the file: customers/pullups.json
-[INFO] 11:40:23 AM   : Data is saved into the file: customers/pullups.bhive
-=======
-[INFO] 14:42:06   : --- client name: pullups
-[INFO] 14:42:06   : --- host name: pullups.ugc.bazaarvoice.com
-[INFO] 14:42:06   : --- display code: 4123
-[INFO] 14:42:06   : --- using api host name: yes
-[INFO] 14:42:06   : --- test environment : bvstaging
-[INFO] 14:42:06   : --- product external id : test1
-[INFO] 14:42:06   : Working with: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/test1/reviews.htm?format=noscript
-[SUCCESS] 14:42:08   : Status received = success
-[INFO] 14:42:08   : Event Triggered: onPageSuccess
-[INFO] 14:42:08   : Start grabbing css properties
-[INFO] 14:42:08   : colorToHex: translating rgb(110, 17, 159) to hex
-[INFO] 14:42:08   : colorToHex: translating rgb(255, 255, 255) to hex
-[INFO] 14:42:08   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 14:42:08   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 14:42:08   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 14:42:08   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 14:42:08   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 14:42:08   : colorToHex: translating rgb(149, 149, 149) to hex
-[INFO] 14:42:08   : colorToHex: translating rgb(113, 19, 153) to hex
-[INFO] 14:42:08   : colorToHex: translating rgb(113, 19, 153) to hex
-[INFO] 14:42:08   : colorToHex: translating rgb(113, 19, 153) to hex
-[INFO] 14:42:08   : Could not access to element using path: .BVRRDisplayContentLinkWrite a
-[INFO] 14:42:08   : grabCssProperties: skips: 1; processed: 66
-[INFO] 14:42:08   : Start grabbing rating stars properties
-[INFO] 14:42:08   : /bvstaging/4123/3_0/5/rating.gif
-[INFO] 14:42:08   : Using OverallRating image
-[INFO] 14:42:08   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
-[INFO] 14:42:08   : Image dimensions [with: 0, height: 0]
-[INFO] 14:42:08   : /bvstaging/4123/3_0/5/ratingSecondary.gif
-[INFO] 14:42:08   : Using SecondaryRating image
-[INFO] 14:42:08   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
-[INFO] 14:42:08   : Image dimensions [with: 0, height: 0]
-[INFO] 14:42:08   : Checking if all steps were done
-[INFO] 14:42:08   : Not all tasks were completed:
-[INFO] 14:42:08   : grabCssProperties - ok
-[WARN] 14:42:08 ! : grabRatingStars - not ok
-[DEMO] 14:42:08   : Need to re-run : yes
-[INFO] 14:42:08   : Thresholds left: 3
-[INFO] 14:42:13   : Event Triggered: onPageSuccess
-[INFO] 14:42:13   : Start grabbing rating stars properties
-[INFO] 14:42:13   : /bvstaging/4123/3_0/5/rating.gif
-[INFO] 14:42:13   : Using OverallRating image
-[INFO] 14:42:13   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
-[INFO] 14:42:13   : Image dimensions [with: 125, height: 20]
-[INFO] 14:42:13   : Setting with attribute
-[INFO] 14:42:13   : Setting height attribute
-[INFO] 14:42:13   : Appending image into the document body
-[INFO] 14:42:13   : Drawing rating stars image
-[INFO] 14:42:13   : colorToHex: translating rgb(126, 33, 162) to hex
-[INFO] 14:42:13   : colorToHex: translating rgb(210, 215, 217) to hex
-[INFO] 14:42:13   : /bvstaging/4123/3_0/5/ratingSecondary.gif
-[INFO] 14:42:13   : Using SecondaryRating image
-[INFO] 14:42:13   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
-[INFO] 14:42:13   : Image dimensions [with: 155, height: 9]
-[INFO] 14:42:13   : Setting with attribute
-[INFO] 14:42:13   : Setting height attribute
-[INFO] 14:42:13   : Appending image into the document body
-[INFO] 14:42:13   : Drawing rating stars image
-[INFO] 14:42:13   : colorToHex: translating rgb(0, 128, 34) to hex
-[INFO] 14:42:13   : colorToHex: translating rgb(179, 179, 179) to hex
-[INFO] 14:42:13   : grabRatingStars: skips: 0; processed: 2
-[INFO] 14:42:13   : Checking if all steps were done
-[INFO] 14:42:13   : Saving Data
-[INFO] 14:42:13   : Results:
-[INFO] 14:42:13   : ========================================
-[INFO] 14:42:13   : 
-{"text":{"DimensionValues":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"15px","font-style":"normal","line-height":"22px","text-transform":"none"},"Lables":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"Links":{"active":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"},"hover":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"},"visited":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"}},"ReviewDates":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"ReviewText":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"ReviewTitles":{"color":"#6e119f","font-family":"BPreplayBold, Helvetica, Arial, sans-serif","font-size":"20px","font-style":"normal","line-height":"30px","text-transform":"none"},"ReviewerName":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"SectionHeader":{"color":"#ffffff","font-family":"Helvetica, Arial, sans-serif","font-size":"18px","font-style":"normal","line-height":"26px","text-transform":"none"},"SectionHeaderControls":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"}},"images":{"OverallRating":{"empty":"#d2d7d9","full":"#7e21a2","size":20},"SecondaryRating":{"empty":"#b3b3b3","full":"#008022","size":9}}}
-[INFO] 14:42:14   : ========================================
-[INFO] 14:42:14   : Completed with:
-[INFO] 14:42:14   : Task: @grabCssProperties [skips: 1; processed: 66]
-[WARN] 14:42:14 ! :    Could not access to element using path: .BVRRDisplayContentLinkWrite a
-[INFO] 14:42:14   : Task: @grabRatingStars [skips: 0; processed: 2]
-[INFO] 14:42:14   : Data is saved into the file: customers/pullups.json
-[INFO] 14:42:14   : Transforming bhive structure into key:value strings
-[INFO] 14:42:14   : Transforming fetched data structure into key:value strings
-[INFO] 14:42:14   : jsonToKeypathValue: [ratingIcons.summaryStars.subStyles.full.color : @images.OverallRating.full]
-[INFO] 14:42:14   : jsonToKeypathValue: [ratingIcons.summaryStars.subStyles.full.size : @images.OverallRating.size]
-[INFO] 14:42:14   : jsonToKeypathValue: [ratingIcons.summaryStars.subStyles.empty.color : @images.OverallRating.empty]
-[INFO] 14:42:14   : jsonToKeypathValue: [ratingIcons.summaryStars.subStyles.empty.size : @images.OverallRating.size]
-[INFO] 14:42:14   : jsonToKeypathValue: [ratingIcons.bars.subStyles.full.color : @images.SecondaryRating.full]
-[INFO] 14:42:14   : jsonToKeypathValue: [ratingIcons.bars.subStyles.full.size : @images.SecondaryRating.size]
-[INFO] 14:42:14   : jsonToKeypathValue: [ratingIcons.bars.subStyles.empty.color : @images.SecondaryRating.empty]
-[INFO] 14:42:14   : jsonToKeypathValue: [ratingIcons.bars.subStyles.empty.size : @images.SecondaryRating.size]
-[INFO] 14:42:14   : jsonToKeypathValue: [ratingIcons.reviewStars.subStyles.full.color : @images.OverallRating.full]
-[INFO] 14:42:14   : jsonToKeypathValue: [ratingIcons.reviewStars.subStyles.full.size : @images.OverallRating.size]
-[INFO] 14:42:14   : jsonToKeypathValue: [ratingIcons.reviewStars.subStyles.empty.color : @images.OverallRating.empty]
-[INFO] 14:42:14   : jsonToKeypathValue: [ratingIcons.reviewStars.subStyles.empty.size : @images.OverallRating.size]
-[INFO] 14:42:14   : jsonToKeypathValue: [backgroundTab.section-header.color : transparent]
-[INFO] 14:42:14   : jsonToKeypathValue: [backgroundTab.prs-container.color : transparent]
-[INFO] 14:42:14   : jsonToKeypathValue: [backgroundTab.section-header-controls.color : transparent]
-[INFO] 14:42:14   : jsonToKeypathValue: [backgroundTab.button.color : transparent]
-[INFO] 14:42:14   : jsonToKeypathValue: [backgroundTab.button.subStyles.primary.color : #0B5681]
-[INFO] 14:42:14   : jsonToKeypathValue: [backgroundTab.button.subStyles.hover.color : #0B5681]
-[INFO] 14:42:14   : jsonToKeypathValue: [backgroundTab.content-summary.color : transparent]
-[INFO] 14:42:14   : jsonToKeypathValue: [backgroundTab.content-item.color : transparent]
-[INFO] 14:42:14   : jsonToKeypathValue: [backgroundTab.content-header.color : transparent]
-[INFO] 14:42:14   : jsonToKeypathValue: [marginAndPadding.prs-container.margin.uniform : false]
-[INFO] 14:42:14   : jsonToKeypathValue: [marginAndPadding.prs-container.margin.bottom : 0]
-[INFO] 14:42:14   : jsonToKeypathValue: [marginAndPadding.prs-container.margin.left : 0]
-[INFO] 14:42:14   : jsonToKeypathValue: [marginAndPadding.prs-container.margin.right : 0]
-[INFO] 14:42:14   : jsonToKeypathValue: [marginAndPadding.prs-container.margin.top : 0]
-[INFO] 14:42:14   : jsonToKeypathValue: [marginAndPadding.prs-container.padding.uniform : false]
-[INFO] 14:42:14   : jsonToKeypathValue: [marginAndPadding.prs-container.padding.bottom : 0]
-[INFO] 14:42:14   : jsonToKeypathValue: [marginAndPadding.prs-container.padding.left : 0]
-[INFO] 14:42:14   : jsonToKeypathValue: [marginAndPadding.prs-container.padding.right : 0]
-[INFO] 14:42:14   : jsonToKeypathValue: [marginAndPadding.prs-container.padding.top : 0]
-[INFO] 14:42:14   : jsonToKeypathValue: [marginAndPadding.content-summary.margin.uniform : false]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-summary.margin.bottom : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-summary.margin.left : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-summary.margin.right : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-summary.margin.top : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-summary.padding.uniform : false]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-summary.padding.bottom : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-summary.padding.left : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-summary.padding.right : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-summary.padding.top : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-item.margin.uniform : false]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-item.margin.bottom : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-item.margin.left : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-item.margin.right : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-item.margin.top : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-item.padding.uniform : false]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-item.padding.bottom : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-item.padding.left : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-item.padding.right : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-item.padding.top : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-header.margin.uniform : false]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-header.margin.bottom : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-header.margin.left : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-header.margin.right : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-header.margin.top : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-header.padding.uniform : false]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-header.padding.bottom : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-header.padding.left : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-header.padding.right : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [marginAndPadding.content-header.padding.top : 0]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.body.lineHeight : 16.5]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.body.sampleBackgroundColor : white]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.body.color : #4B4B4B]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.body.family : Arial, sans-serif]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.body.familyID : sniffedFontFamily1637882686]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.body.textTransform : none]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.body.size : 12]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.lineHeight : 19.5]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.sampleBackgroundColor : black]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.color : #FFFFFF]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.family : Arial, Helvetica, sans-serif]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.familyID : fontFamily2]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.textTransform : none]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.characterStyles.0 : bold]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.subStyles.button.lineHeight : 16.5]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.subStyles.button.sampleBackgroundColor : white]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.subStyles.button.color : #FFF]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.subStyles.button.family : Arial, sans-serif]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.subStyles.button.familyID : sniffedFontFamily1637882686]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.subStyles.button.textTransform : uppercase]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.subStyles.button.characterStyles.0 : bold]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.subStyles.button.size : 12]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.subStyles.active.lineHeight : 16.5]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.subStyles.active.sampleBackgroundColor : white]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.subStyles.active.color : #FFF]
-[INFO] 14:42:15   : jsonToKeypathValue: [fonts.button.subStyles.active.family : Arial, sans-serif]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.subStyles.active.familyID : sniffedFontFamily1637882686]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.subStyles.active.textTransform : uppercase]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.subStyles.active.characterStyles.0 : bold]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.subStyles.active.size : 12]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.subStyles.hover.lineHeight : 16.5]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.subStyles.hover.sampleBackgroundColor : white]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.subStyles.hover.color : #FFF]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.subStyles.hover.family : Arial, sans-serif]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.subStyles.hover.familyID : sniffedFontFamily1637882686]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.subStyles.hover.textTransform : uppercase]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.subStyles.hover.characterStyles.0 : bold]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.subStyles.hover.size : 12]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.button.size : 13]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.pageHeader.lineHeight : 16.5]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.pageHeader.sampleBackgroundColor : white]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.pageHeader.color : #4B4B4B]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.pageHeader.family : Arial, sans-serif]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.pageHeader.familyID : sniffedFontFamily1637882686]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.pageHeader.textTransform : none]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.pageHeader.characterStyles.0 : bold]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.pageHeader.size : 14]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.ugcDate.lineHeight : 16.5]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.ugcDate.sampleBackgroundColor : white]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.ugcDate.color : #4B4B4B]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.ugcDate.family : Arial, sans-serif]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.ugcDate.familyID : sniffedFontFamily1637882686]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.ugcDate.textTransform : none]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.ugcDate.size : 11]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.sectionHeader.lineHeight : 16.5]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.sectionHeader.sampleBackgroundColor : white]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.sectionHeader.color : #4B4B4B]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.sectionHeader.family : Arial, sans-serif]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.sectionHeader.familyID : sniffedFontFamily1637882686]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.sectionHeader.textTransform : none]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.sectionHeader.characterStyles.0 : bold]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.sectionHeader.size : 12]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.link.lineHeight : 19.5]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.link.family : Arial, Helvetica, sans-serif]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.link.familyID : fontFamily2]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.link.textTransform : none]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.link.subStyles.visited.lineHeight : 16.5]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.link.subStyles.visited.sampleBackgroundColor : white]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.link.subStyles.visited.color : #2A5A97]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.link.subStyles.visited.family : Arial, sans-serif]
-[INFO] 14:42:16   : jsonToKeypathValue: [fonts.link.subStyles.visited.familyID : sniffedFontFamily1637882686]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.visited.textTransform : none]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.visited.size : 12]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.link.lineHeight : 16.5]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.link.sampleBackgroundColor : white]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.link.color : #2A5A97]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.link.family : Arial, sans-serif]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.link.familyID : sniffedFontFamily1637882686]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.link.textTransform : none]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.link.size : 12]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.active.lineHeight : 16.5]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.active.sampleBackgroundColor : white]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.active.color : #2A5A97]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.active.family : Arial, sans-serif]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.active.familyID : sniffedFontFamily1637882686]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.active.textTransform : none]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.active.size : 12]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.hover.lineHeight : 16.5]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.hover.sampleBackgroundColor : white]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.hover.color : #2A5A97]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.hover.family : Arial, sans-serif]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.hover.textTransform : none]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.subStyles.hover.size : 12]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.link.size : 13]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.labels.lineHeight : 16.5]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.labels.sampleBackgroundColor : white]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.labels.color : #4B4B4B]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.labels.family : Arial, sans-serif]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.labels.textTransform : none]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.labels.size : 12]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.dimensionValues.lineHeight : 16.5]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.dimensionValues.sampleBackgroundColor : white]
-[INFO] 14:42:17   : jsonToKeypathValue: [fonts.dimensionValues.color : #4B4B4B]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.dimensionValues.family : Arial, sans-serif]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.dimensionValues.textTransform : none]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.dimensionValues.size : 12]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.sectionHeaderControls.lineHeight : 16.5]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.sectionHeaderControls.sampleBackgroundColor : white]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.sectionHeaderControls.color : #4B4B4B]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.sectionHeaderControls.family : Arial, sans-serif]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.sectionHeaderControls.textTransform : none]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.sectionHeaderControls.size : 12]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.ugcName.lineHeight : 16.5]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.ugcName.sampleBackgroundColor : white]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.ugcName.color : #2A5A97]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.ugcName.family : Arial, sans-serif]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.ugcName.textTransform : none]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.ugcName.characterStyles.0 : bold]
-[INFO] 14:42:18   : jsonToKeypathValue: [fonts.ugcName.size : 12]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.bottomRightRadius : 3]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.bottomLeftRadius : 3]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.topRightRadius : 3]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.bottom.style : none]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.bottom.color : transparent]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.bottom.width : 0]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.left.style : none]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.left.color : transparent]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.left.width : 0]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.right.style : none]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.right.color : transparent]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.right.width : 0]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.topLeftRadius : 3]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.radiiLocked : true]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.top.style : none]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.top.color : transparent]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.button-primary.top.width : 0]
-[INFO] 14:42:18   : jsonToKeypathValue: [borders.prs-container.bottomRightRadius : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.bottomLeftRadius : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.topRightRadius : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.bottom.style : none]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.bottom.color : transparent]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.bottom.width : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.left.style : none]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.left.color : transparent]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.left.width : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.right.style : none]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.right.color : transparent]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.right.width : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.topLeftRadius : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.radiiLocked : false]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.top.style : none]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.top.color : transparent]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.prs-container.top.width : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.bottomRightRadius : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.bottomLeftRadius : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.topRightRadius : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.bottom.style : none]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.bottom.color : transparent]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.bottom.width : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.left.style : none]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.left.color : transparent]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.left.width : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.right.style : none]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.right.color : transparent]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.right.width : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.topLeftRadius : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.radiiLocked : false]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.top.style : none]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.top.color : transparent]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.button-secondary.top.width : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.content-summary.bottomRightRadius : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.content-summary.bottomLeftRadius : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.content-summary.topRightRadius : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.content-summary.bottom.style : none]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.content-summary.bottom.color : transparent]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.content-summary.bottom.width : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.content-summary.left.style : none]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.content-summary.left.color : transparent]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.content-summary.left.width : 0]
-[INFO] 14:42:19   : jsonToKeypathValue: [borders.content-summary.right.style : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-summary.right.color : transparent]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-summary.right.width : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-summary.topLeftRadius : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-summary.radiiLocked : false]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-summary.top.style : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-summary.top.color : transparent]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-summary.top.width : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.bottomRightRadius : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.bottomLeftRadius : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.topRightRadius : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.bottom.style : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.bottom.color : transparent]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.bottom.width : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.left.style : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.left.color : transparent]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.left.width : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.right.style : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.right.color : transparent]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.right.width : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.topLeftRadius : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.radiiLocked : false]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.top.style : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.top.color : transparent]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-item.top.width : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.bottomRightRadius : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.bottomLeftRadius : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.topRightRadius : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.bottom.style : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.bottom.color : transparent]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.bottom.width : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.left.style : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.left.color : transparent]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.left.width : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.right.style : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.right.color : transparent]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.right.width : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.topLeftRadius : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.radiiLocked : false]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.top.style : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.top.color : transparent]
-[INFO] 14:42:20   : jsonToKeypathValue: [borders.content-header.top.width : 0]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.DimensionValues.color : #959595]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.DimensionValues.font-family : Helvetica, Arial, sans-serif]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.DimensionValues.font-size : 15px]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.DimensionValues.font-style : normal]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.DimensionValues.line-height : 22px]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.DimensionValues.text-transform : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Lables.color : #959595]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Lables.font-family : Helvetica, Arial, sans-serif]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Lables.font-size : 13px]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Lables.font-style : normal]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Lables.line-height : 19px]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Lables.text-transform : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.active.color : #711399]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.active.font-family : Helvetica, Arial, sans-serif]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.active.font-size : 12px]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.active.font-style : normal]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.active.line-height : 19px]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.active.text-transform : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.hover.color : #711399]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.hover.font-family : Helvetica, Arial, sans-serif]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.hover.font-size : 12px]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.hover.font-style : normal]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.hover.line-height : 19px]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.hover.text-transform : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.visited.color : #711399]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.visited.font-family : Helvetica, Arial, sans-serif]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.visited.font-size : 12px]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.visited.font-style : normal]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.visited.line-height : 19px]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.Links.visited.text-transform : none]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.ReviewDates.color : #959595]
-[INFO] 14:42:20   : jsonToKeypathValue: [text.ReviewDates.font-family : Helvetica, Arial, sans-serif]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewDates.font-size : 13px]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewDates.font-style : normal]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewDates.line-height : 19px]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewDates.text-transform : none]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewText.color : #959595]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewText.font-family : Helvetica, Arial, sans-serif]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewText.font-size : 13px]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewText.font-style : normal]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewText.line-height : 19px]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewText.text-transform : none]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewTitles.color : #6e119f]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewTitles.font-family : BPreplayBold, Helvetica, Arial, sans-serif]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewTitles.font-size : 20px]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewTitles.font-style : normal]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewTitles.line-height : 30px]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewTitles.text-transform : none]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewerName.color : #959595]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewerName.font-family : Helvetica, Arial, sans-serif]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewerName.font-size : 13px]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewerName.font-style : normal]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewerName.line-height : 19px]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.ReviewerName.text-transform : none]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.SectionHeader.color : #ffffff]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.SectionHeader.font-family : Helvetica, Arial, sans-serif]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.SectionHeader.font-size : 18px]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.SectionHeader.font-style : normal]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.SectionHeader.line-height : 26px]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.SectionHeader.text-transform : none]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.SectionHeaderControls.color : #959595]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.SectionHeaderControls.font-family : Helvetica, Arial, sans-serif]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.SectionHeaderControls.font-size : 13px]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.SectionHeaderControls.font-style : normal]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.SectionHeaderControls.line-height : 19px]
-[INFO] 14:42:21   : jsonToKeypathValue: [text.SectionHeaderControls.text-transform : none]
-[INFO] 14:42:21   : jsonToKeypathValue: [images.OverallRating.empty : #d2d7d9]
-[INFO] 14:42:21   : jsonToKeypathValue: [images.OverallRating.full : #7e21a2]
-[INFO] 14:42:21   : jsonToKeypathValue: [images.OverallRating.size : 20]
-[INFO] 14:42:21   : jsonToKeypathValue: [images.SecondaryRating.empty : #b3b3b3]
-[INFO] 14:42:21   : jsonToKeypathValue: [images.SecondaryRating.full : #008022]
-[INFO] 14:42:21   : jsonToKeypathValue: [images.SecondaryRating.size : 9]
-[INFO] 14:42:21   : Data is saved into the file: customers/pullups.bhive
->>>>>>> 81fa6961d3937e970102e9e82223b09ed141acb8
+[INFO] 17:53:04   : ========================================
+[INFO] 17:53:04   : Completed with:
+[INFO] 17:53:04   : Task: @grabCssProperties [skips: 1; processed: 66]
+[WARN] 17:53:04 ! :    Could not access to element using path: .BVRRDisplayContentLinkWrite a
+[INFO] 17:53:04   : Task: @grabRatingStars [skips: 0; processed: 2]
+[INFO] 17:53:04   : Data is saved into the file: customers/pullups.json
+[INFO] 17:53:04   : Modified: ratingIcons.summaryStars.subStyles.full.color : #7e21a2
+[INFO] 17:53:04   : Modified: ratingIcons.summaryStars.subStyles.full.size : 20
+[INFO] 17:53:04   : Modified: ratingIcons.summaryStars.subStyles.empty.color : #d2d7d9
+[INFO] 17:53:04   : Modified: ratingIcons.summaryStars.subStyles.empty.size : 20
+[INFO] 17:53:04   : Modified: ratingIcons.bars.subStyles.full.color : #008022
+[INFO] 17:53:04   : Modified: ratingIcons.bars.subStyles.full.size : 9
+[INFO] 17:53:05   : Modified: ratingIcons.bars.subStyles.empty.color : #b3b3b3
+[INFO] 17:53:05   : Modified: ratingIcons.bars.subStyles.empty.size : 9
+[INFO] 17:53:05   : Modified: ratingIcons.reviewStars.subStyles.full.color : #7e21a2
+[INFO] 17:53:05   : Modified: ratingIcons.reviewStars.subStyles.full.size : 20
+[INFO] 17:53:05   : Modified: ratingIcons.reviewStars.subStyles.empty.color : #d2d7d9
+[INFO] 17:53:05   : Modified: ratingIcons.reviewStars.subStyles.empty.size : 20
+[INFO] 17:53:05   : Data is saved into the file: customers/pullups.bhive
