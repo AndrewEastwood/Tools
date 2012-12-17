@@ -133,7 +133,7 @@ function clientDataObject(rawData, allRawData) {
             else
                 value = desc[p];
             value = value || "undefined";
-            stringDesc += "|" + p + "|" + (escape?value.replace(/\,/g,"\\,").replace(/\"/g, '\\"'):value) + "| ";
+            stringDesc += "*" + p + "* " + (escape?value.replace(/\,/g,"\\,").replace(/\"/g, '\\"'):value) + " \\\\ ";
         }
 
         return stringDesc;
@@ -160,11 +160,12 @@ function getCSVFields () {
     return "Type,Summary,Description,Version,Client,Label";
 }
 function exportToCSV (fields, jsonData) {
-    print("exportToCSV");
-    print(fields);
+    //print("exportToCSV");
+    var csvString = fields + "\n";
+    //print(fields);
     var itemsToPrint = 10;
     for (var key in jsonData) {
-        print(jsonData[key].toString());
+        csvString += jsonData[key].toString() + "\n";//print(jsonData[key].toString());
         if (itemsToPrint-- < 0)
             break;
     }

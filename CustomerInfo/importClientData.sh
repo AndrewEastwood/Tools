@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash node
 
-CLIDATA="data/temp.json";
+CLIDATA="data/temp.csv";
 
 if [ -z "$1" ]
 then
