@@ -1,6 +1,6 @@
 var cursor = db.clients.find({}, {_id:0});
 var itemsToSkip = 0;
-var itemsToPrint = 1;
+var itemsToPrint = 10;
 var clients = [];
 
 //print("[")
@@ -27,22 +27,29 @@ while(cursor.hasNext() && itemsToPrint > 0){
 
 exportToCSV(getCSVFields(), getClientsInfo(clients));
 
+//for (var i = 0; i < clients.length; i++)
+	//print(clients[i].name);
+
+
 function getClientsInfo(jsonDataArray) {
 
     //console.log(jsonDataArray);
 
-    ("");
+    //print("getClientsInfo");
 
     var jiraClientsJson = {};
-    for (var key in jsonDataArray)
-        if (jsonDataArray[key].name != "" && jsonDataArray[key].uiVersion != "") {
+    for (var key in jsonDataArray) {
+        //if (jsonDataArray[key].name != "" && jsonDataArray[key].uiVersion != "") {
             jiraClientsJson[jsonDataArray[key].name] = new clientDataObject(jsonDataArray[key], jiraClientsJson);
-        }
+        //}
+    }
 
     return jiraClientsJson;
 }
 
 function clientDataObject(rawData, allRawData) {
+    //print("clientDataObject");
+    
     this.getBundleName = function () { 
         return rawData.bundle;
     }
@@ -67,35 +74,46 @@ function clientDataObject(rawData, allRawData) {
 
         desc["UI Version"] = this.getUIversion(this.getDirectoryName());
         desc.directory = this.getIGLink(this.getDirectoryName(), this.getDirectoryName());
-        desc["bundle folders"] = [];
-        for (var idx in rawData.bundleFolders)
-            desc["bundle folders"].push(this.getIGLink(rawData.bundleFolders[idx], rawData.bundleFolders[idx]));
-
-        desc["authentication"] = [];
-        for (var idx in rawData.authentication.map)
-            for (var dc in rawData.authentication.map[idx])
-                desc["authentication"].push(this.keyValueString(dc, rawData.authentication.map[idx][dc]));
-
-        desc["display codes"] = [];
-        for (var dcName in rawData.hosted.displayCodes)
-            desc["display codes"].push(this.getIGLink(this.getDirectoryName() + '/displays/' + dcName, dcName));
-
-        desc["locales"] = rawData.hosted.locales;
-        desc["other products"] = rawData.hosted.products;
-
-        for (var feedType in rawData.feeds) {
-            desc["feed " + feedType] = [];
-            for (var feedCat in rawData.feeds[feedType]) {
-                var category = [];
-                for (var feedIdx in rawData.feeds[feedType][feedCat])
-                    if (feedCat == "scheduled")
-                        category.push(rawData.feeds[feedType][feedCat][feedIdx]);
-                    else
-                        category.push(feedIdx + "=" + rawData.feeds[feedType][feedCat][feedIdx]);
-                desc["feed " + feedType].push(this.keyValueString(feedCat, category.join('; ')));
-            }
+        
+        if (typeof(rawData.bundleFolders) !== "undefined") {
+            desc["bundle folders"] = [];
+            for (var idx in rawData.bundleFolders)
+                desc["bundle folders"].push(this.getIGLink(rawData.bundleFolders[idx], rawData.bundleFolders[idx]));
         }
 
+        if (typeof(rawData.authentication) !== "undefined") {
+	        desc["authentication"] = [];
+	        for (var idx in rawData.authentication.map)
+	            for (var dc in rawData.authentication.map[idx])
+	                desc["authentication"].push(this.keyValueString(dc, rawData.authentication.map[idx][dc]));
+        }
+
+        if (typeof(rawData.hosted) !== "undefined") {
+            desc["display codes"] = [];
+            if (typeof(rawData.hosted.displayCodes) !== "undefined")
+                for (var dcName in rawData.hosted.displayCodes)
+                    desc["display codes"].push(this.getIGLink(this.getDirectoryName() + '/displays/' + dcName, dcName));
+            if (typeof(rawData.hosted.locales) !== "undefined")
+                desc["locales"] = rawData.hosted.locales;
+            if (typeof(rawData.hosted.products) !== "undefined")
+                desc["other products"] = rawData.hosted.products;
+        }
+
+        
+        if (typeof(rawData.feeds) !== "undefined") {
+            for (var feedType in rawData.feeds) {
+                desc["feed " + feedType] = [];
+                for (var feedCat in rawData.feeds[feedType]) {
+                    var category = [];
+                    for (var feedIdx in rawData.feeds[feedType][feedCat])
+                        if (feedCat == "scheduled")
+                            category.push(rawData.feeds[feedType][feedCat][feedIdx]);
+                        else
+                            category.push(feedIdx + "=" + rawData.feeds[feedType][feedCat][feedIdx]);
+                    desc["feed " + feedType].push(this.keyValueString(feedCat, category.join('; ')));
+                }
+            }
+        }
         /*desc += "|display(s)|" + "";
         desc += "|submission|" + "";
         desc += "|display codes|" + "";
@@ -104,10 +122,11 @@ function clientDataObject(rawData, allRawData) {
         desc += "|export feeds|" + "";
         desc += "|product feed|" + "";
         desc += "|overrides|" + "";
-        */
+    */
 
         var stringDesc = "";
         var value = "";
+
         for (var p in desc) {
             if (Array.isArray(desc[p]))
                 value = desc[p].join(' \\\\ ');
@@ -141,6 +160,7 @@ function getCSVFields () {
     return "Type,Summary,Description,Version,Client,Label";
 }
 function exportToCSV (fields, jsonData) {
+    print("exportToCSV");
     print(fields);
     var itemsToPrint = 10;
     for (var key in jsonData) {

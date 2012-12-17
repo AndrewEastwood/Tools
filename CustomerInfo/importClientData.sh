@@ -16,4 +16,5 @@ else
     fi
 fi
 
+cat $CLIDATA
 #phantomjs convertClientDataToJiraCSV.js $CLIDATA
