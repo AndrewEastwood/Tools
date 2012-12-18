@@ -1,49 +1,30 @@
-var cursor = db.clients.find({}, {_id:0});
-var itemsToSkip = 0;
-var itemsToPrint = 10;
-var clients = [];
 
-//print("[")
-while(cursor.hasNext() && itemsToPrint > 0){
+function  main () {
 
-    if (itemsToSkip > 0) {
-        cursor.next();
-        itemsToSkip--;
-        continue;
+    // get all records
+    var cursor = db.clients.find({}, {_id:0});
+    var itemsToSkip = 0;
+    var itemsToPrint = 10;
+    var clients = [];
+
+    while(cursor.hasNext() && itemsToPrint > 0) {
+        if (itemsToSkip > 0) {
+            cursor.next();
+            itemsToSkip--;
+            continue;
+        }
+        // add each client info into the array
+        clients.push(cursor.next());
+        itemsToPrint--;
     }
 
-
-    //var j = cursor.next();
-	//print(j.name);
-    //var json = printjson();
-
-    clients.push(cursor.next());
-
-    //if (cursor.hasNext())
-    //print(",");
-    itemsToPrint--;
+    exportToCSV(getCSVFields(), getClientsInfo(clients));
 }
-//print("]");
-
-exportToCSV(getCSVFields(), getClientsInfo(clients));
-
-//for (var i = 0; i < clients.length; i++)
-	//print(clients[i].name);
-
 
 function getClientsInfo(jsonDataArray) {
-
-    //console.log(jsonDataArray);
-
-    //print("getClientsInfo");
-
     var jiraClientsJson = {};
-    for (var key in jsonDataArray) {
-        //if (jsonDataArray[key].name != "" && jsonDataArray[key].uiVersion != "") {
+    for (var key in jsonDataArray)
             jiraClientsJson[jsonDataArray[key].name] = new clientDataObject(jsonDataArray[key], jiraClientsJson);
-        //}
-    }
-
     return jiraClientsJson;
 }
 
@@ -68,7 +49,7 @@ function clientDataObject(rawData, allRawData) {
         return " *" + k + "*: (" + v + ") ";
     }
     this.getJiraDescription = function (escape) {
-        // generate table style description for jira
+        // generates description for jira
 
         var desc = {};
 
@@ -99,7 +80,6 @@ function clientDataObject(rawData, allRawData) {
                 desc["other products"] = rawData.hosted.products;
         }
 
-        
         if (typeof(rawData.feeds) !== "undefined") {
             for (var feedType in rawData.feeds) {
                 desc["feed " + feedType] = [];
@@ -114,15 +94,9 @@ function clientDataObject(rawData, allRawData) {
                 }
             }
         }
-        /*desc += "|display(s)|" + "";
-        desc += "|submission|" + "";
-        desc += "|display codes|" + "";
 
-        desc += "|esp|" + "";
-        desc += "|export feeds|" + "";
-        desc += "|product feed|" + "";
-        desc += "|overrides|" + "";
-    */
+        if (typeof(rawData.esp) !== "undefined")
+            desc["email provider"] = rawData.esp;
 
         var stringDesc = "";
         var value = "";
