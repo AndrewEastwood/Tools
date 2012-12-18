@@ -1,13 +1,13 @@
 //var os = require('os');
 //console.log(os.platform());
 
-var logger = require('./logger.js').setup("clientDataCards");
+var logger = require('./lib/logger.js').setup("clientDataCards");
 var util = require('util');
 
 var _settings = {
 	limit : 500,
 	skip : 0,
-	dirToExport : 'data',
+	dirToExport : 'data/cards',
 	fileNamePattern : "export_d%s_p%d_%s.csv",
 	pageCountToExport : -1,
 	connection: {

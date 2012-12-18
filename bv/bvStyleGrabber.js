@@ -11,7 +11,7 @@
         productExternalID : "test1",
         testEnvironment : "bvstaging",
         pageFormat : "noscript",
-        resourceFolder : "customers/",
+        resourceFolder : "data/styles/",
         //outputFmt : "",
         docID : ""
     };
