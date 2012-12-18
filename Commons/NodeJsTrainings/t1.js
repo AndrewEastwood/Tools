@@ -47,10 +47,23 @@ function performExport (host, dbname, table) {
 		var recToSkip = 0;
 		var currPage = 1;
 
+		//logger.log(collection.count);
+		//logger.log(collection.length);
+		//logger.log(collection.count());
+
 		while ((_settings.pageCountToExport === -1) || pgsToExport > 0) {
 			logger.log('Performing data import at page ' + currPage);
 
 			var _records = collection.find({}, {_id:0}).limit(_settings.limit).skip(recToSkip);
+
+
+
+
+			_records.count(function (e,c){
+				logger.log(c);
+			});
+			
+			break;
 			processFetchedRecords(db, _records, currPage);
 
 			/*collection.find({}, {_id:0}).limit(_settings.limit).skip(recToSkip).toArray(function(err, results){
