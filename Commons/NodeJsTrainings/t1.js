@@ -29,6 +29,39 @@ else
 
 /********** general methods ************/
 
+function exitHook () {
+	logger.log('exit hook');
+	process.exit(0);
+}
+
+function getRecordsRecursive (db, collection, limit, skip, pagesToExport, page) {
+
+	_activeTasks.push(page);
+
+	if (pagesToExport !== -1 && pagesToExport < page)
+		return;
+
+	logger.log(util.format('Performing data import [limit:%d; skip:%d; active page:%d]', limit, skip, page));
+	collection.find({}, {_id:0}).limit(limit).skip(skip).toArray(function (err, records) {
+		logger.log(util.format('Selected  %d record(s)', records.length));
+		var data = getClientsInfo(records);
+		if (!!data.Valid) {
+			logger.log('performing export to csv file: ' + Object.getOwnPropertyNames(data.Valid).length);
+			exportToCSV(getCSVFields(), data.Valid, page, 'ok');
+		}
+		if (!!data.Error) {
+			logger.log('performing export to csv file: ' + Object.getOwnPropertyNames(data.Error).length);
+			exportToCSV(getCSVFields(), data.Error, page, 'err');
+		}
+		if (records.length == limit )	
+			getRecordsRecursive(db, collection, limit, skip + limit, pagesToExport, page + 1);
+		//else
+		//	exitHook();
+		_activeTasks.pop();
+	});
+
+}
+
 function performExport (host, dbname, table) {
 
 	logger.log("connectig to " + host);
@@ -41,70 +74,7 @@ function performExport (host, dbname, table) {
 
 	db.open(function(error, client){
 		if (error) throw error;
-		
-		var collection = new mongo.Collection(client, table);
-		var pgsToExport = _settings.pageCountToExport;
-		var recToSkip = 0;
-		var currPage = 1;
-
-		//logger.log(collection.count);
-		//logger.log(collection.length);
-		//logger.log(collection.count());
-
-		while ((_settings.pageCountToExport === -1) || pgsToExport > 0) {
-			logger.log('Performing data import at page ' + currPage);
-
-			var _records = collection.find({}, {_id:0}).limit(_settings.limit).skip(recToSkip);
-
-
-
-
-			_records.count(function (e,c){
-				logger.log(c);
-			});
-			
-			break;
-			processFetchedRecords(db, _records, currPage);
-
-			/*collection.find({}, {_id:0}).limit(_settings.limit).skip(recToSkip).toArray(function(err, results){
-				//console.dir(results);
-				exportToCSV(getCSVFields(), getClientsInfo(clients));
-			});*/
-			//logger.log('received records count: ' + _records.count());
-			if (_records.count() < _settings.limit)
-				break;
-			//console.dir(_records);
-			recToSkip += _settings.limit;
-			if (_settings.pageCountToExport !== -1)
-				pgsToExport--;
-			currPage++;
-		}
-		logger.log('end of main loop');
-		//process.exit(0);
-	});
-	//process.exit(1);
-}
-
-function processFetchedRecords (db, records, page) {
-	logger.log('processFetchedRecords is triggered with : page=' + page);
-	logger.log('records to process: ' + records.count());
-	
-	_activeTasks.push(page);
-
-	records.toArray(function(err, results){
-		logger.log('reading clients information: ' + results.length);
-		var data = getClientsInfo(results);
-		logger.log('performing export to csv file');
-		exportToCSV(getCSVFields(), data.Valid, page, 'ok');
-		exportToCSV(getCSVFields(), data.Error, page, 'err');
-
-		_activeTasks.pop();
-
-		if (_activeTasks.length == 0) {
-			logger.log('all tasks were completed.');
-			db.close();
-			process.exit(1);
-		}
+		getRecordsRecursive(db, new mongo.Collection(client, table), _settings.limit, _settings.skip, _settings.pageCountToExport, 1);
 	});
 }
  
@@ -112,12 +82,22 @@ function getClientsInfo(jsonDataArray) {
     var jiraClientsJsonValid = {};
     var jiraClientsJsonWithErrors = {};
     //var jiraClientsJson = {};
+    var hasError = false;
+    var hasValid = false;
     for (var key in jsonDataArray)
-    	if (typeof(jsonDataArray[key].directory) !== "undefined")
+    	if (typeof(jsonDataArray[key].directory) !== "undefined") {
             jiraClientsJsonValid[jsonDataArray[key].name] = new clientDataObject(jsonDataArray[key]);
-        else
+            hasValid = true;
+        } else {
             jiraClientsJsonWithErrors[jsonDataArray[key].name] = new clientDataObject(jsonDataArray[key]);
-    return {Valid:jiraClientsJsonValid, Error:jiraClientsJsonWithErrors};
+            hasError = true;
+        }
+    var rez = {};
+    if (hasError)
+    	rez.Error = jiraClientsJsonWithErrors;
+    if (hasValid)
+    	rez.Valid = jiraClientsJsonValid;
+    return rez;
 }
 
 function clientDataObject(rawData /* =, allRawData */ ) {
@@ -211,13 +191,12 @@ function clientDataObject(rawData /* =, allRawData */ ) {
         return this.getIGLink(clientDirName + "/config/bundleConfiguration.xml", rawData.uiVersion || "unable to identify");
     }
     this.toString = function () {
-        var str = "";
-        str += 'Story,';
+        var str = "Story,";
         str += '"Upgrade ' + this.getName() + '",';
         str += '"' + this.getJiraDescription(true) + '",';
         str += '"' + "Unscheduled - Phase " + this.getPhase() + '",';
         str += '"' + this.getName() + '",';
-        str += '"' + this.getName() + '"';
+        str += '"Upgrade, C2013, ' + this.getName() + '"';
         return str;
     }
 }
@@ -225,6 +204,7 @@ function clientDataObject(rawData /* =, allRawData */ ) {
 function getCSVFields () {
     return "Type,Summary,Description,Version,Client,Label";
 }
+
 function exportToCSV (fields, jsonData, page, state) {
     //print("exportToCSV");
     var fs = require('fs');
@@ -232,6 +212,15 @@ function exportToCSV (fields, jsonData, page, state) {
     var csvString = fields + "\n";
     for (var key in jsonData)
         csvString += jsonData[key].toString() + "\n";
-    logger.log('Saving file: ' + fileName);
-    fs.writeFile(_settings.dirToExport + '/' + fileName, csvString);
+    //logger.log('Saving file: ' + fileName);
+    fs.writeFile(_settings.dirToExport + '/' + fileName, csvString, function(err) {
+	    if(err) {
+	        console.log(err);
+	    } else {
+	        //console.log("The file was saved!");
+    		logger.log(util.format('Saved %d records in the file %s', Object.getOwnPropertyNames(jsonData).length, fileName));
+	        if (_activeTasks.length == 0)
+	        	exitHook();
+	    }
+	});
 }
