@@ -5,7 +5,7 @@ var logger = require('./lib/logger.js').setup("clientDataCards");
 var util = require('util');
 
 var _settings = {
-	limit : 500,
+	limit : 5000,
 	skip : 0,
 	dirToExport : 'data/cards',
 	fileNamePattern : "export_d%s_p%d_%s.csv",
@@ -17,6 +17,8 @@ var _settings = {
 	}
 };
 var _activeTasks = [];
+var jiraClientsJsonValid = {};
+var jiraClientsJsonWithErrors = {};
 
 if (process.argv[2] == '?' || process.argv[2] == '--help')
 	console.log("Usage: [host] [dbanme] [table]");
@@ -45,7 +47,8 @@ function getRecordsRecursive (db, collection, limit, skip, pagesToExport, page) 
 	collection.find({}, {_id:0}).limit(limit).skip(skip).toArray(function (err, records) {
 		logger.log(util.format('Selected  %d record(s)', records.length));
 		var data = getClientsInfo(records);
-		if (!!data.Valid) {
+        //logger.log('imported data: ' + Object.getOwnPropertyNames(data.Valid).length);
+        if (!!data.Valid) {
 			logger.log('performing export to csv file: ' + Object.getOwnPropertyNames(data.Valid).length);
 			exportToCSV(getCSVFields(), data.Valid, page, 'ok');
 		}
@@ -68,7 +71,7 @@ function performExport (host, dbname, table) {
 	logger.log("using database " + dbname);
 	logger.log("table " + table);
 
-	var mongo = require('mongodb');
+	var mongo = require('./lib/node_modules/mongodb');
 	var server = new mongo.Server(host, 27017, {});
 	var db = new mongo.Db(dbname, server, {safe:true});
 
@@ -79,17 +82,15 @@ function performExport (host, dbname, table) {
 }
  
 function getClientsInfo(jsonDataArray) {
-    var jiraClientsJsonValid = {};
-    var jiraClientsJsonWithErrors = {};
     //var jiraClientsJson = {};
     var hasError = false;
     var hasValid = false;
     for (var key in jsonDataArray)
     	if (typeof(jsonDataArray[key].directory) !== "undefined") {
-            jiraClientsJsonValid[jsonDataArray[key].name] = new clientDataObject(jsonDataArray[key]);
+            jiraClientsJsonValid[jsonDataArray[key].directory] = new clientDataObject(jsonDataArray[key], jiraClientsJsonValid);
             hasValid = true;
         } else {
-            jiraClientsJsonWithErrors[jsonDataArray[key].name] = new clientDataObject(jsonDataArray[key]);
+            jiraClientsJsonWithErrors[jsonDataArray[key].directory] = new clientDataObject(jsonDataArray[key], jiraClientsJsonWithErrors);
             hasError = true;
         }
     var rez = {};
@@ -100,17 +101,17 @@ function getClientsInfo(jsonDataArray) {
     return rez;
 }
 
-function clientDataObject(rawData /* =, allRawData */ ) {
+function clientDataObject(rawData, allRawData) {
     //print("clientDataObject");
     
     this.getBundleName = function () { 
-        return rawData.bundle;
+        return rawData.bundle || "undefined";
     }
     this.getDirectoryName = function () { 
-        return rawData.directory;
+        return rawData.directory || "undefined";
     }
     this.getName = function () { 
-        return rawData.name;
+        return rawData.name || "undefined";
     }
     this.getIGLink = function (path, linkTitle) {
         if (typeof(linkTitle) == "undefined" || linkTitle == "")
@@ -125,6 +126,7 @@ function clientDataObject(rawData /* =, allRawData */ ) {
 
         var desc = {};
 
+        desc["Bundle Name"] = this.getBundleName();
         desc["UI Version"] = this.getUIversion(this.getDirectoryName());
         desc.directory = this.getIGLink(this.getDirectoryName(), this.getDirectoryName());
         
@@ -188,7 +190,15 @@ function clientDataObject(rawData /* =, allRawData */ ) {
         return rawData.phase;
     }
     this.getUIversion = function (clientDirName) {
-        return this.getIGLink(clientDirName + "/config/bundleConfiguration.xml", rawData.uiVersion || "unable to identify");
+        var uiv = rawData.uiVersion;
+        //dumpObjOnce(allRawData);
+        if (!!!uiv && allRawData[this.getBundleName()] && this.getDirectoryName().toLowerCase() != this.getBundleName().toLowerCase()) {
+            //logger.log(util.format('attempt to get ui version of bundle: %s; dir: %s; name: %s;', this.getBundleName(), this.getDirectoryName(), this.getName()));
+            return allRawData[this.getBundleName()].getUIversion(clientDirName) || false;
+            /*if (!!uiv)
+                logger.log('ui version found: ' + uiv);*/
+        }
+        return this.getIGLink(clientDirName + "/config/bundleConfiguration.xml", uiv || "undefined");
     }
     this.toString = function () {
         var str = "Story,";
@@ -199,6 +209,13 @@ function clientDataObject(rawData /* =, allRawData */ ) {
         str += '"Upgrade, C2013, ' + this.getName() + '"';
         return str;
     }
+}
+
+var dump = true;
+function dumpObjOnce (obj) {
+    if (dump)
+        console.dir(obj);
+    dump = false;
 }
 
 function getCSVFields () {
@@ -213,6 +230,11 @@ function exportToCSV (fields, jsonData, page, state) {
     for (var key in jsonData)
         csvString += jsonData[key].toString() + "\n";
     //logger.log('Saving file: ' + fileName);
+
+    if(!fs.existsSync(_settings.dirToExport)) {
+        fs.mkdir(_settings.dirToExport);
+    }
+
     fs.writeFile(_settings.dirToExport + '/' + fileName, csvString, function(err) {
 	    if(err) {
 	        console.log(err);
