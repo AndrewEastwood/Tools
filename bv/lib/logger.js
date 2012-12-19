@@ -67,7 +67,7 @@ exports.log = function (msg, level, loggerName) {
     //if (typeof(lo))
 }
 
-exports.geLogger = function (loggerName) {
+exports.getLogger = function (loggerName) {
     var logger = false;
     loggerName = loggerName.toUpperCase();
     if (glLoggers.hasOwnProperty(loggerName))
