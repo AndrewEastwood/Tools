@@ -11,7 +11,7 @@
         productExternalID : "test1",
         testEnvironment : "bvstaging",
         pageFormat : "noscript",
-        resourceFolder : "data/styles/",
+        resourceFolder : "./data/styles/",
         //outputFmt : "",
         docID : ""
     };
@@ -1003,15 +1003,33 @@ var sys = require("system");
 // 6 - host
 if (sys.args.length == 2) {
     if (sys.args[1] == '?' || sys.args[1] == 'help') {
-        console.log('-----------------------------');
+        console.log('Style Grabber Usage:');
         console.log('');
-        console.log('bvStyleGrabber.js <clientName> <displayCode> [isApiHostname] [productExternalID] [testEnvironment]');
-        console.log('bvStyleGrabber.js <productPageUrl>');
+        console.log('pass arguments with th following format: -<property> <value>');
         console.log('');
+        console.log('available properties:');
+        console.log('===============================');
+        console.log('');
+        console.log('clientName');
+        console.log('docID');
+        console.log('authUser');
+        console.log('authPwd');
+        console.log('displayCode');
+        console.log('host');
         console.log('isApiHostname       - true | false (default is true)');
         console.log('productExternalID   - product id with reviews (default is test1)');
         console.log('testEnvironment     - [<empty> | <bvstaging>] (default is bvstaging)');
+        console.log('pageFormat          -');
+        console.log('resourceFolder      -');
         console.log('');
+        console.log('example:');
+        console.log('');
+        console.log('-clientName demo -displayCode 0001');
+        console.log('');
+        console.log('===============================');
+        console.log('To run this script itself run: phantomjs styling.js [arguments]');
+        console.log('');
+
         phantom.exit();
     } else
         bvStyleGrabber.grabLink(sys.args[1]);

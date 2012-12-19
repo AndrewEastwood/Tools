@@ -1,13 +1,13 @@
 //var os = require('os');
 //console.log(os.platform());
 
-var logger = require('./lib/logger.js').setup("clientDataCards");
+var logger = require('../lib/logger.js').getLogger("clientDataCards");
 var util = require('util');
 
 var _settings = {
 	limit : 5000,
 	skip : 0,
-	dirToExport : 'data/cards',
+	dirToExport : './data/cards',
 	fileNamePattern : "export_d%s_p%d_%s.csv",
 	pageCountToExport : -1,
 	connection: {
@@ -19,9 +19,10 @@ var _settings = {
 var _activeTasks = [];
 var jiraClientsJsonValid = {};
 var jiraClientsJsonWithErrors = {};
+var jiraClientsJsonConv2 = {};
 
 if (process.argv[2] == '?' || process.argv[2] == '--help')
-	console.log("Usage: [host] [dbanme] [table]");
+	console.log("Export Client Cards To Jira Usage: [host] [dbanme] [table]");
 else
 	performExport(
 		process.argv[2] || _settings.connection.host,
@@ -47,15 +48,19 @@ function getRecordsRecursive (db, collection, limit, skip, pagesToExport, page) 
 	collection.find({}, {_id:0}).limit(limit).skip(skip).toArray(function (err, records) {
 		logger.log(util.format('Selected  %d record(s)', records.length));
 		var data = getClientsInfo(records);
-        //logger.log('imported data: ' + Object.getOwnPropertyNames(data.Error).length + Object.getOwnPropertyNames(data.Valid).length);
+        logger.log('imported data: ' + (Object.getOwnPropertyNames(data.Error).length + Object.getOwnPropertyNames(data.Valid).length));
         if (!!data.Valid) {
-			logger.log('performing export to csv file: ' + Object.getOwnPropertyNames(data.Valid).length);
+			logger.log('performing export clients to csv file: ' + Object.getOwnPropertyNames(data.Valid).length);
 			exportToCSV(getCSVFields(), data.Valid, page, 'ok');
 		}
 		if (!!data.Error) {
-			logger.log('performing export to csv file: ' + Object.getOwnPropertyNames(data.Error).length);
+			logger.log('performing export clients with errors to csv file: ' + Object.getOwnPropertyNames(data.Error).length);
 			exportToCSV(getCSVFields(), data.Error, page, 'err');
 		}
+        if (!!data.Conv2) {
+            logger.log('performing export clients on conv2.0 to txt file: ' + Object.getOwnPropertyNames(data.Conv2).length);
+            saveIntoFile(_settings.dirToExport, 'clientsOnConv2.txt', util.inspect(data.Conv2, true, null));
+        }
 		if (records.length == limit )	
 			getRecordsRecursive(db, collection, limit, skip + limit, pagesToExport, page + 1);
 		//else
@@ -71,7 +76,7 @@ function performExport (host, dbname, table) {
 	logger.log("using database " + dbname);
 	logger.log("table " + table);
 
-	var mongo = require('./lib/node_modules/mongodb');
+	var mongo = require('../lib/node_modules/mongodb');
 	var server = new mongo.Server(host, 27017, {});
 	var db = new mongo.Db(dbname, server, {safe:true});
 
@@ -85,20 +90,48 @@ function getClientsInfo(jsonDataArray) {
     //var jiraClientsJson = {};
     var hasError = false;
     var hasValid = false;
-    for (var key in jsonDataArray)
-    	if (typeof(jsonDataArray[key].directory) !== "undefined") {
+    //console.log("getClientsInfo: " + jsonDataArray.length);
+    saveIntoFile(_settings.dirToExport, 'client-dump.txt', util.inspect(jsonDataArray, true, null));
+    var _log = "";
+    var runnuniIndexTest = 0;
+    for (var key in jsonDataArray) {
+        //console.log(runnuniIndexTest);
+        _log += runnuniIndexTest + " = " + jsonDataArray[key].name;
+
+    	if (validateClientData(jsonDataArray[key])) {
             jiraClientsJsonValid[jsonDataArray[key].directory] = new clientDataObject(jsonDataArray[key], jiraClientsJsonValid);
             hasValid = true;
+            _log += " [ok]";
+        } else if (isOnConv2(jsonDataArray[key])) {
+            jiraClientsJsonConv2[jsonDataArray[key].name] = jsonDataArray[key];
+            _log += " [conv 2.0]";
         } else {
-            jiraClientsJsonWithErrors[jsonDataArray[key].directory] = new clientDataObject(jsonDataArray[key], jiraClientsJsonWithErrors);
+            jiraClientsJsonWithErrors[jsonDataArray[key].name] = new clientDataObject(jsonDataArray[key], jiraClientsJsonWithErrors);
             hasError = true;
+            _log += " [error]";
         }
-    var rez = {};
+        _log += "\n";
+
+        runnuniIndexTest++;
+    }
+    saveIntoFile(_settings.dirToExport, 'client-import.log', _log);
+    var rez = {
+        Conv2 : jiraClientsJsonConv2
+    };
     if (hasError)
     	rez.Error = jiraClientsJsonWithErrors;
     if (hasValid)
     	rez.Valid = jiraClientsJsonValid;
     return rez;
+}
+
+function isOnConv2 (clData) {
+    return (typeof(clData.platform) !== "undefined" && clData.platform == "Conv2");
+}
+
+function validateClientData (clData) {
+    return (typeof(clData.directory) !== "undefined" &&
+        typeof(clData.name) !== "undefined");
 }
 
 function clientDataObject(rawData, allRawData) {
@@ -186,7 +219,17 @@ function clientDataObject(rawData, allRawData) {
 
         return stringDesc;
     }
-    this.getPhase = function() {
+    this.getPhase = function(asString) {
+        if (asString) {
+            var pref = "";
+            if (rawData.phase == 1)
+                pref = "Active - Phase ";
+            if (rawData.phase == 2)
+                pref = "Unscheduled - Phase ";
+            if (rawData.phase == 3)
+                pref = "Unscheduled - Phase ";
+            return pref + rawData.phase;
+        }
         return rawData.phase;
     }
     this.getUIversion = function (clientDirName) {
@@ -204,7 +247,7 @@ function clientDataObject(rawData, allRawData) {
         var str = "Story,";
         str += '"Upgrade ' + this.getName() + '",';
         str += '"' + this.getJiraDescription(true) + '",';
-        str += '"' + "Unscheduled - Phase " + this.getPhase() + '",';
+        str += '"' + this.getPhase(true) + '",';
         str += '"' + this.getName() + '",';
         str += '"Upgrade, C2013, ' + this.getName() + '"';
         return str;
@@ -231,18 +274,24 @@ function exportToCSV (fields, jsonData, page, state) {
         csvString += jsonData[key].toString() + "\n";
     //logger.log('Saving file: ' + fileName);
 
-    if(!fs.existsSync(_settings.dirToExport)) {
-        fs.mkdir(_settings.dirToExport);
-    }
+    saveIntoFile(_settings.dirToExport, fileName, csvString);
 
-    fs.writeFile(_settings.dirToExport + '/' + fileName, csvString, function(err) {
-	    if(err) {
-	        console.log(err);
-	    } else {
-	        //console.log("The file was saved!");
-    		logger.log(util.format('Saved %d records in the file %s', Object.getOwnPropertyNames(jsonData).length, fileName));
-	        if (_activeTasks.length == 0)
-	        	exitHook();
-	    }
-	});
+}
+
+
+function saveIntoFile (dir, fname, data) {
+    var fs = require('fs');
+    if(!fs.existsSync(dir)) {
+        fs.mkdir(dir);
+    }
+    fs.writeFile(dir + '/' + fname, data, function(err) {
+        if(err) {
+            console.log(err);
+        } else {
+            //console.log("The file was saved!");
+            //logger.log(util.format('Saved %d records in the file %s', Object.getOwnPropertyNames(data).length, fname));
+            if (_activeTasks.length == 0)
+                exitHook();
+        }
+    });
 }
