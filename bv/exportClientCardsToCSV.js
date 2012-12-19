@@ -47,7 +47,7 @@ function getRecordsRecursive (db, collection, limit, skip, pagesToExport, page) 
 	collection.find({}, {_id:0}).limit(limit).skip(skip).toArray(function (err, records) {
 		logger.log(util.format('Selected  %d record(s)', records.length));
 		var data = getClientsInfo(records);
-        //logger.log('imported data: ' + Object.getOwnPropertyNames(data.Valid).length);
+        //logger.log('imported data: ' + Object.getOwnPropertyNames(data.Error).length + Object.getOwnPropertyNames(data.Valid).length);
         if (!!data.Valid) {
 			logger.log('performing export to csv file: ' + Object.getOwnPropertyNames(data.Valid).length);
 			exportToCSV(getCSVFields(), data.Valid, page, 'ok');

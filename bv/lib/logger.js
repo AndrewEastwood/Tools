@@ -21,7 +21,7 @@ function loggerClass (name) {
         return this;
     }
     this.getName = function () { return this._name; }
-    this.getID = function() { return this._name == "anonymous" ? "" : this._name.toUpperCase(); }
+    this.getID = function () { return this._name == "anonymous" ? "" : this._name.toUpperCase(); }
     this.log = function  (text, level) {
         var message = this.getMessage(text, level);
         console.log(message);
@@ -32,18 +32,28 @@ function loggerClass (name) {
     }
     this.getMessage = function (text, level) {
         var sign = " ";
-        level = level || "info";
+        level = this.getLevel(level);
         // show short signs with messages
         if (level === 'warn') sign = "!";
         if (level === 'error') sign = "*";
         if (level === 'fail') sign = "X";
-        return glUtil.format(this._msgFmt,
+        return glUtil.format("[%s] %s %s %s %s",
             level.toUpperCase(),
             this.getID(),
             new Date().toLocaleTimeString(),
             sign,
-            msg
+            text
         );
+    }
+    this.getLevels = function () { return ['info', 'warn', 'error', 'fatal']; }
+    this.getLevel = function (level) {
+        var _logLevel = 0;
+        var _levels = this.getLevels();
+        if(typeof(level) === 'number' && level >= 0 && level < _levels.length)
+            _logLevel = level;
+        if(typeof(level) === 'string')
+            _logLevel = _levels.indexOf(level);
+        return _levels[_logLevel] ? _levels[_logLevel] : _levels[0];
     }
     this.getCacheMode = function (mode) { return this._saveMessages; }
     this.setCacheMode = function (mode) { this._saveMessages = mode; }
@@ -62,12 +72,14 @@ function loggerClass (name) {
 
 /******** module implementation ********/
 
-exports.log = function (msg, level, loggerName) {
-    console.log(__filename);
-    //if (typeof(lo))
+exports.log = function (loggerName, text, level) {
+    if (typeof(text) === "undefined")
+        exports.getLogger("").log(loggerName, text);
+    else
+        exports.getLogger(loggerName).log(text, level);
 }
 
-exports.geLogger = function (loggerName) {
+exports.getLogger = function (loggerName) {
     var logger = false;
     loggerName = loggerName.toUpperCase();
     if (glLoggers.hasOwnProperty(loggerName))
