@@ -949,7 +949,9 @@
         for (var key in jsonObject) {
             var currentKeypath = (runningKey ? (runningKey + "." + key) : key);
             //innerLog("jsonToKeypathValue: running key is: " + currentKeypath, "info");
-            if (typeof(jsonObject[key]) === "object")
+            if (Array.isArray(jsonObject[key]))
+                list[currentKeypath] = "['" + jsonObject[key].join(",'") + "']";
+            else if (typeof(jsonObject[key]) === "object")
                 jsonToKeypathValue(jsonObject[key], currentKeypath, list);
             else {
                 //innerLog("jsonToKeypathValue: value reached: " + jsonObject[key], "info");
