@@ -923,7 +923,10 @@
             case "update" : {
                 output = "";
                 for (var key in bhiveListOfKeysValues)
-                    output += "data." + key + " = '" + bhiveListOfKeysValues[key] + "'; ";
+                    if (bhiveListOfKeysValues[key][0] == '[')
+                        output += "data." + key + " = " + bhiveListOfKeysValues[key] + "; ";
+                    else
+                        output += "data." + key + " = '" + bhiveListOfKeysValues[key] + "'; ";
                 break;
             }
             case "raw" : {
