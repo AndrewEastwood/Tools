@@ -863,6 +863,7 @@
                 fileName = settingsPublic.resourceFolder + pageObj.clientName;
             saveIntoFile(fileName + ".json", JSON.stringify(allData));
             saveIntoFile(fileName + ".bhive", linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive, "inline"));
+            saveIntoFile(fileName + ".update", linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive, "underscore"));
             saveIntoFile(fileName + ".log", logCache);
             // exit
             phantom.exit();
@@ -917,6 +918,12 @@
                 output = "";
                 for (var key in bhiveListOfKeysValues)
                     output += "modifyImplementation.sh " + settingsPublic.docID + " " + key + " " + bhiveListOfKeysValues[key] + "\n";
+                break;
+            }
+            case "update" : {
+                output = "";
+                for (var key in bhiveListOfKeysValues)
+                    output += "data." + key + " = '" + bhiveListOfKeysValues[key] + "'; ";
                 break;
             }
             case "raw" : {
