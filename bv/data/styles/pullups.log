@@ -1,0 +1,101 @@
+
+[INFO] 08:49:52 PM   : --- client name: pullups
+[INFO] 08:49:52 PM   : --- host name: pullups.ugc.bazaarvoice.com
+[INFO] 08:49:52 PM   : --- display code: 4123
+[INFO] 08:49:52 PM   : --- using api host name: yes
+[INFO] 08:49:52 PM   : --- test environment : bvstaging
+[INFO] 08:49:52 PM   : --- product external id : test1
+[INFO] 08:49:52 PM   : --- implementation id : 
+[INFO] 08:49:52 PM   : Working with: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/test1/reviews.htm?format=noscript
+[SUCCESS] 08:49:53 PM   : Status received = success
+[INFO] 08:49:53 PM   : Event Triggered: onPageSuccess
+[INFO] 08:49:53 PM   : Start grabbing css properties
+[INFO] 08:49:53 PM   : colorToHex: translating rgb(110, 17, 159) to hex
+[INFO] 08:49:53 PM   : colorToHex: translating rgb(255, 255, 255) to hex
+[INFO] 08:49:53 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 08:49:53 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 08:49:53 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 08:49:53 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 08:49:53 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 08:49:53 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 08:49:53 PM   : colorToHex: translating rgb(113, 19, 153) to hex
+[INFO] 08:49:53 PM   : colorToHex: translating rgb(113, 19, 153) to hex
+[INFO] 08:49:53 PM   : colorToHex: translating rgb(113, 19, 153) to hex
+[INFO] 08:49:53 PM   : Could not access to element using path: .BVRRDisplayContentLinkWrite a
+[INFO] 08:49:53 PM   : grabCssProperties: skips: 1; processed: 66
+[INFO] 08:49:53 PM   : Start grabbing rating stars properties
+[INFO] 08:49:53 PM   : /bvstaging/4123/3_0/5/rating.gif
+[INFO] 08:49:53 PM   : Using OverallRating image
+[INFO] 08:49:53 PM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
+[INFO] 08:49:53 PM   : Image dimensions [with: 0, height: 0]
+[INFO] 08:49:53 PM   : /bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 08:49:53 PM   : Using SecondaryRating image
+[INFO] 08:49:53 PM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 08:49:53 PM   : Image dimensions [with: 0, height: 0]
+[INFO] 08:49:53 PM   : Checking if all steps were done
+[INFO] 08:49:53 PM   : Not all tasks were completed:
+[INFO] 08:49:53 PM   : grabCssProperties - ok
+[WARN] 08:49:53 PM ! : grabRatingStars - not ok
+[DEMO] 08:49:53 PM   : Need to re-run : yes
+[INFO] 08:49:53 PM   : Thresholds left: 3
+[INFO] 08:49:58 PM   : Event Triggered: onPageSuccess
+[INFO] 08:49:58 PM   : Start grabbing rating stars properties
+[INFO] 08:49:58 PM   : /bvstaging/4123/3_0/5/rating.gif
+[INFO] 08:49:58 PM   : Using OverallRating image
+[INFO] 08:49:58 PM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
+[INFO] 08:49:58 PM   : Image dimensions [with: 125, height: 20]
+[INFO] 08:49:58 PM   : Setting with attribute
+[INFO] 08:49:58 PM   : Setting height attribute
+[INFO] 08:49:58 PM   : Appending image into the document body
+[INFO] 08:49:58 PM   : Drawing rating stars image
+[INFO] 08:49:58 PM   : colorToHex: translating rgb(126, 33, 162) to hex
+[INFO] 08:49:58 PM   : colorToHex: translating rgb(210, 215, 217) to hex
+[INFO] 08:49:58 PM   : /bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 08:49:58 PM   : Using SecondaryRating image
+[INFO] 08:49:58 PM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 08:49:58 PM   : Image dimensions [with: 155, height: 9]
+[INFO] 08:49:58 PM   : Setting with attribute
+[INFO] 08:49:58 PM   : Setting height attribute
+[INFO] 08:49:58 PM   : Appending image into the document body
+[INFO] 08:49:58 PM   : Drawing rating stars image
+[INFO] 08:49:58 PM   : colorToHex: translating rgb(0, 128, 34) to hex
+[INFO] 08:49:58 PM   : colorToHex: translating rgb(179, 179, 179) to hex
+[INFO] 08:49:58 PM   : grabRatingStars: skips: 0; processed: 2
+[INFO] 08:49:58 PM   : Checking if all steps were done
+[INFO] 08:49:58 PM   : Saving Data
+[INFO] 08:49:58 PM   : Results:
+[INFO] 08:49:58 PM   : ========================================
+[INFO] 08:49:58 PM   : 
+{"text":{"DimensionValues":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"15px","font-style":"normal","line-height":"22px","text-transform":"none"},"Lables":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"Links":{"active":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"},"hover":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"},"visited":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"}},"ReviewDates":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"ReviewText":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"ReviewTitles":{"color":"#6e119f","font-family":"BPreplayBold, Helvetica, Arial, sans-serif","font-size":"20px","font-style":"normal","line-height":"30px","text-transform":"none"},"ReviewerName":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"SectionHeader":{"color":"#ffffff","font-family":"Helvetica, Arial, sans-serif","font-size":"18px","font-style":"normal","line-height":"26px","text-transform":"none"},"SectionHeaderControls":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"}},"images":{"OverallRating":{"empty":"#d2d7d9","full":"#7e21a2","size":20},"SecondaryRating":{"empty":"#b3b3b3","full":"#008022","size":9}}}
+[INFO] 08:49:58 PM   : ========================================
+[INFO] 08:49:58 PM   : Completed with:
+[INFO] 08:49:58 PM   : Task: @grabCssProperties [skips: 1; processed: 66]
+[WARN] 08:49:58 PM ! :    Could not access to element using path: .BVRRDisplayContentLinkWrite a
+[INFO] 08:49:58 PM   : Task: @grabRatingStars [skips: 0; processed: 2]
+[INFO] 08:49:58 PM   : Data is saved into the file: ./data/styles/pullups.json
+[INFO] 08:49:58 PM   : Modified: ratingIcons.summaryStars.subStyles.full.color : #7e21a2
+[INFO] 08:49:58 PM   : Modified: ratingIcons.summaryStars.subStyles.full.size : 20
+[INFO] 08:49:58 PM   : Modified: ratingIcons.summaryStars.subStyles.empty.color : #d2d7d9
+[INFO] 08:49:58 PM   : Modified: ratingIcons.summaryStars.subStyles.empty.size : 20
+[INFO] 08:49:58 PM   : Modified: ratingIcons.bars.subStyles.full.color : #008022
+[INFO] 08:49:58 PM   : Modified: ratingIcons.bars.subStyles.full.size : 9
+[INFO] 08:49:58 PM   : Modified: ratingIcons.bars.subStyles.empty.color : #b3b3b3
+[INFO] 08:49:58 PM   : Modified: ratingIcons.bars.subStyles.empty.size : 9
+[INFO] 08:49:58 PM   : Modified: ratingIcons.reviewStars.subStyles.full.color : #7e21a2
+[INFO] 08:49:58 PM   : Modified: ratingIcons.reviewStars.subStyles.full.size : 20
+[INFO] 08:49:58 PM   : Modified: ratingIcons.reviewStars.subStyles.empty.color : #d2d7d9
+[INFO] 08:49:58 PM   : Modified: ratingIcons.reviewStars.subStyles.empty.size : 20
+[INFO] 08:49:58 PM   : Data is saved into the file: ./data/styles/pullups.bhive
+[INFO] 08:49:58 PM   : Modified: ratingIcons.summaryStars.subStyles.full.color : #7e21a2
+[INFO] 08:49:58 PM   : Modified: ratingIcons.summaryStars.subStyles.full.size : 20
+[INFO] 08:49:58 PM   : Modified: ratingIcons.summaryStars.subStyles.empty.color : #d2d7d9
+[INFO] 08:49:58 PM   : Modified: ratingIcons.summaryStars.subStyles.empty.size : 20
+[INFO] 08:49:58 PM   : Modified: ratingIcons.bars.subStyles.full.color : #008022
+[INFO] 08:49:58 PM   : Modified: ratingIcons.bars.subStyles.full.size : 9
+[INFO] 08:49:58 PM   : Modified: ratingIcons.bars.subStyles.empty.color : #b3b3b3
+[INFO] 08:49:58 PM   : Modified: ratingIcons.bars.subStyles.empty.size : 9
+[INFO] 08:49:58 PM   : Modified: ratingIcons.reviewStars.subStyles.full.color : #7e21a2
+[INFO] 08:49:58 PM   : Modified: ratingIcons.reviewStars.subStyles.full.size : 20
+[INFO] 08:49:58 PM   : Modified: ratingIcons.reviewStars.subStyles.empty.color : #d2d7d9
+[INFO] 08:49:58 PM   : Modified: ratingIcons.reviewStars.subStyles.empty.size : 20
+[INFO] 08:49:58 PM   : Data is saved into the file: ./data/styles/pullups.update

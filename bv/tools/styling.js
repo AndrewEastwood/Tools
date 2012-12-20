@@ -863,7 +863,7 @@
                 fileName = settingsPublic.resourceFolder + pageObj.clientName;
             saveIntoFile(fileName + ".json", JSON.stringify(allData));
             saveIntoFile(fileName + ".bhive", linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive, "inline"));
-            saveIntoFile(fileName + ".update", linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive, "underscore"));
+            saveIntoFile(fileName + ".update", linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive, "update"));
             saveIntoFile(fileName + ".log", logCache);
             // exit
             phantom.exit();
