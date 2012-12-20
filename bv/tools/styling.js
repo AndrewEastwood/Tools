@@ -863,6 +863,7 @@
                 fileName = settingsPublic.resourceFolder + pageObj.clientName;
             saveIntoFile(fileName + ".json", JSON.stringify(allData));
             saveIntoFile(fileName + ".bhive", linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive, "inline"));
+            saveIntoFile(fileName + ".update", linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive, "update"));
             saveIntoFile(fileName + ".log", logCache);
             // exit
             phantom.exit();
@@ -919,6 +920,18 @@
                     output += "modifyImplementation.sh " + settingsPublic.docID + " " + key + " " + bhiveListOfKeysValues[key] + "\n";
                 break;
             }
+            case "update" : {
+                output = "";
+                for (var key in bhiveListOfKeysValues)
+                    if (bhiveListOfKeysValues[key][0] == '[') {
+                        if (bhiveListOfKeysValues[key].length == 4)
+                            output += "data." + key + " = []; ";
+                        else
+                            output += "data." + key + " = " + bhiveListOfKeysValues[key] + "; ";
+                    } else
+                        output += "data." + key + " = '" + bhiveListOfKeysValues[key] + "'; ";
+                break;
+            }
             case "raw" : {
                 output = bhiveListOfKeysValues;
                 break;
@@ -942,7 +955,9 @@
         for (var key in jsonObject) {
             var currentKeypath = (runningKey ? (runningKey + "." + key) : key);
             //innerLog("jsonToKeypathValue: running key is: " + currentKeypath, "info");
-            if (typeof(jsonObject[key]) === "object")
+            if (Array.isArray(jsonObject[key]))
+                list[currentKeypath] = "['" + jsonObject[key].join(",'") + "']";
+            else if (typeof(jsonObject[key]) === "object")
                 jsonToKeypathValue(jsonObject[key], currentKeypath, list);
             else {
                 //innerLog("jsonToKeypathValue: value reached: " + jsonObject[key], "info");
