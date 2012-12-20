@@ -1,44 +1,88 @@
-var  fs = require('fs'), 
-	xml2js = require('../lib/node_modules/xml2js')
-	util = require('util');
+function main (val) {
+	var  fs = require('fs'), 
+		xml2js = require('../lib/node_modules/xml2js')
+		util = require('util');
 
-//console.log(process.argv[2]); // xml file
-//console.log(process.argv[3]); // value to get
+	var parser = new xml2js.Parser();
+	fs.readFile(process.argv[2], function (err, data) { 
+		parser.parseString(data, function (err, result) {
+			
+			var _valueToReturn;
+			//console.log(util.inspect(result), false, null);
 
+			if (process.argv[3][0] == '@') {
+				switch (process.argv[3].substr(1)) {
+					/* bundle */
+					case "apps":
+						_valueToReturn = getClientApps(result);
+						break;
+					case "dc":
+						_valueToReturn = getClientDisplayCode(result);
+						break;
+					case "cx":
+						_valueToReturn = getClientCluster(result);
+						break;
+					case "cname":
+						_valueToReturn = getClientName(result);
+						break;
+					/* commons */
+					case "apihostname":
+						_valueToReturn = getClientApiHostName(result);
+						break;
+					/* display */
+					case "bvhost":
+						_valueToReturn = getClientBvHost(result);
+						break;
+					case "domain":
+						_valueToReturn = getClientDomainNames(result);
+						break;
+					case "dispname":
+						_valueToReturn = getClientDisplayName(result);
+						break;
+					case "homepage":
+						_valueToReturn = getClientHomePageUrl(result);
+						break;
+					case "enckey":
+						_valueToReturn = getClientEncodingKey(result);
+						break;
+					default:
+						_valueToReturn = "Undefined function name: " + process.argv[4];
+						break;
+				}
+			} else
+				_valueToReturn = getValue(result, process.argv[3]);
 
-//while (true)
-//	console.log("[INFO] xml parser. looking for value : XXXXXXXX");
+			// print value 
+			console.log(optimizeValue(_valueToReturn));
+		})
+	});
+}
 
-var parser = new xml2js.Parser();
-fs.readFile(process.argv[2], function (err, data) { 
-	parser.parseString(data, function (err, result) {
-		
-		var _valueToReturn;
-		//console.log(util.inspect(result), false, null);
+function help () {
+	var _helpString = "Script Usage:\n\n";
 
-		if (process.argv[3] == 'def') {
-			switch (process.argv[4]) {
-				case "dc" :
-					_valueToReturn = getClientDisplayCode(result);
-					break;
-				case "cx" :
-					_valueToReturn = getClientCluster(result);
-					break;
-				case "cname" : 
-					_valueToReturn = getClientName(result);
-					break;
+	_helpString += "node scriptName.js [path/to/your/file.xml] [SELECTOR|@METHOD|:CONDITION]";
+	_helpString += "\n\n";
+	_helpString += "SELECTOR:\n";
+	_helpString += "----------------------------\n";
+	_helpString += ""
+	_helpString += "\n\n";
+	_helpString += "CONDITION:\n";
+	_helpString += "----------------------------\n";
+	_helpString += "Format: ':'"
+	_helpString += "\n\n";
+	_helpString += "@METHOD:\n";
+	_helpString += "----------------------------\n";
+	_helpString += ""
 
-			}
-		} else
-			_valueToReturn = getValue(result, process.argv[3]);
+}
 
-
-		console.log(optimizeValue(_valueToReturn));
-	})
-}); 
-
-
-
+function optimizeValue (val) {
+	//console.log("value type is " + typeof(val));
+	if (!!val)
+		return val.replace(/^\'|\'$/g, " ").trim();
+	return "";
+}
 
 function conditionObj (conditionString) {
 
@@ -61,11 +105,6 @@ function conditionObj (conditionString) {
 		keyPropToReturn : selector[1],
 		reached : false
 	};
-}
-
-function optimizeValue (val) {
-	//console.log("value type is " + typeof(val));
-	return val.replace(/^\'|\'$/g, " ").trim();
 }
 
 function getValueByPath (jsonObj, path) {
@@ -111,27 +150,50 @@ function getValue (jsonDoc, pathToProp) {
 		return getValueByPath(jsonDoc, pathToProp);
 }
 
-/********/
+/**** configuration pre-defined selectors ****/
 
+/* = bundle config */
+
+function getClientApps (jsonDoc) {
+	return getValue(jsonDoc, "bundle.client.0.display.0.$.apps");
+}
 
 function getClientDisplayCode (jsonDoc) {
-	//for (var p in jsonDoc.client[0].display[0])
-	//	console.log(p);
 	return getValue(jsonDoc, "bundle.client.0.display.0.$.code");
-	//console.dir(jsonDoc.client[0].display[0].$.code);
 }
 
 function getClientCluster (jsonDoc) {
-	//for (var p in jsonDoc.client[0].display[0])
-	//	console.log(p);
-	//console.dir(jsonDoc.$.cluster);
 	return getValue(jsonDoc, "bundle.$.cluster");
 }
 
 function getClientName (jsonDoc) {
-	//for (var p in jsonDoc.client[0].display[0])
-	//	console.log(p);
-	//console.dir(jsonDoc.client[0].$.name);
 	return getValue(jsonDoc, "bundle.client.0.$.name");
 }
 
+/* = common config */
+
+function getClientApiHostName (jsonDoc) {
+	return getValue(jsonDoc, ":name=apiHostName@value");
+}
+
+/* = display config */
+
+function getClientBvHost (jsonDoc) {
+	return getValue(jsonDoc, ":name=bvHost@value");
+}
+
+function getClientDomainNames (jsonDoc) {
+	return getValue(jsonDoc, ":name=clientDomainNames@value");
+}
+
+function getClientDisplayName (jsonDoc) {
+	return getValue(jsonDoc, ":name=displayName@value");
+}
+
+function getClientHomePageUrl (jsonDoc) {
+	return getValue(jsonDoc, ":name=customerHomePageURL@value");
+}
+
+function getClientEncodingKey (jsonDoc) {
+	return getValue(jsonDoc, ":name=encodingKey@value");
+}

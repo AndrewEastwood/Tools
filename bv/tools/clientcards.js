@@ -268,7 +268,7 @@ function getCSVFields () {
 function exportToCSV (fields, jsonData, page, state) {
     //print("exportToCSV");
     var fs = require('fs');
-    var fileName = util.format(_settings.fileNamePattern, new Date().toLocaleTimeString(), page, state);
+    var fileName = util.format(_settings.fileNamePattern, new Date().getTime(), page, state);
     var csvString = fields + "\n";
     for (var key in jsonData)
         csvString += jsonData[key].toString() + "\n";

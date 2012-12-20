@@ -8,6 +8,7 @@ showHelp () {
 	echo "avaialble scripts:"
 	echo " 1) styling"
 	echo " 2) clientcards"
+	echo " 3) xmlparser"
 	echo ""
 	echo "Run '<script> help' to get more information"
 }
@@ -28,6 +29,7 @@ then
 			styling)
 				phantomjs $SCRIPTPATH $2
 				;;
+			xmlparser)
 			clientcards)
 				node $SCRIPTPATH $2
 				;;
