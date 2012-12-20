@@ -923,9 +923,12 @@
             case "update" : {
                 output = "";
                 for (var key in bhiveListOfKeysValues)
-                    if (bhiveListOfKeysValues[key][0] == '[')
-                        output += "data." + key + " = " + bhiveListOfKeysValues[key] + "; ";
-                    else
+                    if (bhiveListOfKeysValues[key][0] == '[') {
+                        if (bhiveListOfKeysValues[key].length == 4)
+                            output += "data." + key + " = []; ";
+                        else
+                            output += "data." + key + " = " + bhiveListOfKeysValues[key] + "; ";
+                    } else
                         output += "data." + key + " = '" + bhiveListOfKeysValues[key] + "'; ";
                 break;
             }
