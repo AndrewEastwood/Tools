@@ -220,16 +220,8 @@ function clientDataObject(rawData, allRawData) {
         return stringDesc;
     }
     this.getPhase = function(asString) {
-        if (asString) {
-            var pref = "";
-            if (rawData.phase == 1)
-                pref = "Active - Phase ";
-            if (rawData.phase == 2)
-                pref = "Unscheduled - Phase ";
-            if (rawData.phase == 3)
-                pref = "Unscheduled - Phase ";
-            return pref + rawData.phase;
-        }
+        if (asString)
+            return "Unscheduled - Phase " + rawData.phase;
         return rawData.phase;
     }
     this.getUIversion = function (clientDirName) {

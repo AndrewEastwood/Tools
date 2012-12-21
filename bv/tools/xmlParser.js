@@ -1,16 +1,23 @@
-function main (val) {
+if (process.argv.length == 2 || process.argv[2] == '?' || process.argv[2] == 'help' || process.argv[2] == '--help')
+	help();
+else
+	main(process.argv[2], process.argv[3] || "");
+
+/************************/
+
+function main (fpath, selector) {
 	var  fs = require('fs'), 
 		xml2js = require('../lib/node_modules/xml2js')
 		util = require('util');
 
 	var parser = new xml2js.Parser();
-	fs.readFile(process.argv[2], function (err, data) { 
+	fs.readFile(fpath, function (err, data) { 
 		parser.parseString(data, function (err, result) {
 			
 			var _valueToReturn;
 			//console.log(util.inspect(result), false, null);
 
-			if (process.argv[3][0] == '@') {
+			if (selector[0] == '@') {
 				switch (process.argv[3].substr(1)) {
 					/* bundle */
 					case "apps":
@@ -60,21 +67,53 @@ function main (val) {
 
 function help () {
 	var _helpString = "Script Usage:\n\n";
-
 	_helpString += "node scriptName.js [path/to/your/file.xml] [SELECTOR|@METHOD|:CONDITION]";
 	_helpString += "\n\n";
 	_helpString += "SELECTOR:\n";
 	_helpString += "----------------------------\n";
+	_helpString += "Format: 'bundle.client.0.display.0.$.code'\n"
 	_helpString += ""
 	_helpString += "\n\n";
-	_helpString += "CONDITION:\n";
+	_helpString += ":CONDITION\n";
 	_helpString += "----------------------------\n";
-	_helpString += "Format: ':'"
+	_helpString += "Format: ':name=apiHostName@value'"
+	_helpString += "\n"
+	_helpString += "'name' - script looks for the key called 'name' which contains the value 'apiHostName'\n";
+	_helpString += "'value' - this key is used to get value from the same object that was found using condition 'name=apiHostName'\n";
+	_helpString += "\n";
+	_helpString += "Object Example:";
+	_helpString += "\n";
+	_helpString += "{ 'props' : \n";
+	_helpString += "    [\n";
+	_helpString += "        {\n";
+	_helpString += "            'name' : 'bvHosts',\n";
+	_helpString += "            'value' : '[Object]'\n";
+	_helpString += "        },\n";
+	_helpString += "        {\n";
+	_helpString += "            'name' : 'apiHostName',\n";
+	_helpString += "            'value' : 'test.domain.com'\n";
+	_helpString += "        }\n";
+	_helpString += "    ]\n";
+	_helpString += "}\n";
+	_helpString += "\n";
+	_helpString += "Result: 'test.domain.com'\n";
 	_helpString += "\n\n";
 	_helpString += "@METHOD:\n";
 	_helpString += "----------------------------\n";
-	_helpString += ""
+	_helpString += "There are already defined methods to get client confgiuration value: \n";
+	_helpString += "";
+	_helpString += "@apps - get all apps enabled in the main display\n";
+	_helpString += "@dc - main display code\n";
+	_helpString += "@cx - cluster\n";
+	_helpString += "@cname - client name\n";
+	_helpString += "@apihostname - api host name value\n";
+	_helpString += "@bvhost - bv host\n";
+	_helpString += "@domain - client domain names\n";
+	_helpString += "@dispname - display name\n";
+	_helpString += "@homepage - home page url\n";
+	_helpString += "@enckey - encoding key\n";
 
+	console.log(_helpString);
 }
 
 function optimizeValue (val) {
