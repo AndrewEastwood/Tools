@@ -11,7 +11,7 @@
         productExternalID : "test1",
         testEnvironment : "bvstaging",
         pageFormat : "noscript",
-        resourceFolder : "./data/styles/",
+        resourceFolder : phantom.libraryPath + "/../data/styles/",
         //outputFmt : "",
         docID : ""
     };

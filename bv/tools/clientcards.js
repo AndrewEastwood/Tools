@@ -1,89 +1,152 @@
 //var os = require('os');
 //console.log(os.platform());
 
-var logger = require('../lib/logger.js').getLogger("clientDataCards");
+var logger = require('./lib/logger').getLogger("clientDataCards");
 var util = require('util');
+var commons = require('./lib/commons');
 
 var _settings = {
 	limit : 5000,
 	skip : 0,
-	dirToExport : './data/cards',
+	dirToExport : __dirname + '/../data/cards',
 	fileNamePattern : "export_d%s_p%d_%s.csv",
 	pageCountToExport : -1,
 	connection: {
 		host : "localhost",
-		dbname : "test",
-		table: "demo"
-	}
+        dbname : "test",
+        table: "demo"
+    },
+    exportType: "custom",
+    fieldsToExportMap : {
+        full : {
+            Type : 'getJiraType',
+            Summary : 'getJiraSubject',
+            Description : 'getJiraDescription',
+            Version : 'getJiraVersion',
+            Client : 'getName',
+            Label : 'getJiraLabels'
+        },
+        custom : {
+            Client : 'getName',
+            Phase : 'getPhase'
+        }
+    }
 };
 var _activeTasks = [];
 var jiraClientsJsonValid = {};
 var jiraClientsJsonWithErrors = {};
 var jiraClientsJsonConv2 = {};
 
-if (process.argv[2] == '?' || process.argv[2] == '--help')
-	console.log("Export Client Cards To Jira Usage: [host] [dbanme] [table]");
-else
-	performExport(
-		process.argv[2] || _settings.connection.host,
-		process.argv[3] || _settings.connection.dbname,
-		process.argv[4] || _settings.connection.table);
+
+if (process.argv.length < 3 || process.argv[2] == '?' || process.argv[2] == '--help')
+    console.log("Export Client Cards To Jira Usage: [host] [dbanme] [table] [dir/to/save]");
+else {
+    performExport(
+        process.argv[2] || _settings.connection.host,
+        process.argv[3] || _settings.connection.dbname,
+        process.argv[4] || _settings.connection.table);
+}
 
 
 /********** general methods ************/
 
 function exitHook () {
-	logger.log('exit hook');
-	process.exit(0);
+    logger.log('exit hook');
+    process.exit(0);
+}
+
+function getFiledsToExport (name) {
+    return _settings.fieldsToExportMap[name || _settings.exportType];
+}
+
+function exportToCSV (fieldMap, jsonData, page, state) {
+    //print("exportToCSV");
+    var fs = require('fs');
+    var fileName = util.format(_settings.fileNamePattern, new Date().getTime(), page, state);
+    var csvString = Object.getOwnPropertyNames(fieldMap).join(',') + "\n";
+    for (var key in jsonData)
+        csvString += jsonData[key].toString(fieldMap) + "\n";
+    //logger.log('Saving file: ' + fileName);
+
+    saveIntoFile(_settings.dirToExport, fileName, csvString);
+
+}
+
+function saveIntoFile (dir, fname, data) {
+    var fs = require('fs');
+    if(!fs.existsSync(dir)) {
+        fs.mkdir(dir);
+    }
+    fs.writeFile(dir + '/' + fname, data, function(err) {
+        if(err) {
+            console.log(err);
+        } else {
+            //console.log("The file was saved!");
+            //logger.log(util.format('Saved %d records in the file %s', Object.getOwnPropertyNames(data).length, fname));
+            if (_activeTasks.length == 0)
+                exitHook();
+        }
+    });
+}
+
+function exportToFile (data, page) {
+    if (_settings.exportType == "full") {
+        if (!!data.Valid) {
+            logger.log('performing export clients to csv: ' + Object.getOwnPropertyNames(data.Valid).length);
+            exportToCSV(getFiledsToExport(), data.Valid, page, 'ok');
+        }
+        if (!!data.Error) {
+            logger.log('performing export clients with errors to csv: ' + Object.getOwnPropertyNames(data.Error).length);
+            exportToCSV(getFiledsToExport(), data.Error, page, 'err');
+        }
+        if (!!data.Conv2) {
+            logger.log('performing export clients on conv2.0 to txt: ' + Object.getOwnPropertyNames(data.Conv2).length);
+            saveIntoFile(_settings.dirToExport, 'clientsOnConv2.txt', util.inspect(data.Conv2, true, null));
+        }
+    }
+    if (_settings.exportType == "custom") {
+        var _all = commons.extend(data.Valid, data.Error, data.Conv2);
+        logger.log('performing custom export to csv : ' + Object.getOwnPropertyNames(_all).length);
+        exportToCSV(getFiledsToExport(), _all, page, 'custom');
+    }
 }
 
 function getRecordsRecursive (db, collection, limit, skip, pagesToExport, page) {
 
-	_activeTasks.push(page);
+    _activeTasks.push(page);
 
-	if (pagesToExport !== -1 && pagesToExport < page)
-		return;
+    if (pagesToExport !== -1 && pagesToExport < page)
+        return;
 
-	logger.log(util.format('Performing data import [limit:%d; skip:%d; active page:%d]', limit, skip, page));
-	collection.find({}, {_id:0}).limit(limit).skip(skip).toArray(function (err, records) {
-		logger.log(util.format('Selected  %d record(s)', records.length));
-		var data = getClientsInfo(records);
+    logger.log(util.format('Performing data import [limit:%d; skip:%d; active page:%d]', limit, skip, page));
+    collection.find({}, {_id:0}).limit(limit).skip(skip).toArray(function (err, records) {
+        logger.log(util.format('Selected  %d record(s)', records.length));
+        var data = getClientsInfo(records);
         logger.log('imported data: ' + (Object.getOwnPropertyNames(data.Error).length + Object.getOwnPropertyNames(data.Valid).length));
-        if (!!data.Valid) {
-			logger.log('performing export clients to csv file: ' + Object.getOwnPropertyNames(data.Valid).length);
-			exportToCSV(getCSVFields(), data.Valid, page, 'ok');
-		}
-		if (!!data.Error) {
-			logger.log('performing export clients with errors to csv file: ' + Object.getOwnPropertyNames(data.Error).length);
-			exportToCSV(getCSVFields(), data.Error, page, 'err');
-		}
-        if (!!data.Conv2) {
-            logger.log('performing export clients on conv2.0 to txt file: ' + Object.getOwnPropertyNames(data.Conv2).length);
-            saveIntoFile(_settings.dirToExport, 'clientsOnConv2.txt', util.inspect(data.Conv2, true, null));
-        }
-		if (records.length == limit )	
-			getRecordsRecursive(db, collection, limit, skip + limit, pagesToExport, page + 1);
-		//else
-		//	exitHook();
-		_activeTasks.pop();
-	});
+        exportToFile(data, page);
+        if (records.length == limit )   
+            getRecordsRecursive(db, collection, limit, skip + limit, pagesToExport, page + 1);
+        //else
+        //  exitHook();
+        _activeTasks.pop();
+    });
 
 }
 
 function performExport (host, dbname, table) {
 
-	logger.log("connectig to " + host);
-	logger.log("using database " + dbname);
-	logger.log("table " + table);
+    logger.log("connectig to " + host);
+    logger.log("using database " + dbname);
+    logger.log("table " + table);
 
-	var mongo = require('../lib/node_modules/mongodb');
-	var server = new mongo.Server(host, 27017, {});
-	var db = new mongo.Db(dbname, server, {safe:true});
+    var mongo = require('mongodb');
+    var server = new mongo.Server(host, 27017, {});
+    var db = new mongo.Db(dbname, server, {safe:true});
 
-	db.open(function(error, client){
-		if (error) throw error;
-		getRecordsRecursive(db, new mongo.Collection(client, table), _settings.limit, _settings.skip, _settings.pageCountToExport, 1);
-	});
+    db.open(function(error, client){
+        if (error) throw error;
+        getRecordsRecursive(db, new mongo.Collection(client, table), _settings.limit, _settings.skip, _settings.pageCountToExport, 1);
+    });
 }
  
 function getClientsInfo(jsonDataArray) {
@@ -98,12 +161,12 @@ function getClientsInfo(jsonDataArray) {
         //console.log(runnuniIndexTest);
         _log += runnuniIndexTest + " = " + jsonDataArray[key].name;
 
-    	if (validateClientData(jsonDataArray[key])) {
+        if (validateClientData(jsonDataArray[key])) {
             jiraClientsJsonValid[jsonDataArray[key].directory] = new clientDataObject(jsonDataArray[key], jiraClientsJsonValid);
             hasValid = true;
             _log += " [ok]";
         } else if (isOnConv2(jsonDataArray[key])) {
-            jiraClientsJsonConv2[jsonDataArray[key].name] = jsonDataArray[key];
+            jiraClientsJsonConv2[jsonDataArray[key].name] = new clientDataObject(jsonDataArray[key]);
             _log += " [conv 2.0]";
         } else {
             jiraClientsJsonWithErrors[jsonDataArray[key].name] = new clientDataObject(jsonDataArray[key], jiraClientsJsonWithErrors);
@@ -119,9 +182,9 @@ function getClientsInfo(jsonDataArray) {
         Conv2 : jiraClientsJsonConv2
     };
     if (hasError)
-    	rez.Error = jiraClientsJsonWithErrors;
+        rez.Error = jiraClientsJsonWithErrors;
     if (hasValid)
-    	rez.Valid = jiraClientsJsonValid;
+        rez.Valid = jiraClientsJsonValid;
     return rez;
 }
 
@@ -154,7 +217,7 @@ function clientDataObject(rawData, allRawData) {
     this.keyValueString = function (k, v) {
         return " *" + k + "*: (" + v + ") ";
     }
-    this.getJiraDescription = function (escape) {
+    this.getJiraDescription = function (doNotEscape) {
         // generates description for jira
 
         var desc = {};
@@ -170,10 +233,10 @@ function clientDataObject(rawData, allRawData) {
         }
 
         if (typeof(rawData.authentication) !== "undefined") {
-	        desc["authentication"] = [];
-	        for (var idx in rawData.authentication.map)
-	            for (var dc in rawData.authentication.map[idx])
-	                desc["authentication"].push(this.keyValueString(dc, rawData.authentication.map[idx][dc]));
+            desc["authentication"] = [];
+            for (var idx in rawData.authentication.map)
+                for (var dc in rawData.authentication.map[idx])
+                    desc["authentication"].push(this.keyValueString(dc, rawData.authentication.map[idx][dc]));
         }
 
         if (typeof(rawData.hosted) !== "undefined") {
@@ -214,7 +277,7 @@ function clientDataObject(rawData, allRawData) {
             else
                 value = desc[p];
             value = value || "undefined";
-            stringDesc += "*" + p + "* " + (escape?value.replace(/\,/g,"\\,").replace(/\"/g, '\\"'):value) + " \\\\ ";
+            stringDesc += "*" + p + "* " + (doNotEscape?value:value.replace(/\,/g,"\\,").replace(/\"/g, '\\"')) + " \\\\ ";
         }
 
         return stringDesc;
@@ -235,14 +298,16 @@ function clientDataObject(rawData, allRawData) {
         }
         return this.getIGLink(clientDirName + "/config/bundleConfiguration.xml", uiv || "undefined");
     }
-    this.toString = function () {
-        var str = "Story,";
-        str += '"Upgrade ' + this.getName() + '",';
-        str += '"' + this.getJiraDescription(true) + '",';
-        str += '"' + this.getPhase(true) + '",';
-        str += '"' + this.getName() + '",';
-        str += '"Upgrade, C2013, ' + this.getName() + '"';
-        return str;
+    this.getPlatform = function () { return rawData.platform || "RR1.0"; }
+    this.getJiraType = function () { return "Story"; }
+    this.getJiraLabels = function () { return "Upgrade, C2013, " + this.getName(); }
+    this.getJiraSubject = function () { return "Upgrade " + this.getName(); }
+    this.getJiraVersion = function () { return this.getPhase(true); }
+    this.toString = function (filedsToExport) {
+        var values = [];
+        for (var fnName in filedsToExport)
+            values.push('"' + this[filedsToExport[fnName]]() + '"');
+        return values.join(',');
     }
 }
 
@@ -251,39 +316,4 @@ function dumpObjOnce (obj) {
     if (dump)
         console.dir(obj);
     dump = false;
-}
-
-function getCSVFields () {
-    return "Type,Summary,Description,Version,Client,Label";
-}
-
-function exportToCSV (fields, jsonData, page, state) {
-    //print("exportToCSV");
-    var fs = require('fs');
-    var fileName = util.format(_settings.fileNamePattern, new Date().getTime(), page, state);
-    var csvString = fields + "\n";
-    for (var key in jsonData)
-        csvString += jsonData[key].toString() + "\n";
-    //logger.log('Saving file: ' + fileName);
-
-    saveIntoFile(_settings.dirToExport, fileName, csvString);
-
-}
-
-
-function saveIntoFile (dir, fname, data) {
-    var fs = require('fs');
-    if(!fs.existsSync(dir)) {
-        fs.mkdir(dir);
-    }
-    fs.writeFile(dir + '/' + fname, data, function(err) {
-        if(err) {
-            console.log(err);
-        } else {
-            //console.log("The file was saved!");
-            //logger.log(util.format('Saved %d records in the file %s', Object.getOwnPropertyNames(data).length, fname));
-            if (_activeTasks.length == 0)
-                exitHook();
-        }
-    });
 }

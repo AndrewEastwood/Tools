@@ -13,8 +13,8 @@ showHelp () {
 	echo "Run '<script> help' to get more information"
 }
 
-
-TOOLDIR="./tools"
+TOOLS_HOME="/home/andriy/GitRepo/Tools/bv"
+TOOLDIR="$TOOLS_HOME/tools"
 SCRIPTPATH="$TOOLDIR/$1.js"
 
 if [ ! -z "$1" ]
@@ -30,6 +30,8 @@ then
 				phantomjs $SCRIPTPATH $2
 				;;
 			xmlparser)
+				node $SCRIPTPATH $2
+				;;
 			clientcards)
 				node $SCRIPTPATH $2
 				;;

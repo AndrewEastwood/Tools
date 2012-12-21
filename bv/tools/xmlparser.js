@@ -1,3 +1,4 @@
+//console.log(__dirname);
 if (process.argv.length == 2 || process.argv[2] == '?' || process.argv[2] == 'help' || process.argv[2] == '--help')
 	help();
 else
@@ -6,12 +7,19 @@ else
 /************************/
 
 function main (fpath, selector) {
+
+	//console.log(fpath);
+	//console.log(selector);
+
 	var  fs = require('fs'), 
-		xml2js = require('../lib/node_modules/xml2js')
+		xml2js = require('xml2js')
 		util = require('util');
 
 	var parser = new xml2js.Parser();
 	fs.readFile(fpath, function (err, data) { 
+
+		//console.log(data);
+
 		parser.parseString(data, function (err, result) {
 			
 			var _valueToReturn;
@@ -20,36 +28,36 @@ function main (fpath, selector) {
 			if (selector[0] == '@') {
 				switch (process.argv[3].substr(1)) {
 					/* bundle */
-					case "apps":
+					case "clientApps":
 						_valueToReturn = getClientApps(result);
 						break;
-					case "dc":
+					case "displayCode":
 						_valueToReturn = getClientDisplayCode(result);
 						break;
-					case "cx":
+					case "cluster":
 						_valueToReturn = getClientCluster(result);
 						break;
-					case "cname":
+					case "clientName":
 						_valueToReturn = getClientName(result);
 						break;
 					/* commons */
-					case "apihostname":
+					case "apiHostName":
 						_valueToReturn = getClientApiHostName(result);
 						break;
 					/* display */
-					case "bvhost":
+					case "bvHost":
 						_valueToReturn = getClientBvHost(result);
 						break;
-					case "domain":
+					case "clientDomainNames":
 						_valueToReturn = getClientDomainNames(result);
 						break;
-					case "dispname":
+					case "displayName":
 						_valueToReturn = getClientDisplayName(result);
 						break;
-					case "homepage":
+					case "customerHomePageURL":
 						_valueToReturn = getClientHomePageUrl(result);
 						break;
-					case "enckey":
+					case "encodingKey":
 						_valueToReturn = getClientEncodingKey(result);
 						break;
 					default:
@@ -102,16 +110,16 @@ function help () {
 	_helpString += "----------------------------\n";
 	_helpString += "There are already defined methods to get client confgiuration value: \n";
 	_helpString += "";
-	_helpString += "@apps - get all apps enabled in the main display\n";
-	_helpString += "@dc - main display code\n";
-	_helpString += "@cx - cluster\n";
-	_helpString += "@cname - client name\n";
-	_helpString += "@apihostname - api host name value\n";
-	_helpString += "@bvhost - bv host\n";
-	_helpString += "@domain - client domain names\n";
-	_helpString += "@dispname - display name\n";
-	_helpString += "@homepage - home page url\n";
-	_helpString += "@enckey - encoding key\n";
+	_helpString += "@clientApps, \n";
+	_helpString += "@displayCode, \n";
+	_helpString += "@cluster, \n";
+	_helpString += "@clientName, \n";
+	_helpString += "@apiHostName, \n";
+	_helpString += "@bvHost, \n";
+	_helpString += "@clientDomainNames, \n";
+	_helpString += "@displayName, \n";
+	_helpString += "@customerHomePageURL, \n";
+	_helpString += "@encodingKey";
 
 	console.log(_helpString);
 }
