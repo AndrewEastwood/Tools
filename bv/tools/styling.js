@@ -16,401 +16,17 @@
         docID : ""
     };
     var documents = {
-        elementsMap_bhive : {
-            /* TODO: use elementsMap values to fill this json */
-            ratingIcons : {
-                summaryStars : {
-                    subStyles : {
-                        full : { color: '@images.OverallRating.full', size: '@images.OverallRating.size' },
-                        empty : { color: '@images.OverallRating.empty', size: '@images.OverallRating.size' }
-                    }
-                },
-                bars: {
-                    subStyles : {
-                        full : { color: '@images.SecondaryRating.full', size: '@images.SecondaryRating.size' },
-                        empty : { color: '@images.SecondaryRating.empty', size: '@images.SecondaryRating.size' }
-                    }
-                },
-                reviewStars: {
-                    subStyles : {
-                        full : { color: '@images.OverallRating.full', size: '@images.OverallRating.size' },
-                        empty : { color: '@images.OverallRating.empty', size: '@images.OverallRating.size' }
-                    }
-                }
-            },
-            backgroundTab : {
-                "section-header" : {color : "transparent"},
-                "prs-container" : {color : "transparent"},
-                "section-header-controls" : {color : "transparent"},
-                button : {
-                    color : "transparent",
-                    subStyles: {
-                        primary: { color: "#0B5681" },
-                        hover: { color: "#0B5681" }
-                    }
-                },
-                "content-summary": {color: "transparent" },
-                "content-item": {color: "transparent" },
-                "content-header": {color: "transparent" }
-            },
-            marginAndPadding: {
-                "prs-container": {
-                    margin: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 },
-                    padding: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 }
-                },
-                "content-summary": {
-                    margin: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 },
-                    padding: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 }
-                },
-                "content-item": {
-                    margin: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 },
-                    padding: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 }
-                },
-                "content-header": {
-                    margin: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 },
-                    padding: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 }
-                }
-            },
-            fonts: {
-                body: {
-                    lineHeight: 16.5,
-                    sampleBackgroundColor: "white",
-                    color: "#4B4B4B",
-                    family: "Arial, sans-serif",
-                    familyID: "sniffedFontFamily1637882686",
-                    textTransform: "none",
-                    characterStyles: [ ],
-                    size: 12
-                },
-                button: {
-                    lineHeight: 19.5,
-                    sampleBackgroundColor: "black",
-                    color: "#FFFFFF",
-                    family: "Arial, Helvetica, sans-serif",
-                    familyID: "fontFamily2",
-                    textTransform: "none",
-                    characterStyles: [ "bold" ],
-                    subStyles: {
-                        button: {
-                            lineHeight: 16.5,
-                            sampleBackgroundColor: "white",
-                            color: "#FFF",
-                            family: "Arial, sans-serif",
-                            familyID: "sniffedFontFamily1637882686",
-                            textTransform: "uppercase",
-                            characterStyles: [ "bold" ],
-                            size: 12
-                        },
-                        active: {
-                            lineHeight: 16.5,
-                            sampleBackgroundColor: "white",
-                            color: "#FFF",
-                            family: "Arial, sans-serif",
-                            familyID: "sniffedFontFamily1637882686",
-                            textTransform: "uppercase",
-                            characterStyles: [ "bold" ],
-                            size: 12
-                        },
-                        hover: {
-                            lineHeight: 16.5,
-                            sampleBackgroundColor: "white",
-                            color: "#FFF",
-                            family: "Arial, sans-serif",
-                            familyID: "sniffedFontFamily1637882686",
-                            textTransform: "uppercase",
-                            characterStyles: [ "bold" ],
-                            size: 12
-                        }
-                    },
-                    size: 13
-                },
-                pageHeader: {
-                    lineHeight: 16.5,
-                    sampleBackgroundColor: "white",
-                    color: "#4B4B4B",
-                    family: "Arial, sans-serif",
-                    familyID: "sniffedFontFamily1637882686",
-                    textTransform: "none",
-                    characterStyles: [ "bold" ],
-                    size: 14
-                },
-                ugcDate: {
-                    lineHeight: 16.5,
-                    sampleBackgroundColor: "white",
-                    color: "#4B4B4B",
-                    family: "Arial, sans-serif",
-                    familyID: "sniffedFontFamily1637882686",
-                    textTransform: "none",
-                    characterStyles: [ ],
-                    size: 11
-                },
-                sectionHeader: {
-                    lineHeight: 16.5,
-                    sampleBackgroundColor: "white",
-                    color: "#4B4B4B",
-                    family: "Arial, sans-serif",
-                    familyID: "sniffedFontFamily1637882686",
-                    textTransform: "none",
-                    characterStyles: [ "bold" ],
-                    size: 12
-                },
-                link: {
-                    lineHeight: 19.5,
-                    family: "Arial, Helvetica, sans-serif",
-                    familyID: "fontFamily2",
-                    textTransform: "none",
-                    characterStyles: [ ],
-                    subStyles: {
-                        visited: {
-                            lineHeight: 16.5,
-                            sampleBackgroundColor: "white",
-                            color: "#2A5A97",
-                            family: "Arial, sans-serif",
-                            familyID: "sniffedFontFamily1637882686",
-                            textTransform: "none",
-                            characterStyles: [ ],
-                            size: 12
-                        },
-                        link: {
-                            lineHeight: 16.5,
-                            sampleBackgroundColor: "white",
-                            color: "#2A5A97",
-                            family: "Arial, sans-serif",
-                            familyID: "sniffedFontFamily1637882686",
-                            textTransform: "none",
-                            characterStyles: [ ],
-                            size: 12
-                        },
-                        active: {
-                            lineHeight: 16.5,
-                            sampleBackgroundColor: "white",
-                            color: "#2A5A97",
-                            family: "Arial, sans-serif",
-                            familyID: "sniffedFontFamily1637882686",
-                            textTransform: "none",
-                            characterStyles: [ ],
-                            size: 12
-                        },
-                        hover: {
-                            lineHeight: 16.5,
-                            sampleBackgroundColor: "white",
-                            color: "#2A5A97",
-                            family: "Arial, sans-serif",
-                            textTransform: "none",
-                            characterStyles: [ ],
-                            size: 12
-                        }
-                    },
-                    size: 13
-                },
-                labels: {
-                    lineHeight: 16.5,
-                    sampleBackgroundColor: "white",
-                    color: "#4B4B4B",
-                    family: "Arial, sans-serif",
-                    textTransform: "none",
-                    characterStyles: [ ],
-                    size: 12
-                },
-                dimensionValues: {
-                    lineHeight: 16.5,
-                    sampleBackgroundColor: "white",
-                    color: "#4B4B4B",
-                    family: "Arial, sans-serif",
-                    textTransform: "none",
-                    characterStyles: [ ],
-                    size: 12
-                },
-                sectionHeaderControls: {
-                    lineHeight: 16.5,
-                    sampleBackgroundColor: "white",
-                    color: "#4B4B4B",
-                    family: "Arial, sans-serif",
-                    textTransform: "none",
-                    characterStyles: [ ],
-                    size: 12
-                },
-                ugcName: {
-                    lineHeight: 16.5,
-                    sampleBackgroundColor: "white",
-                    color: "#2A5A97",
-                    family: "Arial, sans-serif",
-                    textTransform: "none",
-                    characterStyles: [ "bold" ],
-                    size: 12
-                }
-            },
-            borders: {
-                "button-primary": {
-                    bottomRightRadius: 3,
-                    bottomLeftRadius: 3,
-                    topRightRadius: 3,
-                    bottom: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    left: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    right: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    topLeftRadius: 3,
-                    radiiLocked: true,
-                    top: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    }
-                },
-                "prs-container": {
-                    bottomRightRadius: 0,
-                    bottomLeftRadius: 0,
-                    topRightRadius: 0,
-                    bottom: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    left: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    right: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    topLeftRadius: 0,
-                    radiiLocked: false,
-                    top: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    }
-                },
-                "button-secondary": {
-                    bottomRightRadius: 0,
-                    bottomLeftRadius: 0,
-                    topRightRadius: 0,
-                    bottom: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    left: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    right: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    topLeftRadius: 0,
-                    radiiLocked: false,
-                    top: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    }
-                },
-                "content-summary": {
-                    bottomRightRadius: 0,
-                    bottomLeftRadius: 0,
-                    topRightRadius: 0,
-                    bottom: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    left: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    right: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    topLeftRadius: 0,
-                    radiiLocked: false,
-                    top: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    }
-                },
-                "content-item": {
-                    bottomRightRadius: 0,
-                    bottomLeftRadius: 0,
-                    topRightRadius: 0,
-                    bottom: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    left: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    right: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    topLeftRadius: 0,
-                    radiiLocked: false,
-                    top: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    }
-                },
-                "content-header": {
-                    bottomRightRadius: 0,
-                    bottomLeftRadius: 0,
-                    topRightRadius: 0,
-                    bottom: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    left: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    right: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    },
-                    topLeftRadius: 0,
-                    radiiLocked: false,
-                    top: {
-                        style: "none",
-                        color: "transparent",
-                        width: 0
-                    }
-                }
-            }
-        },
+        elementsMap_bhive : {},
         elementsMap : {
             images : {
                 'OverallRating' : { name : "rating.gif", path : '.BVRROverallRatingContainer .BVRRRatingNormalImage img' },
                 'SecondaryRating' : { name : "ratingSecondary.gif", path : '.BVRRSecondaryRatingsContainer .BVRRRatingNormalImage img' }
             },
             text: {
+                'RootElement' : {
+                    'path' : '.BVRRRootElement',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
+                },
                 'ReviewTitles' : {
                     'path' : '.BVRRReviewTitle',
                     'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
@@ -476,6 +92,8 @@
 
     bvSG.setupWithArguments = function (args) {
 
+        innerLog('Setup', 'info');
+
         var kvArgs = {};
 
         if ((args.length - 1) % 2 !== 0) {
@@ -489,6 +107,8 @@
         //innerLog(kvArgs, "info");
 
         extend(settingsPublic, kvArgs);
+
+        documents.elementsMap_bhive = loadDocument(phantom.libraryPath + "/../docs/customerBhiveTheme.js");
 
         return this;
     }
@@ -549,6 +169,19 @@
     };
 
     /********* INTERNAL METHODS *********/
+
+    function loadDocument (pathToDocument) {
+        var fs = require('fs');
+        if (fs.exists(pathToDocument)) {
+            var rawJson = fs.read(pathToDocument);
+            innerLog("--- received data: " + pathToDocument + " : length = " + rawJson.length, "info");
+            if (rawJson)
+                return eval('(' + rawJson + ')');
+        } else
+            innerLog("failed to load document: " + pathToDocument, "error");
+
+        return {};
+    }
 
     function grabber(pageObj) {
         // create web page
@@ -925,11 +558,19 @@
                 for (var key in bhiveListOfKeysValues)
                     if (bhiveListOfKeysValues[key][0] == '[') {
                         if (bhiveListOfKeysValues[key].length == 4)
-                            output += "data." + key + " = []; ";
-                        else
-                            output += "data." + key + " = " + bhiveListOfKeysValues[key] + "; ";
+                            output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = []; ";
+                        else {
+                            output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = ";
+                            if (Array.isArray(bhiveListOfKeysValues[key])) {
+                                var _arr = [];
+                                for (var i = 0; i < bhiveListOfKeysValues[key]; i++)
+                                    _arr.push('"' + dataListOfKeysValues[bhiveListOfKeysValues[key][i]] + '"');
+                                output += '[ololo' + arr.join(',') + ']';
+                            } else
+                                output += bhiveListOfKeysValues[key] + "; ";
+                        }
                     } else
-                        output += "data." + key + " = '" + bhiveListOfKeysValues[key] + "'; ";
+                        output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = '" + bhiveListOfKeysValues[key] + "'; ";
                 break;
             }
             case "raw" : {
@@ -945,6 +586,22 @@
         return output;
     }
 
+    function getCompatibleUnderscoreDocumentKey (key) {
+        // detect special chars
+        var newKey = "";
+        if (key.indexOf('-') >= 0) {
+            var chains = key.split('.');
+            for (var i = 0; i < chains.length; i++)
+                if (chains[i].indexOf('-') == -1)
+                    newKey += ((newKey.length ? '.' : '') + chains[i]);
+                else
+                    newKey += "['" + chains[i] + "']";
+        } else
+            return key;
+
+        return newKey;
+    }
+
     function getHostName (url) {
         // simple hostname parser
         return url.split('/')[2].replace(/\./g, '_');
@@ -955,8 +612,16 @@
         for (var key in jsonObject) {
             var currentKeypath = (runningKey ? (runningKey + "." + key) : key);
             //innerLog("jsonToKeypathValue: running key is: " + currentKeypath, "info");
-            if (Array.isArray(jsonObject[key]))
-                list[currentKeypath] = "['" + jsonObject[key].join(",'") + "']";
+            if (Array.isArray(jsonObject[key])) {
+                var _valueArr = [];
+                for (var i = 0; i < jsonObject[key].length; i++) {
+                    if (jsonObject[key][i][0] = '@')
+                        _valueArr.push(jsonObject[key][i]); 
+                    else
+                        _valueArr.push("'" + jsonObject[key][i] + "'"); 
+                };
+                list[currentKeypath] = _valueArr;//"[" + _valueArr.join(",") + "]";
+            }
             else if (typeof(jsonObject[key]) === "object")
                 jsonToKeypathValue(jsonObject[key], currentKeypath, list);
             else {

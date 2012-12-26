@@ -1,0 +1,280 @@
+modifyImplementation.sh  configuredStyles.ratingIcons.summaryStars.subStyles.full.color #7e21a2
+modifyImplementation.sh  configuredStyles.ratingIcons.summaryStars.subStyles.full.size 20
+modifyImplementation.sh  configuredStyles.ratingIcons.summaryStars.subStyles.empty.color #d2d7d9
+modifyImplementation.sh  configuredStyles.ratingIcons.summaryStars.subStyles.empty.size 20
+modifyImplementation.sh  configuredStyles.ratingIcons.bars.subStyles.full.color #008022
+modifyImplementation.sh  configuredStyles.ratingIcons.bars.subStyles.full.size 9
+modifyImplementation.sh  configuredStyles.ratingIcons.bars.subStyles.empty.color #b3b3b3
+modifyImplementation.sh  configuredStyles.ratingIcons.bars.subStyles.empty.size 9
+modifyImplementation.sh  configuredStyles.ratingIcons.reviewStars.subStyles.full.color #7e21a2
+modifyImplementation.sh  configuredStyles.ratingIcons.reviewStars.subStyles.full.size 20
+modifyImplementation.sh  configuredStyles.ratingIcons.reviewStars.subStyles.empty.color #d2d7d9
+modifyImplementation.sh  configuredStyles.ratingIcons.reviewStars.subStyles.empty.size 20
+modifyImplementation.sh  configuredStyles.backgroundTab.section-header.color transparent
+modifyImplementation.sh  configuredStyles.backgroundTab.prs-container.color transparent
+modifyImplementation.sh  configuredStyles.backgroundTab.section-header-controls.color transparent
+modifyImplementation.sh  configuredStyles.backgroundTab.button.color transparent
+modifyImplementation.sh  configuredStyles.backgroundTab.button.subStyles.primary.color #0B5681
+modifyImplementation.sh  configuredStyles.backgroundTab.button.subStyles.hover.color #0B5681
+modifyImplementation.sh  configuredStyles.backgroundTab.content-summary.color transparent
+modifyImplementation.sh  configuredStyles.backgroundTab.content-item.color transparent
+modifyImplementation.sh  configuredStyles.backgroundTab.content-header.color transparent
+modifyImplementation.sh  configuredStyles.marginAndPadding.prs-container.margin.uniform false
+modifyImplementation.sh  configuredStyles.marginAndPadding.prs-container.margin.bottom 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.prs-container.margin.left 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.prs-container.margin.right 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.prs-container.margin.top 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.prs-container.padding.uniform false
+modifyImplementation.sh  configuredStyles.marginAndPadding.prs-container.padding.bottom 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.prs-container.padding.left 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.prs-container.padding.right 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.prs-container.padding.top 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-summary.margin.uniform false
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-summary.margin.bottom 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-summary.margin.left 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-summary.margin.right 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-summary.margin.top 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-summary.padding.uniform false
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-summary.padding.bottom 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-summary.padding.left 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-summary.padding.right 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-summary.padding.top 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-item.margin.uniform false
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-item.margin.bottom 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-item.margin.left 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-item.margin.right 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-item.margin.top 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-item.padding.uniform false
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-item.padding.bottom 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-item.padding.left 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-item.padding.right 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-item.padding.top 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-header.margin.uniform false
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-header.margin.bottom 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-header.margin.left 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-header.margin.right 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-header.margin.top 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-header.padding.uniform false
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-header.padding.bottom 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-header.padding.left 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-header.padding.right 0
+modifyImplementation.sh  configuredStyles.marginAndPadding.content-header.padding.top 0
+modifyImplementation.sh  configuredStyles.fonts.body.lineHeight 19px
+modifyImplementation.sh  configuredStyles.fonts.body.sampleBackgroundColor rgba(0, 0, 0, 0)
+modifyImplementation.sh  configuredStyles.fonts.body.color #959595
+modifyImplementation.sh  configuredStyles.fonts.body.family Helvetica, Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.body.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.body.characterStyles @text.RootElement.text-transform,@text.RootElement.text-transform
+modifyImplementation.sh  configuredStyles.fonts.body.size 13px
+modifyImplementation.sh  configuredStyles.fonts.button.lineHeight 19.5
+modifyImplementation.sh  configuredStyles.fonts.button.sampleBackgroundColor black
+modifyImplementation.sh  configuredStyles.fonts.button.color #FFFFFF
+modifyImplementation.sh  configuredStyles.fonts.button.family Arial, Helvetica, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.button.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.button.characterStyles bold
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.button.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.button.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.button.color #FFF
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.button.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.button.textTransform uppercase
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.button.characterStyles bold
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.button.size 12
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.active.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.active.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.active.color #FFF
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.active.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.active.textTransform uppercase
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.active.characterStyles bold
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.active.size 12
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.hover.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.hover.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.hover.color #FFF
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.hover.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.hover.textTransform uppercase
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.hover.characterStyles bold
+modifyImplementation.sh  configuredStyles.fonts.button.subStyles.hover.size 12
+modifyImplementation.sh  configuredStyles.fonts.button.size 13
+modifyImplementation.sh  configuredStyles.fonts.pageHeader.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.pageHeader.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.pageHeader.color #4B4B4B
+modifyImplementation.sh  configuredStyles.fonts.pageHeader.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.pageHeader.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.pageHeader.characterStyles bold
+modifyImplementation.sh  configuredStyles.fonts.pageHeader.size 14
+modifyImplementation.sh  configuredStyles.fonts.ugcDate.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.ugcDate.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.ugcDate.color #4B4B4B
+modifyImplementation.sh  configuredStyles.fonts.ugcDate.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.ugcDate.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.ugcDate.characterStyles 
+modifyImplementation.sh  configuredStyles.fonts.ugcDate.size 11
+modifyImplementation.sh  configuredStyles.fonts.sectionHeader.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.sectionHeader.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.sectionHeader.color #4B4B4B
+modifyImplementation.sh  configuredStyles.fonts.sectionHeader.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.sectionHeader.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.sectionHeader.characterStyles bold
+modifyImplementation.sh  configuredStyles.fonts.sectionHeader.size 12
+modifyImplementation.sh  configuredStyles.fonts.link.lineHeight 19.5
+modifyImplementation.sh  configuredStyles.fonts.link.family Arial, Helvetica, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.link.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.link.characterStyles 
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.visited.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.visited.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.visited.color #2A5A97
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.visited.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.visited.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.visited.characterStyles 
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.visited.size 12
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.link.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.link.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.link.color #2A5A97
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.link.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.link.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.link.characterStyles 
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.link.size 12
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.active.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.active.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.active.color #2A5A97
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.active.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.active.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.active.characterStyles 
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.active.size 12
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.hover.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.hover.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.hover.color #2A5A97
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.hover.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.hover.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.hover.characterStyles 
+modifyImplementation.sh  configuredStyles.fonts.link.subStyles.hover.size 12
+modifyImplementation.sh  configuredStyles.fonts.link.size 13
+modifyImplementation.sh  configuredStyles.fonts.labels.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.labels.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.labels.color #4B4B4B
+modifyImplementation.sh  configuredStyles.fonts.labels.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.labels.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.labels.characterStyles 
+modifyImplementation.sh  configuredStyles.fonts.labels.size 12
+modifyImplementation.sh  configuredStyles.fonts.dimensionValues.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.dimensionValues.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.dimensionValues.color #4B4B4B
+modifyImplementation.sh  configuredStyles.fonts.dimensionValues.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.dimensionValues.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.dimensionValues.characterStyles 
+modifyImplementation.sh  configuredStyles.fonts.dimensionValues.size 12
+modifyImplementation.sh  configuredStyles.fonts.sectionHeaderControls.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.sectionHeaderControls.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.sectionHeaderControls.color #4B4B4B
+modifyImplementation.sh  configuredStyles.fonts.sectionHeaderControls.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.sectionHeaderControls.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.sectionHeaderControls.characterStyles 
+modifyImplementation.sh  configuredStyles.fonts.sectionHeaderControls.size 12
+modifyImplementation.sh  configuredStyles.fonts.ugcName.lineHeight 16.5
+modifyImplementation.sh  configuredStyles.fonts.ugcName.sampleBackgroundColor white
+modifyImplementation.sh  configuredStyles.fonts.ugcName.color #2A5A97
+modifyImplementation.sh  configuredStyles.fonts.ugcName.family Arial, sans-serif
+modifyImplementation.sh  configuredStyles.fonts.ugcName.textTransform none
+modifyImplementation.sh  configuredStyles.fonts.ugcName.characterStyles bold
+modifyImplementation.sh  configuredStyles.fonts.ugcName.size 12
+modifyImplementation.sh  configuredStyles.borders.button-primary.bottomRightRadius 3
+modifyImplementation.sh  configuredStyles.borders.button-primary.bottomLeftRadius 3
+modifyImplementation.sh  configuredStyles.borders.button-primary.topRightRadius 3
+modifyImplementation.sh  configuredStyles.borders.button-primary.bottom.style none
+modifyImplementation.sh  configuredStyles.borders.button-primary.bottom.color transparent
+modifyImplementation.sh  configuredStyles.borders.button-primary.bottom.width 0
+modifyImplementation.sh  configuredStyles.borders.button-primary.left.style none
+modifyImplementation.sh  configuredStyles.borders.button-primary.left.color transparent
+modifyImplementation.sh  configuredStyles.borders.button-primary.left.width 0
+modifyImplementation.sh  configuredStyles.borders.button-primary.right.style none
+modifyImplementation.sh  configuredStyles.borders.button-primary.right.color transparent
+modifyImplementation.sh  configuredStyles.borders.button-primary.right.width 0
+modifyImplementation.sh  configuredStyles.borders.button-primary.topLeftRadius 3
+modifyImplementation.sh  configuredStyles.borders.button-primary.radiiLocked true
+modifyImplementation.sh  configuredStyles.borders.button-primary.top.style none
+modifyImplementation.sh  configuredStyles.borders.button-primary.top.color transparent
+modifyImplementation.sh  configuredStyles.borders.button-primary.top.width 0
+modifyImplementation.sh  configuredStyles.borders.prs-container.bottomRightRadius 0
+modifyImplementation.sh  configuredStyles.borders.prs-container.bottomLeftRadius 0
+modifyImplementation.sh  configuredStyles.borders.prs-container.topRightRadius 0
+modifyImplementation.sh  configuredStyles.borders.prs-container.bottom.style none
+modifyImplementation.sh  configuredStyles.borders.prs-container.bottom.color transparent
+modifyImplementation.sh  configuredStyles.borders.prs-container.bottom.width 0
+modifyImplementation.sh  configuredStyles.borders.prs-container.left.style none
+modifyImplementation.sh  configuredStyles.borders.prs-container.left.color transparent
+modifyImplementation.sh  configuredStyles.borders.prs-container.left.width 0
+modifyImplementation.sh  configuredStyles.borders.prs-container.right.style none
+modifyImplementation.sh  configuredStyles.borders.prs-container.right.color transparent
+modifyImplementation.sh  configuredStyles.borders.prs-container.right.width 0
+modifyImplementation.sh  configuredStyles.borders.prs-container.topLeftRadius 0
+modifyImplementation.sh  configuredStyles.borders.prs-container.radiiLocked false
+modifyImplementation.sh  configuredStyles.borders.prs-container.top.style none
+modifyImplementation.sh  configuredStyles.borders.prs-container.top.color transparent
+modifyImplementation.sh  configuredStyles.borders.prs-container.top.width 0
+modifyImplementation.sh  configuredStyles.borders.button-secondary.bottomRightRadius 0
+modifyImplementation.sh  configuredStyles.borders.button-secondary.bottomLeftRadius 0
+modifyImplementation.sh  configuredStyles.borders.button-secondary.topRightRadius 0
+modifyImplementation.sh  configuredStyles.borders.button-secondary.bottom.style none
+modifyImplementation.sh  configuredStyles.borders.button-secondary.bottom.color transparent
+modifyImplementation.sh  configuredStyles.borders.button-secondary.bottom.width 0
+modifyImplementation.sh  configuredStyles.borders.button-secondary.left.style none
+modifyImplementation.sh  configuredStyles.borders.button-secondary.left.color transparent
+modifyImplementation.sh  configuredStyles.borders.button-secondary.left.width 0
+modifyImplementation.sh  configuredStyles.borders.button-secondary.right.style none
+modifyImplementation.sh  configuredStyles.borders.button-secondary.right.color transparent
+modifyImplementation.sh  configuredStyles.borders.button-secondary.right.width 0
+modifyImplementation.sh  configuredStyles.borders.button-secondary.topLeftRadius 0
+modifyImplementation.sh  configuredStyles.borders.button-secondary.radiiLocked false
+modifyImplementation.sh  configuredStyles.borders.button-secondary.top.style none
+modifyImplementation.sh  configuredStyles.borders.button-secondary.top.color transparent
+modifyImplementation.sh  configuredStyles.borders.button-secondary.top.width 0
+modifyImplementation.sh  configuredStyles.borders.content-summary.bottomRightRadius 0
+modifyImplementation.sh  configuredStyles.borders.content-summary.bottomLeftRadius 0
+modifyImplementation.sh  configuredStyles.borders.content-summary.topRightRadius 0
+modifyImplementation.sh  configuredStyles.borders.content-summary.bottom.style none
+modifyImplementation.sh  configuredStyles.borders.content-summary.bottom.color transparent
+modifyImplementation.sh  configuredStyles.borders.content-summary.bottom.width 0
+modifyImplementation.sh  configuredStyles.borders.content-summary.left.style none
+modifyImplementation.sh  configuredStyles.borders.content-summary.left.color transparent
+modifyImplementation.sh  configuredStyles.borders.content-summary.left.width 0
+modifyImplementation.sh  configuredStyles.borders.content-summary.right.style none
+modifyImplementation.sh  configuredStyles.borders.content-summary.right.color transparent
+modifyImplementation.sh  configuredStyles.borders.content-summary.right.width 0
+modifyImplementation.sh  configuredStyles.borders.content-summary.topLeftRadius 0
+modifyImplementation.sh  configuredStyles.borders.content-summary.radiiLocked false
+modifyImplementation.sh  configuredStyles.borders.content-summary.top.style none
+modifyImplementation.sh  configuredStyles.borders.content-summary.top.color transparent
+modifyImplementation.sh  configuredStyles.borders.content-summary.top.width 0
+modifyImplementation.sh  configuredStyles.borders.content-item.bottomRightRadius 0
+modifyImplementation.sh  configuredStyles.borders.content-item.bottomLeftRadius 0
+modifyImplementation.sh  configuredStyles.borders.content-item.topRightRadius 0
+modifyImplementation.sh  configuredStyles.borders.content-item.bottom.style none
+modifyImplementation.sh  configuredStyles.borders.content-item.bottom.color transparent
+modifyImplementation.sh  configuredStyles.borders.content-item.bottom.width 0
+modifyImplementation.sh  configuredStyles.borders.content-item.left.style none
+modifyImplementation.sh  configuredStyles.borders.content-item.left.color transparent
+modifyImplementation.sh  configuredStyles.borders.content-item.left.width 0
+modifyImplementation.sh  configuredStyles.borders.content-item.right.style none
+modifyImplementation.sh  configuredStyles.borders.content-item.right.color transparent
+modifyImplementation.sh  configuredStyles.borders.content-item.right.width 0
+modifyImplementation.sh  configuredStyles.borders.content-item.topLeftRadius 0
+modifyImplementation.sh  configuredStyles.borders.content-item.radiiLocked false
+modifyImplementation.sh  configuredStyles.borders.content-item.top.style none
+modifyImplementation.sh  configuredStyles.borders.content-item.top.color transparent
+modifyImplementation.sh  configuredStyles.borders.content-item.top.width 0
+modifyImplementation.sh  configuredStyles.borders.content-header.bottomRightRadius 0
+modifyImplementation.sh  configuredStyles.borders.content-header.bottomLeftRadius 0
+modifyImplementation.sh  configuredStyles.borders.content-header.topRightRadius 0
+modifyImplementation.sh  configuredStyles.borders.content-header.bottom.style none
+modifyImplementation.sh  configuredStyles.borders.content-header.bottom.color transparent
+modifyImplementation.sh  configuredStyles.borders.content-header.bottom.width 0
+modifyImplementation.sh  configuredStyles.borders.content-header.left.style none
+modifyImplementation.sh  configuredStyles.borders.content-header.left.color transparent
+modifyImplementation.sh  configuredStyles.borders.content-header.left.width 0
+modifyImplementation.sh  configuredStyles.borders.content-header.right.style none
+modifyImplementation.sh  configuredStyles.borders.content-header.right.color transparent
+modifyImplementation.sh  configuredStyles.borders.content-header.right.width 0
+modifyImplementation.sh  configuredStyles.borders.content-header.topLeftRadius 0
+modifyImplementation.sh  configuredStyles.borders.content-header.radiiLocked false
+modifyImplementation.sh  configuredStyles.borders.content-header.top.style none
+modifyImplementation.sh  configuredStyles.borders.content-header.top.color transparent
+modifyImplementation.sh  configuredStyles.borders.content-header.top.width 0

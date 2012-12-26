@@ -1,0 +1,116 @@
+
+[INFO] 02:46:13 PM   : Setup
+[INFO] 02:46:13 PM   : --- received data: /home/andriy/GitRepo/Tools/bv/tools/../docs/customerBhiveTheme.js : length = 14213
+[INFO] 02:46:13 PM   : --- client name: pullups
+[INFO] 02:46:13 PM   : --- host name: pullups.ugc.bazaarvoice.com
+[INFO] 02:46:13 PM   : --- display code: 4123
+[INFO] 02:46:13 PM   : --- using api host name: yes
+[INFO] 02:46:13 PM   : --- test environment : bvstaging
+[INFO] 02:46:13 PM   : --- product external id : test1
+[INFO] 02:46:13 PM   : --- implementation id : 
+[INFO] 02:46:13 PM   : Working with: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/test1/reviews.htm?format=noscript
+[SUCCESS] 02:46:13 PM   : Status received = success
+[INFO] 02:46:13 PM   : Event Triggered: onPageSuccess
+[INFO] 02:46:13 PM   : Start grabbing css properties
+[INFO] 02:46:13 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 02:46:13 PM   : colorToHex: translating rgb(110, 17, 159) to hex
+[INFO] 02:46:13 PM   : colorToHex: translating rgb(255, 255, 255) to hex
+[INFO] 02:46:13 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 02:46:13 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 02:46:13 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 02:46:13 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 02:46:13 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 02:46:13 PM   : colorToHex: translating rgb(149, 149, 149) to hex
+[INFO] 02:46:13 PM   : colorToHex: translating rgb(113, 19, 153) to hex
+[INFO] 02:46:13 PM   : colorToHex: translating rgb(113, 19, 153) to hex
+[INFO] 02:46:13 PM   : colorToHex: translating rgb(113, 19, 153) to hex
+[INFO] 02:46:13 PM   : Could not access to element using path: .BVRRDisplayContentLinkWrite a
+[INFO] 02:46:13 PM   : grabCssProperties: skips: 1; processed: 74
+[INFO] 02:46:13 PM   : Start grabbing rating stars properties
+[INFO] 02:46:13 PM   : /bvstaging/4123/3_0/5/rating.gif
+[INFO] 02:46:13 PM   : Using OverallRating image
+[INFO] 02:46:13 PM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
+[INFO] 02:46:13 PM   : Image dimensions [with: 0, height: 0]
+[INFO] 02:46:13 PM   : /bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 02:46:13 PM   : Using SecondaryRating image
+[INFO] 02:46:13 PM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 02:46:13 PM   : Image dimensions [with: 0, height: 0]
+[INFO] 02:46:13 PM   : Checking if all steps were done
+[INFO] 02:46:13 PM   : Not all tasks were completed:
+[INFO] 02:46:13 PM   : grabCssProperties - ok
+[WARN] 02:46:13 PM ! : grabRatingStars - not ok
+[DEMO] 02:46:13 PM   : Need to re-run : yes
+[INFO] 02:46:13 PM   : Thresholds left: 3
+[INFO] 02:46:18 PM   : Event Triggered: onPageSuccess
+[INFO] 02:46:18 PM   : Start grabbing rating stars properties
+[INFO] 02:46:18 PM   : /bvstaging/4123/3_0/5/rating.gif
+[INFO] 02:46:18 PM   : Using OverallRating image
+[INFO] 02:46:18 PM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/rating.gif
+[INFO] 02:46:18 PM   : Image dimensions [with: 125, height: 20]
+[INFO] 02:46:18 PM   : Setting with attribute
+[INFO] 02:46:18 PM   : Setting height attribute
+[INFO] 02:46:18 PM   : Appending image into the document body
+[INFO] 02:46:18 PM   : Drawing rating stars image
+[INFO] 02:46:18 PM   : colorToHex: translating rgb(126, 33, 162) to hex
+[INFO] 02:46:18 PM   : colorToHex: translating rgb(210, 215, 217) to hex
+[INFO] 02:46:18 PM   : /bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 02:46:18 PM   : Using SecondaryRating image
+[INFO] 02:46:18 PM   : Image url: http://pullups.ugc.bazaarvoice.com/bvstaging/4123/3_0/5/ratingSecondary.gif
+[INFO] 02:46:18 PM   : Image dimensions [with: 155, height: 9]
+[INFO] 02:46:18 PM   : Setting with attribute
+[INFO] 02:46:18 PM   : Setting height attribute
+[INFO] 02:46:18 PM   : Appending image into the document body
+[INFO] 02:46:18 PM   : Drawing rating stars image
+[INFO] 02:46:18 PM   : colorToHex: translating rgb(0, 128, 34) to hex
+[INFO] 02:46:18 PM   : colorToHex: translating rgb(179, 179, 179) to hex
+[INFO] 02:46:18 PM   : grabRatingStars: skips: 0; processed: 2
+[INFO] 02:46:18 PM   : Checking if all steps were done
+[INFO] 02:46:18 PM   : Saving Data
+[INFO] 02:46:18 PM   : Results:
+[INFO] 02:46:18 PM   : ========================================
+[INFO] 02:46:18 PM   : 
+{"text":{"DimensionValues":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"15px","font-style":"normal","line-height":"22px","text-transform":"none"},"Lables":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"Links":{"active":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"},"hover":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"},"visited":{"color":"#711399","font-family":"Helvetica, Arial, sans-serif","font-size":"12px","font-style":"normal","line-height":"19px","text-transform":"none"}},"ReviewDates":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"ReviewText":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"ReviewTitles":{"color":"#6e119f","font-family":"BPreplayBold, Helvetica, Arial, sans-serif","font-size":"20px","font-style":"normal","line-height":"30px","text-transform":"none"},"ReviewerName":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"},"RootElement":{"background-color":"rgba(0, 0, 0, 0)","color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","font-weight":"normal","line-height":"19px","text-transform":"none"},"SectionHeader":{"color":"#ffffff","font-family":"Helvetica, Arial, sans-serif","font-size":"18px","font-style":"normal","line-height":"26px","text-transform":"none"},"SectionHeaderControls":{"color":"#959595","font-family":"Helvetica, Arial, sans-serif","font-size":"13px","font-style":"normal","line-height":"19px","text-transform":"none"}},"images":{"OverallRating":{"empty":"#d2d7d9","full":"#7e21a2","size":20},"SecondaryRating":{"empty":"#b3b3b3","full":"#008022","size":9}}}
+[INFO] 02:46:18 PM   : ========================================
+[INFO] 02:46:18 PM   : Completed with:
+[INFO] 02:46:18 PM   : Task: @grabCssProperties [skips: 1; processed: 74]
+[WARN] 02:46:18 PM ! :    Could not access to element using path: .BVRRDisplayContentLinkWrite a
+[INFO] 02:46:18 PM   : Task: @grabRatingStars [skips: 0; processed: 2]
+[INFO] 02:46:18 PM   : Data is saved into the file: /home/andriy/GitRepo/Tools/bv/tools/../data/styles/pullups.json
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.summaryStars.subStyles.full.color : #7e21a2
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.summaryStars.subStyles.full.size : 20
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.summaryStars.subStyles.empty.color : #d2d7d9
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.summaryStars.subStyles.empty.size : 20
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.bars.subStyles.full.color : #008022
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.bars.subStyles.full.size : 9
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.bars.subStyles.empty.color : #b3b3b3
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.bars.subStyles.empty.size : 9
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.reviewStars.subStyles.full.color : #7e21a2
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.reviewStars.subStyles.full.size : 20
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.reviewStars.subStyles.empty.color : #d2d7d9
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.reviewStars.subStyles.empty.size : 20
+[INFO] 02:46:18 PM   : Modified: configuredStyles.fonts.body.lineHeight : 19px
+[INFO] 02:46:18 PM   : Modified: configuredStyles.fonts.body.sampleBackgroundColor : rgba(0, 0, 0, 0)
+[INFO] 02:46:18 PM   : Modified: configuredStyles.fonts.body.color : #959595
+[INFO] 02:46:18 PM   : Modified: configuredStyles.fonts.body.family : Helvetica, Arial, sans-serif
+[INFO] 02:46:18 PM   : Modified: configuredStyles.fonts.body.textTransform : none
+[INFO] 02:46:18 PM   : Modified: configuredStyles.fonts.body.size : 13px
+[INFO] 02:46:18 PM   : Data is saved into the file: /home/andriy/GitRepo/Tools/bv/tools/../data/styles/pullups.bhive
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.summaryStars.subStyles.full.color : #7e21a2
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.summaryStars.subStyles.full.size : 20
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.summaryStars.subStyles.empty.color : #d2d7d9
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.summaryStars.subStyles.empty.size : 20
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.bars.subStyles.full.color : #008022
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.bars.subStyles.full.size : 9
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.bars.subStyles.empty.color : #b3b3b3
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.bars.subStyles.empty.size : 9
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.reviewStars.subStyles.full.color : #7e21a2
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.reviewStars.subStyles.full.size : 20
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.reviewStars.subStyles.empty.color : #d2d7d9
+[INFO] 02:46:18 PM   : Modified: configuredStyles.ratingIcons.reviewStars.subStyles.empty.size : 20
+[INFO] 02:46:18 PM   : Modified: configuredStyles.fonts.body.lineHeight : 19px
+[INFO] 02:46:18 PM   : Modified: configuredStyles.fonts.body.sampleBackgroundColor : rgba(0, 0, 0, 0)
+[INFO] 02:46:18 PM   : Modified: configuredStyles.fonts.body.color : #959595
+[INFO] 02:46:18 PM   : Modified: configuredStyles.fonts.body.family : Helvetica, Arial, sans-serif
+[INFO] 02:46:18 PM   : Modified: configuredStyles.fonts.body.textTransform : none
+[INFO] 02:46:18 PM   : Modified: configuredStyles.fonts.body.size : 13px
+[INFO] 02:46:18 PM   : Data is saved into the file: /home/andriy/GitRepo/Tools/bv/tools/../data/styles/pullups.update

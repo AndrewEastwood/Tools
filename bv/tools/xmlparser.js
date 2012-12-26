@@ -119,7 +119,9 @@ function help () {
 	_helpString += "@clientDomainNames, \n";
 	_helpString += "@displayName, \n";
 	_helpString += "@customerHomePageURL, \n";
-	_helpString += "@encodingKey";
+	_helpString += "@encodingKey, \n";
+	_helpString += "@getETPassword, \n";
+	_helpString += "@getETUserLogin \n";
 
 	console.log(_helpString);
 }
@@ -215,6 +217,16 @@ function getClientCluster (jsonDoc) {
 
 function getClientName (jsonDoc) {
 	return getValue(jsonDoc, "bundle.client.0.$.name");
+}
+
+/* = email config */
+
+function getETUserLogin (jsonDoc) {
+	return getValue(jsonDoc, ":name=userName@value");
+}
+
+function getETPassword (jsonDoc) {
+	return getValue(jsonDoc, ":name=password@value");
 }
 
 /* = common config */
