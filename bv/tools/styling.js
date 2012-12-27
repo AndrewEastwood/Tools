@@ -27,46 +27,62 @@
                     'path' : '.BVRRRootElement',
                     'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 },
+                'RatingSummary' : {
+                    'path' : '.BVRRRatingSummary',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
+                },
                 'ReviewTitles' : {
                     'path' : '.BVRRReviewTitle',
-                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
+                },
+                'SectionHeaderTitle' : {
+                    'path' : '.BVRRDisplayContentTitle',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 },
                 'SectionHeader' : {
-                    'path' : '.BVDITitle ',
-                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                    'path' : '.BVRRDisplayContentHeader',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 },
                 'SectionHeaderControls' : {
-                    'path' : '#BVRRDisplayContentHeaderID ',
-                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                    'path' : '.BVRRDisplayContentSubtitle',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 },
                 'ReviewText' : {
                     'path' : '.BVRRReviewTextContainer',
-                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
+                },
+                'ReviewContent' : {
+                    'path' : "div[class^='BVRRReviewDisplayStyle'][class$='Content']",
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
+                },
+                'ReviewItem' : {
+                    'path' : '.BVRRContentReview',
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 },
                 'ReviewDates' : {
                     'path' : '.BVRRReviewDate',
-                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 },
                 'ReviewerName' : {
                     'path' : '.BVRRUserNickname',
-                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 },
                 'Lables' : {
                     'path' : '.BVRRLabel',
-                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 },
                 'DimensionValues' : {
                     'path' : '.BVRRRatingNormalOutOf',
-                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 },
                 'Links' : {
                     'path' : '.BVRRRootElement a',
-                    'states' : ['hover', 'active', 'visited'],
-                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                    'states' : ['link', 'hover', 'active', 'visited'],
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 },
                 'Buttons' : {
                     'path' : '.BVRRDisplayContentLinkWrite a',
-                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform']
+                    'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 }
             }
         }
@@ -538,7 +554,22 @@
 
         // update bhive document values
         for (var key in bhiveListOfKeysValues)
-            if (typeof(bhiveListOfKeysValues[key][0]) !== "undefined" &&
+            if (Array.isArray(bhiveListOfKeysValues[key])) {
+                var _arr = [];
+                var _tmpVal = false;
+                for (var i = 0; i < bhiveListOfKeysValues[key].length; i++)
+                    if (bhiveListOfKeysValues[key][i][0] === '@') {
+                        _tmpVal = dataListOfKeysValues[bhiveListOfKeysValues[key][i].substr(1)];
+                        if (_tmpVal == "none" || _tmpVal == "normal" || _arr.indexOf(_tmpVal) >= 0)
+                            continue;
+                        else
+                            _arr.push('"' + _tmpVal + '"');
+                    }
+                    else
+                        _arr.push('"' + bhiveListOfKeysValues[key][i] + '"');
+                bhiveListOfKeysValues[key] = '[' + _arr.join(',') + ']';
+            }
+            else if (typeof(bhiveListOfKeysValues[key][0]) !== "undefined" &&
                 bhiveListOfKeysValues[key][0] === '@' &&
                 typeof(dataListOfKeysValues[bhiveListOfKeysValues[key].substr(1)]) !== "undefined") {
                 innerLog("Modified: " + key + " : " + dataListOfKeysValues[bhiveListOfKeysValues[key].substr(1)], "info");
@@ -558,19 +589,11 @@
                 for (var key in bhiveListOfKeysValues)
                     if (bhiveListOfKeysValues[key][0] == '[') {
                         if (bhiveListOfKeysValues[key].length == 4)
-                            output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = []; ";
-                        else {
-                            output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = ";
-                            if (Array.isArray(bhiveListOfKeysValues[key])) {
-                                var _arr = [];
-                                for (var i = 0; i < bhiveListOfKeysValues[key]; i++)
-                                    _arr.push('"' + dataListOfKeysValues[bhiveListOfKeysValues[key][i]] + '"');
-                                output += '[ololo' + arr.join(',') + ']';
-                            } else
-                                output += bhiveListOfKeysValues[key] + "; ";
-                        }
+                            output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = []; \n";
+                        else
+                            output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = "+ bhiveListOfKeysValues[key] + "; \n";
                     } else
-                        output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = '" + bhiveListOfKeysValues[key] + "'; ";
+                        output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = '" + bhiveListOfKeysValues[key] + "'; \n";
                 break;
             }
             case "raw" : {
@@ -613,7 +636,8 @@
             var currentKeypath = (runningKey ? (runningKey + "." + key) : key);
             //innerLog("jsonToKeypathValue: running key is: " + currentKeypath, "info");
             if (Array.isArray(jsonObject[key])) {
-                var _valueArr = [];
+                innerLog('jsonToKeypathValue: array value detected with key: ' + key, 'info');
+                /*ar _valueArr = [];
                 for (var i = 0; i < jsonObject[key].length; i++) {
                     if (jsonObject[key][i][0] = '@')
                         _valueArr.push(jsonObject[key][i]); 
@@ -621,6 +645,8 @@
                         _valueArr.push("'" + jsonObject[key][i] + "'"); 
                 };
                 list[currentKeypath] = _valueArr;//"[" + _valueArr.join(",") + "]";
+                */
+                list[currentKeypath] = jsonObject[key];
             }
             else if (typeof(jsonObject[key]) === "object")
                 jsonToKeypathValue(jsonObject[key], currentKeypath, list);
