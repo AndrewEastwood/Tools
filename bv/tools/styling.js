@@ -44,7 +44,8 @@
                     'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 },
                 'SectionHeaderControls' : {
-                    'path' : '.BVRRDisplayContentSubtitle',
+                    // 'path' : '.BVRRDisplayContentSubtitle', - is not available in the noscript format
+                    'path' : '.BVRRSortAndSearch',
                     'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 },
                 'ReviewText' : {
@@ -84,9 +85,54 @@
                     'path' : '.BVRRDisplayContentLinkWrite a',
                     'cssProps' : ['font-family', 'font-size', 'line-height', 'color', 'font-style', 'text-transform', 'background-color', 'font-weight']
                 }
+            },
+            borders : {
+                'RatingSummary' : {
+                    'path' : '.BVRRRatingSummary',
+                    'cssProps' : ['border-left-style', 'border-top-style', 'border-right-style', 'border-bottom-style', 'border-left-width', 'border-top-width', 'border-right-width', 'border-bottom-width', 'border-left-color', 'border-top-color', 'border-right-color', 'border-bottom-color']
+                },
+                'ContentItem' : {
+                    'path' : ".BVRRContentReview div[class^='BVRRReviewDisplayStyle']",
+                    'cssProps' : ['border-left-style', 'border-top-style', 'border-right-style', 'border-bottom-style', 'border-left-width', 'border-top-width', 'border-right-width', 'border-bottom-width', 'border-left-color', 'border-top-color', 'border-right-color', 'border-bottom-color']
+                },
+                'ContentHeader' : {
+                    'path' : '.BVRRReviewTitleContainer',
+                    'cssProps' : ['border-left-style', 'border-top-style', 'border-right-style', 'border-bottom-style', 'border-left-width', 'border-top-width', 'border-right-width', 'border-bottom-width', 'border-left-color', 'border-top-color', 'border-right-color', 'border-bottom-color']
+                },
+                'ContentSummary' : {
+                    'path' : "div[class^='BVRRReviewDisplayStyle'][class$='Content']",
+                    'cssProps' : ['border-left-style', 'border-top-style', 'border-right-style', 'border-bottom-style', 'border-left-width', 'border-top-width', 'border-right-width', 'border-bottom-width', 'border-left-color', 'border-top-color', 'border-right-color', 'border-bottom-color']
+                },
+                'PrimaryButton' : {
+                    'path' : '.BVRRDisplayContentLinkWrite a',
+                    'cssProps' : ['border-left-style', 'border-top-style', 'border-right-style', 'border-bottom-style', 'border-left-width', 'border-top-width', 'border-right-width', 'border-bottom-width', 'border-left-color', 'border-top-color', 'border-right-color', 'border-bottom-color']
+                },
+                'SecondaryButton' : {
+                    'path' : '.BVRRDisplayContentLinkWrite a',
+                    'cssProps' : ['border-left-style', 'border-top-style', 'border-right-style', 'border-bottom-style', 'border-left-width', 'border-top-width', 'border-right-width', 'border-bottom-width', 'border-left-color', 'border-top-color', 'border-right-color', 'border-bottom-color']
+                }
+            },
+            marginAndPadding : {
+                'RatingSummary' : {
+                    'path' : '.BVRRRatingSummary',
+                    'cssProps' : ['margin-left', 'margin-top', 'margin-right', 'margin-bottom', 'padding-left', 'padding-top', 'padding-right', 'padding-bottom']
+                },
+                'ContentItem' : {
+                    'path' : ".BVRRContentReview div[class^='BVRRReviewDisplayStyle']",
+                    'cssProps' : ['margin-left', 'margin-top', 'margin-right', 'margin-bottom', 'padding-left', 'padding-top', 'padding-right', 'padding-bottom']
+                },
+                'ContentHeader' : {
+                    'path' : '.BVRRReviewTitleContainer',
+                    'cssProps' : ['margin-left', 'margin-top', 'margin-right', 'margin-bottom', 'padding-left', 'padding-top', 'padding-right', 'padding-bottom']
+                },
+                'ContentSummary' : {
+                    'path' : "div[class^='BVRRReviewDisplayStyle'][class$='Content']",
+                    'cssProps' : ['margin-left', 'margin-top', 'margin-right', 'margin-bottom', 'padding-left', 'padding-top', 'padding-right', 'padding-bottom']
+                }
             }
         }
     };
+
     var grabberTasks = {
         grabCssProperties : {
             state: false,
@@ -231,10 +277,24 @@
         innerLog("Event Triggered: onPageSuccess", "info");
         // get css properties
         if (grabberTasks.grabCssProperties.state === false) {
-            var cssProp = grabCssProperties(pageObj, documents.elementsMap, "text");
-            if (typeof(cssProp) == "object") {
-                innerLog("grabCssProperties: skips: " + cssProp.log.skips + "; processed: " + cssProp.log.processed, "info");
-                if (cssProp.log.processed == 0) isNeedToRerun = true;
+            var cssPropTxt = grabCssProperties(pageObj, documents.elementsMap, "text");
+            if (typeof(cssPropTxt) == "object") {
+                innerLog("grabCssProperties: text properties skips: " + cssPropTxt.log.skips + "; processed: " + cssPropTxt.log.processed, "info");
+                if (cssPropTxt.log.processed == 0) isNeedToRerun = true;
+            } else
+                isNeedToRerun = true;
+
+            var cssPropBrd = grabCssProperties(pageObj, documents.elementsMap, "borders");
+            if (typeof(cssPropBrd) == "object") {
+                innerLog("grabCssProperties: border properties skips: " + cssPropBrd.log.skips + "; processed: " + cssPropBrd.log.processed, "info");
+                if (cssPropBrd.log.processed == 0) isNeedToRerun = true;
+            } else
+                isNeedToRerun = true;
+
+            var cssPropMP = grabCssProperties(pageObj, documents.elementsMap, "marginAndPadding");
+            if (typeof(cssPropMP) == "object") {
+                innerLog("grabCssProperties: margins and paddings properties skips: " + cssPropMP.log.skips + "; processed: " + cssPropMP.log.processed, "info");
+                if (cssPropMP.log.processed == 0) isNeedToRerun = true;
             } else
                 isNeedToRerun = true;
         }
@@ -379,6 +439,9 @@
     function grabCssProperties(pageObj, elMap, elementsKey) {
         // fetch css properties usign elementsMap
         innerLog("Start grabbing css properties", "info");
+
+
+
         //console.log(elMap);
         var cssPropsObj = pageObj.webPageObject.evaluate(function(colorToHexFn, elMap) {
 
@@ -424,7 +487,7 @@
                     if (!!currElem.states) {
                         for (var j = 0; j < currElem.states.length; j++) {
                             var cssProp = window.getComputedStyle(elem, currElem.states[j]).getPropertyValue(currElem.cssProps[i]);
-                            if (currElem.cssProps[i] === "color")
+                            if (currElem.cssProps[i] === "color" || (currElem.cssProps[i].indexOf('color') >= 0 && cssProp.indexOf('rgb') == '0'))
                                 cssProp = colorToHexFn(cssProp);
                             _fetchedStyles[elKey][currElem.states[j]][currElem.cssProps[i]] = cssProp;
                             _processed++;
@@ -432,7 +495,7 @@
                     }
                     else {
                         var cssProp = window.getComputedStyle(elem, null).getPropertyValue(currElem.cssProps[i]);
-                        if (currElem.cssProps[i] === "color")
+                        if (currElem.cssProps[i] === "color" || (currElem.cssProps[i].indexOf('color') >= 0 && cssProp.indexOf('rgb') == '0'))
                             cssProp = colorToHexFn(cssProp);
                         _fetchedStyles[elKey][currElem.cssProps[i]] = cssProp;
                         _processed++;
@@ -441,6 +504,7 @@
             }
             return {data : _fetchedStyles, log : {skips : _skips, processed : _processed, skippedItems : _skippedItems}};
         }, colorToHex, elMap[elementsKey]);
+
         if (cssPropsObj.log.skips > 0 && cssPropsObj.log.processed == 0)
             return false;
         grabberTasks.grabCssProperties.state = true;
@@ -553,14 +617,15 @@
         //console.log(dataListOfKeysValues);
 
         // update bhive document values
+        var _tmpVal = false;
         for (var key in bhiveListOfKeysValues)
             if (Array.isArray(bhiveListOfKeysValues[key])) {
                 var _arr = [];
-                var _tmpVal = false;
                 for (var i = 0; i < bhiveListOfKeysValues[key].length; i++)
                     if (bhiveListOfKeysValues[key][i][0] === '@') {
-                        _tmpVal = dataListOfKeysValues[bhiveListOfKeysValues[key][i].substr(1)];
-                        if (_tmpVal == "none" || _tmpVal == "normal" || _arr.indexOf(_tmpVal) >= 0)
+                        //_tmpVal = dataListOfKeysValues[bhiveListOfKeysValues[key][i].substr(1)];
+                        _tmpVal = getValueByKey(bhiveListOfKeysValues[key][i], dataListOfKeysValues);
+                        if (typeof(_tmpVal) === "undefined" || _tmpVal == "none" || _tmpVal == "normal" || _arr.indexOf(_tmpVal) >= 0)
                             continue;
                         else
                             _arr.push('"' + _tmpVal + '"');
@@ -569,12 +634,14 @@
                         _arr.push('"' + bhiveListOfKeysValues[key][i] + '"');
                 bhiveListOfKeysValues[key] = '[' + _arr.join(',') + ']';
             }
-            else if (typeof(bhiveListOfKeysValues[key][0]) !== "undefined" &&
-                bhiveListOfKeysValues[key][0] === '@' &&
-                typeof(dataListOfKeysValues[bhiveListOfKeysValues[key].substr(1)]) !== "undefined") {
-                innerLog("Modified: " + key + " : " + dataListOfKeysValues[bhiveListOfKeysValues[key].substr(1)], "info");
-                bhiveListOfKeysValues[key] = dataListOfKeysValues[bhiveListOfKeysValues[key].substr(1)];
-        }
+            else if (typeof(bhiveListOfKeysValues[key]) === "string" && bhiveListOfKeysValues[key][0] === '@') {
+                _tmpVal = getValueByKey(bhiveListOfKeysValues[key], dataListOfKeysValues);
+                if (typeof(_tmpVal) !== "undefined") {
+                    bhiveListOfKeysValues[key] = _tmpVal;
+                    innerLog("Modified: " + key + " : " + _tmpVal, "info");
+                }
+            }
+        
 
         var output = false;
         switch (format) {
@@ -607,6 +674,30 @@
         }
         // return updated document
         return output;
+    }
+
+    function getValueByKey(key, data, defValue) {
+        
+        if (key.indexOf('|') >= 0) {
+            var keys = key.split('|');
+            var _tmpVal = false;
+            for (var i in keys)
+                if (typeof(keys[i]) !== "undefined") {
+                    if (typeof(keys[i]) === "string" && keys[i][0] === '@') {
+                        _tmpVal = getValueByKey(keys[i].substr(1), data);
+                        if (typeof(_tmpVal) !== "undefined")
+                            return _tmpVal;
+                    }
+                    else {
+                        // some value that is not a key
+                        // maybe some default value
+                        return keys[i];
+                    }
+                }
+            return getValueByKey("@none", data, "PLEASE CHECK THIS LINE!!! PROVIDE DEFAULT VALUE");
+        }
+
+        return data[key.substr(1)] || defValue;
     }
 
     function getCompatibleUnderscoreDocumentKey (key) {
@@ -682,14 +773,16 @@
             return str;
         }
 
-        var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
+        var digitsString = /(.*?)(rgb|rgba)\((.*)\)/.exec(color);
 
-        var red = parseInt(digits[2]);
-        var green = parseInt(digits[3]);
-        var blue = parseInt(digits[4]);
+        var digits = digitsString[3].split(',')
+
+        var red = parseInt(digits[0]);
+        var green = parseInt(digits[1]);
+        var blue = parseInt(digits[2]);
 
         var rgb = blue | (green << 8) | (red << 16);
-        return digits[1] + '#' + lpad(rgb.toString(16), "0", 6);
+        return '#' + lpad(rgb.toString(16), "0", 6);
     };
 
     // inject into window object

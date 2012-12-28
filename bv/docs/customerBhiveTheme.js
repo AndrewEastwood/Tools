@@ -38,20 +38,20 @@
         },
         marginAndPadding: {
             "prs-container": {
-                margin: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 },
-                padding: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 }
+                margin: { uniform: false, bottom: '@marginAndPadding.RatingSummary.margin-bottom', left: '@marginAndPadding.RatingSummary.margin-left', right: '@marginAndPadding.RatingSummary.margin-right', top: '@marginAndPadding.RatingSummary.margin-top' },
+                padding: { uniform: false, bottom: '@marginAndPadding.RatingSummary.padding-bottom', left: '@marginAndPadding.RatingSummary.padding-left', right: '@marginAndPadding.RatingSummary.padding-right', top: '@marginAndPadding.RatingSummary.padding-top' }
             },
             "content-summary": {
-                margin: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 },
-                padding: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 }
+                margin: { uniform: false, bottom: '@marginAndPadding.ContentSummary.margin-bottom', left: '@marginAndPadding.ContentSummary.margin-left', right: '@marginAndPadding.ContentSummary.margin-right', top: '@marginAndPadding.ContentSummary.margin-top' },
+                padding: { uniform: false, bottom: '@marginAndPadding.ContentSummary.padding-bottom', left: '@marginAndPadding.ContentSummary.padding-left', right: '@marginAndPadding.ContentSummary.padding-right', top: '@marginAndPadding.ContentSummary.padding-top' }
             },
             "content-item": {
-                margin: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 },
-                padding: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 }
+                margin: { uniform: false, bottom: '@marginAndPadding.ContentItem.margin-bottom', left: '@marginAndPadding.ContentItem.margin-left', right: '@marginAndPadding.ContentItem.margin-right', top: '@marginAndPadding.ContentItem.margin-top' },
+                padding: { uniform: false, bottom: '@marginAndPadding.ContentItem.padding-bottom', left: '@marginAndPadding.ContentItem.padding-left', right: '@marginAndPadding.ContentItem.padding-right', top: '@marginAndPadding.ContentItem.padding-top' }
             },
             "content-header": {
-                margin: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 },
-                padding: { uniform: false, bottom: 0, left: 0, right: 0, top: 0 }
+                margin: { uniform: false, bottom: '@marginAndPadding.ContentHeader.margin-bottom', left: '@marginAndPadding.ContentHeader.margin-left', right: '@marginAndPadding.ContentHeader.margin-right', top: '@marginAndPadding.ContentHeader.margin-top' },
+                padding: { uniform: false, bottom: '@marginAndPadding.ContentHeader.padding-bottom', left: '@marginAndPadding.ContentHeader.padding-left', right: '@marginAndPadding.ContentHeader.padding-right', top: '@marginAndPadding.ContentHeader.padding-top' }
             }
         },
         fonts: {
@@ -105,7 +105,7 @@
                         size: "@text.Links.link.font-size"
                     }
                 },
-                size: 13
+                size: "@text.Links.link.font-size"
             },
             // review titles
             pageHeader: {
@@ -231,26 +231,26 @@
                 bottomLeftRadius: 3,
                 topRightRadius: 3,
                 bottom: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.PrimaryButton.border-bottom-style|none",
+                    color: "@borders.PrimaryButton.border-bottom-color|transparent",
+                    width: "@borders.PrimaryButton.border-bottom-width|0"
                 },
                 left: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.PrimaryButton.border-left-style|none",
+                    color: "@borders.PrimaryButton.border-left-color|transparent",
+                    width: "@borders.PrimaryButton.border-left-width|0"
                 },
                 right: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.PrimaryButton.border-right-style|none",
+                    color: "@borders.PrimaryButton.border-right-color|transparent",
+                    width: "@borders.PrimaryButton.border-right-width|0"
                 },
                 topLeftRadius: 3,
                 radiiLocked: true,
                 top: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.PrimaryButton.border-top-style|none",
+                    color: "@borders.PrimaryButton.border-top-color|transparent",
+                    width: "@borders.PrimaryButton.border-top-width|0"
                 }
             },
             "prs-container": {
@@ -258,26 +258,26 @@
                 bottomLeftRadius: 0,
                 topRightRadius: 0,
                 bottom: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.RatingSummary.border-bottom-style|none",
+                    color: "@borders.RatingSummary.border-bottom-color|transparent",
+                    width: "@borders.RatingSummary.border-bottom-width|0"
                 },
                 left: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.RatingSummary.border-left-style|none",
+                    color: "@borders.RatingSummary.border-left-color|transparent",
+                    width: "@borders.RatingSummary.border-left-width|0"
                 },
                 right: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.RatingSummary.border-right-style|none",
+                    color: "@borders.RatingSummary.border-right-color|transparent",
+                    width: "@borders.RatingSummary.border-right-width|0"
                 },
                 topLeftRadius: 0,
                 radiiLocked: false,
                 top: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.RatingSummary.border-top-style|none",
+                    color: "@borders.RatingSummary.border-top-color|transparent",
+                    width: "@borders.RatingSummary.border-top-width|0"
                 }
             },
             "button-secondary": {
@@ -285,26 +285,26 @@
                 bottomLeftRadius: 0,
                 topRightRadius: 0,
                 bottom: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.SecondaryButton.border-bottom-style|none",
+                    color: "@borders.SecondaryButton.border-bottom-color|transparent",
+                    width: "@borders.SecondaryButton.border-bottom-width|0"
                 },
                 left: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.SecondaryButton.border-left-style|none",
+                    color: "@borders.SecondaryButton.border-left-color|transparent",
+                    width: "@borders.SecondaryButton.border-left-width|0"
                 },
                 right: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.SecondaryButton.border-right-style|none",
+                    color: "@borders.SecondaryButton.border-right-color|transparent",
+                    width: "@borders.SecondaryButton.border-right-width|0"
                 },
                 topLeftRadius: 0,
                 radiiLocked: false,
                 top: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.SecondaryButton.border-top-style|none",
+                    color: "@borders.SecondaryButton.border-top-color|transparent",
+                    width: "@borders.SecondaryButton.border-top-width|0"
                 }
             },
             "content-summary": {
@@ -312,26 +312,26 @@
                 bottomLeftRadius: 0,
                 topRightRadius: 0,
                 bottom: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.ContentSummary.border-bottom-style|none",
+                    color: "@borders.ContentSummary.border-bottom-color|transparent",
+                    width: "@borders.ContentSummary.border-bottom-width|0"
                 },
                 left: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.ContentSummary.border-left-style|none",
+                    color: "@borders.ContentSummary.border-left-color|transparent",
+                    width: "@borders.ContentSummary.border-left-width|0"
                 },
                 right: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.ContentSummary.border-right-style|none",
+                    color: "@borders.ContentSummary.border-right-color|transparent",
+                    width: "@borders.ContentSummary.border-right-width|0"
                 },
                 topLeftRadius: 0,
                 radiiLocked: false,
                 top: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.ContentSummary.border-top-style|none",
+                    color: "@borders.ContentSummary.border-top-color|transparent",
+                    width: "@borders.ContentSummary.border-top-width|0"
                 }
             },
             "content-item": {
@@ -339,53 +339,26 @@
                 bottomLeftRadius: 0,
                 topRightRadius: 0,
                 bottom: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.ContentItem.border-bottom-style|none",
+                    color: "@borders.ContentItem.border-bottom-color|transparent",
+                    width: "@borders.ContentItem.border-bottom-width|0"
                 },
                 left: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.ContentItem.border-left-style|none",
+                    color: "@borders.ContentItem.border-left-color|transparent",
+                    width: "@borders.ContentItem.border-left-width|0"
                 },
                 right: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.ContentItem.border-right-style|none",
+                    color: "@borders.ContentItem.border-right-color|transparent",
+                    width: "@borders.ContentItem.border-right-width|0"
                 },
                 topLeftRadius: 0,
                 radiiLocked: false,
                 top: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
-                }
-            },
-            "content-header": {
-                bottomRightRadius: 0,
-                bottomLeftRadius: 0,
-                topRightRadius: 0,
-                bottom: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
-                },
-                left: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
-                },
-                right: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
-                },
-                topLeftRadius: 0,
-                radiiLocked: false,
-                top: {
-                    style: "none",
-                    color: "transparent",
-                    width: 0
+                    style: "@borders.ContentItem.border-top-style|none",
+                    color: "@borders.ContentItem.border-top-color|transparent",
+                    width: "@borders.ContentItem.border-top-width|0"
                 }
             }
         }
