@@ -26,9 +26,9 @@
             "prs-container" : {color : "@text.RatingSummary.background-color"},
             "section-header-controls" : {color : "transparent"},
             button : {
-                color : "@text.Links.active.color",
+                color : "@images.OverallRating.full",
                 subStyles: {
-                    primary: { color: "@text.Links.active.color" },
+                    primary: { color: "@images.OverallRating.full" },
                     hover: { color: "@text.Links.active.color" }
                 }
             },
@@ -38,26 +38,26 @@
         },
         marginAndPadding: {
             "prs-container": {
-                margin: { uniform: false, bottom: '@marginAndPadding.RatingSummary.margin-bottom', left: '@marginAndPadding.RatingSummary.margin-left', right: '@marginAndPadding.RatingSummary.margin-right', top: '@marginAndPadding.RatingSummary.margin-top' },
-                padding: { uniform: false, bottom: '@marginAndPadding.RatingSummary.padding-bottom', left: '@marginAndPadding.RatingSummary.padding-left', right: '@marginAndPadding.RatingSummary.padding-right', top: '@marginAndPadding.RatingSummary.padding-top' }
+                margin: { uniform: false, bottom: 5, left: 5, right: 5, top: 5 },
+                padding: { uniform: false, bottom: 5, left: 5, right: 5, top: 5 }
             },
             "content-summary": {
-                margin: { uniform: false, bottom: '@marginAndPadding.ContentSummary.margin-bottom', left: '@marginAndPadding.ContentSummary.margin-left', right: '@marginAndPadding.ContentSummary.margin-right', top: '@marginAndPadding.ContentSummary.margin-top' },
-                padding: { uniform: false, bottom: '@marginAndPadding.ContentSummary.padding-bottom', left: '@marginAndPadding.ContentSummary.padding-left', right: '@marginAndPadding.ContentSummary.padding-right', top: '@marginAndPadding.ContentSummary.padding-top' }
+                margin: { uniform: false, bottom: 5, left: 5, right: 5, top: 5 },
+                padding: { uniform: false, bottom: 5, left: 5, right: 5, top: 5 }
             },
             "content-item": {
-                margin: { uniform: false, bottom: '@marginAndPadding.ContentItem.margin-bottom', left: '@marginAndPadding.ContentItem.margin-left', right: '@marginAndPadding.ContentItem.margin-right', top: '@marginAndPadding.ContentItem.margin-top' },
-                padding: { uniform: false, bottom: '@marginAndPadding.ContentItem.padding-bottom', left: '@marginAndPadding.ContentItem.padding-left', right: '@marginAndPadding.ContentItem.padding-right', top: '@marginAndPadding.ContentItem.padding-top' }
+                margin: { uniform: false, bottom: 5, left: 5, right: 5, top: 5 },
+                padding: { uniform: false, bottom: 5, left: 5, right: 5, top: 5 }
             },
             "content-header": {
-                margin: { uniform: false, bottom: '@marginAndPadding.ContentHeader.margin-bottom', left: '@marginAndPadding.ContentHeader.margin-left', right: '@marginAndPadding.ContentHeader.margin-right', top: '@marginAndPadding.ContentHeader.margin-top' },
-                padding: { uniform: false, bottom: '@marginAndPadding.ContentHeader.padding-bottom', left: '@marginAndPadding.ContentHeader.padding-left', right: '@marginAndPadding.ContentHeader.padding-right', top: '@marginAndPadding.ContentHeader.padding-top' }
+                margin: { uniform: false, bottom: 5, left: 5, right: 5, top: 5 },
+                padding: { uniform: false, bottom: 5, left: 5, right: 5, top: 5 }
             }
         },
         fonts: {
             body: {
                 lineHeight: '@text.RootElement.line-height',
-                sampleBackgroundColor: "@text.RootElement.background-color",
+                // sampleBackgroundColor: "@text.RootElement.background-color",
                 color: "@text.RootElement.color",
                 family: "@text.RootElement.font-family",
                 //// ?? familyID: "sniffedFontFamily1637882686",
@@ -67,7 +67,7 @@
             },
             button: {
                 lineHeight: "@text.Links.link.line-height",
-                sampleBackgroundColor: "@text.Links.link.color",
+                // sampleBackgroundColor: "@text.Links.link.color",
                 color: "#FFFFFF",
                 family: "@text.Links.link.font-family",
                 // ?? familyID: "fontFamily2",
@@ -76,7 +76,7 @@
                 subStyles: {
                     button: {
                         lineHeight: "@text.Links.link.line-height",
-                        sampleBackgroundColor: "@text.Links.link.color",
+                        // sampleBackgroundColor: "@text.Links.link.color",
                         color: "#FFFFFF",
                         family: "@text.Links.link.font-family",
                         // ?? familyID: "sniffedFontFamily1637882686",
@@ -86,7 +86,7 @@
                     },
                     active: {
                         lineHeight: "@text.Links.link.line-height",
-                        sampleBackgroundColor: "@text.Links.link.color",
+                        // sampleBackgroundColor: "@text.Links.link.color",
                         color: "#FFFFFF",
                         family: "@text.Links.link.font-family",
                         // ?? familyID: "sniffedFontFamily1637882686",
@@ -96,7 +96,7 @@
                     },
                     hover: {
                         lineHeight: "@text.Links.link.line-height",
-                        sampleBackgroundColor: "@text.Links.link.color",
+                        // sampleBackgroundColor: "@text.Links.link.color",
                         color: "#FFFFFF",
                         family: "@text.Links.link.font-family",
                         // ?? familyID: "sniffedFontFamily1637882686",
@@ -110,7 +110,7 @@
             // review titles
             pageHeader: {
                 lineHeight: "@text.ReviewTitles.line-height",
-                sampleBackgroundColor: "@text.ReviewTitles.background-color",
+                // sampleBackgroundColor: "@text.ReviewTitles.background-color",
                 color: "@text.ReviewTitles.color",
                 family: "@text.ReviewTitles.font-family",
                 // ?? familyID: "sniffedFontFamily1637882686",
@@ -120,7 +120,7 @@
             },
             ugcDate: {
                 lineHeight: '@text.ReviewDates.line-height',
-                sampleBackgroundColor: "@text.ReviewDates.background-color",
+                // sampleBackgroundColor: "@text.ReviewDates.background-color",
                 color: "@text.ReviewDates.color",
                 family: "@text.ReviewDates.font-family",
                 // ?? familyID: "sniffedFontFamily1637882686",
@@ -130,7 +130,7 @@
             },
             sectionHeader: {
                 lineHeight: "@text.SectionHeaderTitle.line-height",
-                sampleBackgroundColor: "@text.SectionHeaderTitle.background-color",
+                // sampleBackgroundColor: "@text.SectionHeaderTitle.background-color",
                 color: "@text.SectionHeaderTitle.color",
                 family: "@text.SectionHeaderTitle.font-family",
                 // ?? familyID: "sniffedFontFamily1637882686",
@@ -147,7 +147,7 @@
                 subStyles: {
                     visited: {
                         lineHeight: "@text.Links.visited.line-height",
-                        sampleBackgroundColor: "@text.Links.visited.background-color",
+                        // sampleBackgroundColor: "@text.Links.visited.background-color",
                         color: "@text.Links.visited.color",
                         family: "Arial, sans-serif",
                         // ?? familyID: "sniffedFontFamily1637882686",
@@ -157,7 +157,7 @@
                     },
                     link: {
                         lineHeight: "@text.Links.link.line-height",
-                        sampleBackgroundColor: "@text.Links.link.background-color",
+                        // sampleBackgroundColor: "@text.Links.link.background-color",
                         color: "@text.Links.link.color",
                         family: "Arial, sans-serif",
                         // ?? familyID: "sniffedFontFamily1637882686",
@@ -167,7 +167,7 @@
                     },
                     active: {
                         lineHeight: "@text.Links.active.line-height",
-                        sampleBackgroundColor: "@text.Links.active.background-color",
+                        // sampleBackgroundColor: "@text.Links.active.background-color",
                         color: "@text.Links.active.color",
                         family: "Arial, sans-serif",
                         // ?? familyID: "sniffedFontFamily1637882686",
@@ -177,7 +177,7 @@
                     },
                     hover: {
                         lineHeight: "@text.Links.hover.line-height",
-                        sampleBackgroundColor: "@text.Links.hover.background-color",
+                        // sampleBackgroundColor: "@text.Links.hover.background-color",
                         color: "@text.Links.hover.color",
                         family: "Arial, sans-serif",
                         // ?? familyID: "sniffedFontFamily1637882686",
@@ -190,7 +190,7 @@
             },
             labels: {
                 lineHeight: "@text.Lables.line-height",
-                sampleBackgroundColor: "@text.Lables.background-color",
+                // sampleBackgroundColor: "@text.Lables.background-color",
                 color: "@text.Lables.color",
                 family: "@text.Lables.font-family",
                 textTransform: "@text.Lables.text-transform",
@@ -199,7 +199,7 @@
             },
             dimensionValues: {
                 lineHeight: "@text.DimensionValues.line-height",
-                sampleBackgroundColor: "@text.DimensionValues.background-color",
+                // sampleBackgroundColor: "@text.DimensionValues.background-color",
                 color: "@text.DimensionValues.color",
                 family: "@text.DimensionValues.font-family",
                 textTransform: "@text.DimensionValues.text-transform",
@@ -208,7 +208,7 @@
             },
             sectionHeaderControls: {
                 lineHeight: "@text.SectionHeaderControls.line-height",
-                sampleBackgroundColor: "@text.SectionHeaderControls.background-color",
+                // sampleBackgroundColor: "@text.SectionHeaderControls.background-color",
                 color: "@text.SectionHeaderControls.color",
                 family: "@text.SectionHeaderControls.font-family",
                 textTransform: "@text.SectionHeaderControls.text-transform",
@@ -217,7 +217,7 @@
             },
             ugcName: {
                 lineHeight: "@text.ReviewerName.line-height",
-                sampleBackgroundColor: "@text.ReviewerName.background-color",
+                // sampleBackgroundColor: "@text.ReviewerName.background-color",
                 color: "@text.ReviewerName.color",
                 family: "@text.ReviewerName.font-family",
                 textTransform: "@text.ReviewerName.text-transform",

@@ -1,0 +1,653 @@
+
+[INFO] 12:12:48 PM   : Setup
+[INFO] 12:12:48 PM   : Using theme file : 1
+[INFO] 12:12:48 PM   : --- received data: /home/andriy/GitRepo/Tools/bv/tools/../docs/customerBhiveTheme1.js : length = 20463
+[INFO] 12:12:48 PM   : --- client name: JohnDeere
+[INFO] 12:12:48 PM   : --- host name: JohnDeere.ugc.bazaarvoice.com
+[INFO] 12:12:48 PM   : --- display code: 1507
+[INFO] 12:12:48 PM   : --- using api host name: yes
+[INFO] 12:12:48 PM   : --- test environment : bvstaging
+[INFO] 12:12:48 PM   : --- product external id : test1
+[INFO] 12:12:48 PM   : --- implementation id : 
+[INFO] 12:12:48 PM   : Working with: http://JohnDeere.ugc.bazaarvoice.com/bvstaging/1507/test1/reviews.htm?format=noscript
+[SUCCESS] 12:12:48 PM   : Status received = success
+[INFO] 12:12:48 PM   : Event Triggered: onPageSuccess
+[INFO] 12:12:48 PM   : Start grabbing css properties
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(218, 218, 218) to hex >> #DADADA
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(255, 255, 255) to hex >> #FFFFFF
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(166, 166, 166) to hex >> #A6A6A6
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(54, 124, 43) to hex >> #367C2B
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(54, 124, 43) to hex >> #367C2B
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(54, 124, 43) to hex >> #367C2B
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(54, 124, 43) to hex >> #367C2B
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : colorToHex: translating rgba(0, 0, 0, 0) to hex >> transparent
+[INFO] 12:12:48 PM   : Could not access to element using path: .BVRRDisplayContentLinkWrite a
+[INFO] 12:12:48 PM   : grabCssProperties: text properties skips: 1; processed: 136
+[INFO] 12:12:48 PM   : Start grabbing css properties
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : colorToHex: translating rgb(51, 51, 51) to hex >> #333333
+[INFO] 12:12:48 PM   : Could not access to element using path: .BVRRDisplayContentLinkWrite a
+[INFO] 12:12:48 PM   : Could not access to element using path: .BVRRDisplayContentLinkWrite a
+[INFO] 12:12:48 PM   : grabCssProperties: border properties skips: 2; processed: 48
+[INFO] 12:12:48 PM   : Start grabbing css properties
+[INFO] 12:12:48 PM   : grabCssProperties: margins and paddings properties skips: 0; processed: 32
+[INFO] 12:12:48 PM   : Start grabbing rating stars properties
+[INFO] 12:12:48 PM   : /bvstaging/1507/3_0/5/rating.gif
+[INFO] 12:12:48 PM   : Using OverallRating image
+[INFO] 12:12:48 PM   : Image url: http://johndeere.ugc.bazaarvoice.com/bvstaging/1507/3_0/5/rating.gif
+[INFO] 12:12:48 PM   : Image dimensions [with: 0, height: 0]
+[INFO] 12:12:48 PM   : /bvstaging/1507/3_0/5/ratingSecondary.gif
+[INFO] 12:12:48 PM   : Using SecondaryRating image
+[INFO] 12:12:48 PM   : Image url: http://johndeere.ugc.bazaarvoice.com/bvstaging/1507/3_0/5/ratingSecondary.gif
+[INFO] 12:12:48 PM   : Image dimensions [with: 0, height: 0]
+[INFO] 12:12:48 PM   : Checking if all steps were done
+[INFO] 12:12:48 PM   : Not all tasks were completed:
+[INFO] 12:12:48 PM   : grabCssProperties - ok
+[WARN] 12:12:48 PM ! : grabRatingStars - not ok
+[DEMO] 12:12:48 PM   : Need to re-run : yes
+[INFO] 12:12:48 PM   : Thresholds left: 3
+[INFO] 12:12:53 PM   : Event Triggered: onPageSuccess
+[INFO] 12:12:53 PM   : Start grabbing rating stars properties
+[INFO] 12:12:53 PM   : /bvstaging/1507/3_0/5/rating.gif
+[INFO] 12:12:53 PM   : Using OverallRating image
+[INFO] 12:12:53 PM   : Image url: http://johndeere.ugc.bazaarvoice.com/bvstaging/1507/3_0/5/rating.gif
+[INFO] 12:12:53 PM   : Image dimensions [with: 70, height: 13]
+[INFO] 12:12:53 PM   : Setting with attribute
+[INFO] 12:12:53 PM   : Setting height attribute
+[INFO] 12:12:53 PM   : Appending image into the document body
+[INFO] 12:12:53 PM   : Drawing rating stars image
+[INFO] 12:12:53 PM   : colorToHex: translating rgb(54, 124, 43) to hex >> #367C2B
+[INFO] 12:12:53 PM   : colorToHex: translating rgb(203, 203, 203) to hex >> #CBCBCB
+[INFO] 12:12:53 PM   : /bvstaging/1507/3_0/5/ratingSecondary.gif
+[INFO] 12:12:53 PM   : Using SecondaryRating image
+[INFO] 12:12:53 PM   : Image url: http://johndeere.ugc.bazaarvoice.com/bvstaging/1507/3_0/5/ratingSecondary.gif
+[INFO] 12:12:53 PM   : Image dimensions [with: 100, height: 6]
+[INFO] 12:12:53 PM   : Setting with attribute
+[INFO] 12:12:53 PM   : Setting height attribute
+[INFO] 12:12:53 PM   : Appending image into the document body
+[INFO] 12:12:53 PM   : Drawing rating stars image
+[INFO] 12:12:53 PM   : colorToHex: translating rgb(54, 124, 43) to hex >> #367C2B
+[INFO] 12:12:53 PM   : colorToHex: translating rgb(255, 255, 255) to hex >> #FFFFFF
+[INFO] 12:12:53 PM   : grabRatingStars: skips: 0; processed: 2
+[INFO] 12:12:53 PM   : Checking if all steps were done
+[INFO] 12:12:53 PM   : Saving Data
+[INFO] 12:12:53 PM   : Results:
+[INFO] 12:12:53 PM   : ========================================
+[INFO] 12:12:53 PM   : 
+{"text":{"DimensionValues":{"background-color":"transparent","color":"#333333","font-family":"CalibriBold, CalibriBold_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"bold","line-height":"25px","text-transform":"none"},"Lables":{"background-color":"transparent","color":"#333333","font-family":"CalibriBold, CalibriBold_sub, Arial, sans-serif","font-size":"13px","font-style":"normal","font-weight":"bold","line-height":"18px","text-transform":"none"},"Links":{"active":{"background-color":"transparent","color":"#367C2B","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"normal","line-height":"21px","text-transform":"none"},"hover":{"background-color":"transparent","color":"#367C2B","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"normal","line-height":"21px","text-transform":"none"},"link":{"background-color":"transparent","color":"#367C2B","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"normal","line-height":"21px","text-transform":"none"},"visited":{"background-color":"transparent","color":"#367C2B","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"normal","line-height":"21px","text-transform":"none"}},"RatingSummary":{"background-color":"transparent","color":"#333333","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"normal","line-height":"21px","text-transform":"none"},"ReviewContent":{"background-color":"transparent","color":"#333333","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"normal","line-height":"21px","text-transform":"none"},"ReviewDates":{"background-color":"transparent","color":"#A6A6A6","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"11px","font-style":"normal","font-weight":"normal","line-height":"13px","text-transform":"none"},"ReviewItem":{"background-color":"#FFFFFF","color":"#333333","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"normal","line-height":"21px","text-transform":"none"},"ReviewText":{"background-color":"transparent","color":"#333333","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"normal","line-height":"21px","text-transform":"none"},"ReviewTitles":{"background-color":"transparent","color":"#333333","font-family":"CalibriBold, CalibriBold_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"bold","line-height":"normal","text-transform":"none"},"ReviewerName":{"background-color":"transparent","color":"#333333","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"13px","font-style":"normal","font-weight":"normal","line-height":"18px","text-transform":"none"},"RootElement":{"background-color":"transparent","color":"#333333","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"normal","line-height":"21px","text-transform":"none"},"SectionHeader":{"background-color":"#DADADA","color":"#333333","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"normal","line-height":"21px","text-transform":"none"},"SectionHeaderControls":{"background-color":"transparent","color":"#333333","font-family":"CalibriRegular, CalibriRegular_sub, Arial, sans-serif","font-size":"14px","font-style":"normal","font-weight":"normal","line-height":"21px","text-transform":"none"},"SectionHeaderTitle":{"background-color":"transparent","color":"#333333","font-family":"CalibriBold, CalibriBold_sub, Arial, sans-serif","font-size":"12px","font-style":"normal","font-weight":"bold","line-height":"normal","text-transform":"uppercase"}},"borders":{"ContentHeader":{"border-bottom-color":"#333333","border-bottom-style":"none","border-bottom-width":"0px","border-left-color":"#333333","border-left-style":"none","border-left-width":"0px","border-right-color":"#333333","border-right-style":"none","border-right-width":"0px","border-top-color":"#333333","border-top-style":"none","border-top-width":"0px"},"ContentItem":{"border-bottom-color":"#333333","border-bottom-style":"none","border-bottom-width":"0px","border-left-color":"#333333","border-left-style":"none","border-left-width":"0px","border-right-color":"#333333","border-right-style":"none","border-right-width":"0px","border-top-color":"#333333","border-top-style":"none","border-top-width":"0px"},"ContentSummary":{"border-bottom-color":"#333333","border-bottom-style":"none","border-bottom-width":"0px","border-left-color":"#333333","border-left-style":"none","border-left-width":"0px","border-right-color":"#333333","border-right-style":"none","border-right-width":"0px","border-top-color":"#333333","border-top-style":"none","border-top-width":"0px"},"RatingSummary":{"border-bottom-color":"#333333","border-bottom-style":"none","border-bottom-width":"0px","border-left-color":"#333333","border-left-style":"none","border-left-width":"0px","border-right-color":"#333333","border-right-style":"none","border-right-width":"0px","border-top-color":"#333333","border-top-style":"none","border-top-width":"0px"}},"marginAndPadding":{"ContentHeader":{"margin-bottom":"0px","margin-left":"0px","margin-right":"0px","margin-top":"0px","padding-bottom":"0px","padding-left":"0px","padding-right":"0px","padding-top":"0px"},"ContentItem":{"margin-bottom":"0px","margin-left":"0px","margin-right":"0px","margin-top":"0px","padding-bottom":"0px","padding-left":"20px","padding-right":"20px","padding-top":"20px"},"ContentSummary":{"margin-bottom":"0px","margin-left":"0px","margin-right":"0px","margin-top":"0px","padding-bottom":"0px","padding-left":"0px","padding-right":"0px","padding-top":"0px"},"RatingSummary":{"margin-bottom":"0px","margin-left":"0px","margin-right":"0px","margin-top":"0px","padding-bottom":"0px","padding-left":"0px","padding-right":"0px","padding-top":"0px"}},"images":{"OverallRating":{"empty":"#CBCBCB","full":"#367C2B","size":13},"SecondaryRating":{"empty":"#FFFFFF","full":"#367C2B","size":6}}}
+[INFO] 12:12:53 PM   : ========================================
+[INFO] 12:12:53 PM   : Completed with:
+[INFO] 12:12:53 PM   : Task: @grabCssProperties [skips: 0; processed: 32]
+[INFO] 12:12:53 PM   : Task: @grabRatingStars [skips: 0; processed: 2]
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : jsonToKeypathValue: array value detected with key: characterStyles
+[INFO] 12:12:53 PM   : Return value is: #367C2B typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.ratingIcons.summaryStars.subStyles.full.color : #367C2B
+[INFO] 12:12:53 PM   : Return value is: 13 typeof = number
+[INFO] 12:12:53 PM   : Modified: configuredStyles.ratingIcons.summaryStars.subStyles.full.size : 13
+[INFO] 12:12:53 PM   : Return value is: #CBCBCB typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.ratingIcons.summaryStars.subStyles.empty.color : #CBCBCB
+[INFO] 12:12:53 PM   : Return value is: 13 typeof = number
+[INFO] 12:12:53 PM   : Modified: configuredStyles.ratingIcons.summaryStars.subStyles.empty.size : 13
+[INFO] 12:12:53 PM   : Return value is: #367C2B typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.ratingIcons.bars.subStyles.full.color : #367C2B
+[INFO] 12:12:53 PM   : Return value is: 6 typeof = number
+[INFO] 12:12:53 PM   : Modified: configuredStyles.ratingIcons.bars.subStyles.full.size : 6
+[INFO] 12:12:53 PM   : Return value is: #FFFFFF typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.ratingIcons.bars.subStyles.empty.color : #FFFFFF
+[INFO] 12:12:53 PM   : Return value is: 6 typeof = number
+[INFO] 12:12:53 PM   : Modified: configuredStyles.ratingIcons.bars.subStyles.empty.size : 6
+[INFO] 12:12:53 PM   : Return value is: #367C2B typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.ratingIcons.reviewStars.subStyles.full.color : #367C2B
+[INFO] 12:12:53 PM   : Return value is: 13 typeof = number
+[INFO] 12:12:53 PM   : Modified: configuredStyles.ratingIcons.reviewStars.subStyles.full.size : 13
+[INFO] 12:12:53 PM   : Return value is: #CBCBCB typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.ratingIcons.reviewStars.subStyles.empty.color : #CBCBCB
+[INFO] 12:12:53 PM   : Return value is: 13 typeof = number
+[INFO] 12:12:53 PM   : Modified: configuredStyles.ratingIcons.reviewStars.subStyles.empty.size : 13
+[INFO] 12:12:53 PM   : Return value is: #DADADA typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.backgroundTab.section-header.color : #DADADA
+[INFO] 12:12:53 PM   : Return value is: transparent typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.backgroundTab.prs-container.color : transparent
+[INFO] 12:12:53 PM   : Return value is: #367C2B typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.backgroundTab.button.color : #367C2B
+[INFO] 12:12:53 PM   : Return value is: #367C2B typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.backgroundTab.button.subStyles.primary.color : #367C2B
+[INFO] 12:12:53 PM   : Return value is: #367C2B typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.backgroundTab.button.subStyles.hover.color : #367C2B
+[INFO] 12:12:53 PM   : Return value is: transparent typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.backgroundTab.content-summary.color : transparent
+[INFO] 12:12:53 PM   : Return value is: #FFFFFF typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.backgroundTab.content-item.color : #FFFFFF
+[INFO] 12:12:53 PM   : Return value is: transparent typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.backgroundTab.content-header.color : transparent
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.prs-container.margin.bottom : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.prs-container.margin.left : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.prs-container.margin.right : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.prs-container.margin.top : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.prs-container.padding.bottom : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.prs-container.padding.left : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.prs-container.padding.right : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.prs-container.padding.top : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-summary.margin.bottom : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-summary.margin.left : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-summary.margin.right : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-summary.margin.top : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-summary.padding.bottom : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-summary.padding.left : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-summary.padding.right : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-summary.padding.top : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-item.margin.bottom : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-item.margin.left : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-item.margin.right : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-item.margin.top : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-item.padding.bottom : 0
+[INFO] 12:12:53 PM   : Return value is: 20px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-item.padding.left : 20
+[INFO] 12:12:53 PM   : Return value is: 20px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-item.padding.right : 20
+[INFO] 12:12:53 PM   : Return value is: 20px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-item.padding.top : 20
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-header.margin.bottom : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-header.margin.left : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-header.margin.right : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-header.margin.top : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-header.padding.bottom : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-header.padding.left : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-header.padding.right : 0
+[INFO] 12:12:53 PM   : Return value is: 0px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.marginAndPadding.content-header.padding.top : 0
+[INFO] 12:12:53 PM   : Return value is: 21px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.body.lineHeight : 21
+[INFO] 12:12:53 PM   : Return value is: #333333 typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.body.color : #333333
+[INFO] 12:12:53 PM   : Return value is: CalibriRegular, CalibriRegular_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.body.family : CalibriRegular, CalibriRegular_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.body.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.body.size : 14
+[INFO] 12:12:53 PM   : Return value is: 21px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.lineHeight : 21
+[INFO] 12:12:53 PM   : Return value is: CalibriRegular, CalibriRegular_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.family : CalibriRegular, CalibriRegular_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: 21px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.subStyles.button.lineHeight : 21
+[INFO] 12:12:53 PM   : Return value is: CalibriRegular, CalibriRegular_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.subStyles.button.family : CalibriRegular, CalibriRegular_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.subStyles.button.size : 14
+[INFO] 12:12:53 PM   : Return value is: 21px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.subStyles.active.lineHeight : 21
+[INFO] 12:12:53 PM   : Return value is: CalibriRegular, CalibriRegular_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.subStyles.active.family : CalibriRegular, CalibriRegular_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.subStyles.active.size : 14
+[INFO] 12:12:53 PM   : Return value is: 21px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.subStyles.hover.lineHeight : 21
+[INFO] 12:12:53 PM   : Return value is: CalibriRegular, CalibriRegular_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.subStyles.hover.family : CalibriRegular, CalibriRegular_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.subStyles.hover.size : 14
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.button.size : 14
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.pageHeader.lineHeight : normal
+[INFO] 12:12:53 PM   : Return value is: #333333 typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.pageHeader.color : #333333
+[INFO] 12:12:53 PM   : Return value is: CalibriBold, CalibriBold_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.pageHeader.family : CalibriBold, CalibriBold_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.pageHeader.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: bold typeof = string
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.pageHeader.size : 14
+[INFO] 12:12:53 PM   : Return value is: 13px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.ugcDate.lineHeight : 13
+[INFO] 12:12:53 PM   : Return value is: #A6A6A6 typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.ugcDate.color : #A6A6A6
+[INFO] 12:12:53 PM   : Return value is: CalibriRegular, CalibriRegular_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.ugcDate.family : CalibriRegular, CalibriRegular_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.ugcDate.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.sectionHeader.lineHeight : normal
+[INFO] 12:12:53 PM   : Return value is: #333333 typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.sectionHeader.color : #333333
+[INFO] 12:12:53 PM   : Return value is: CalibriBold, CalibriBold_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.sectionHeader.family : CalibriBold, CalibriBold_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: uppercase typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.sectionHeader.textTransform : uppercase
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Return value is: 12px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.sectionHeader.size : 12
+[INFO] 12:12:53 PM   : Return value is: 21px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.lineHeight : 21
+[INFO] 12:12:53 PM   : Return value is: CalibriRegular, CalibriRegular_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.family : CalibriRegular, CalibriRegular_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: 21px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.visited.lineHeight : 21
+[INFO] 12:12:53 PM   : Return value is: #367C2B typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.visited.color : #367C2B
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.visited.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.visited.size : 14
+[INFO] 12:12:53 PM   : Return value is: 21px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.link.lineHeight : 21
+[INFO] 12:12:53 PM   : Return value is: #367C2B typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.link.color : #367C2B
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.link.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.link.size : 14
+[INFO] 12:12:53 PM   : Return value is: 21px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.active.lineHeight : 21
+[INFO] 12:12:53 PM   : Return value is: #367C2B typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.active.color : #367C2B
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.active.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.active.size : 14
+[INFO] 12:12:53 PM   : Return value is: 21px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.hover.lineHeight : 21
+[INFO] 12:12:53 PM   : Return value is: #367C2B typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.hover.color : #367C2B
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.hover.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.subStyles.hover.size : 14
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.link.size : 14
+[INFO] 12:12:53 PM   : Return value is: 18px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.labels.lineHeight : 18
+[INFO] 12:12:53 PM   : Return value is: #333333 typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.labels.color : #333333
+[INFO] 12:12:53 PM   : Return value is: CalibriBold, CalibriBold_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.labels.family : CalibriBold, CalibriBold_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.labels.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: bold typeof = string
+[INFO] 12:12:53 PM   : Return value is: 13px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.labels.size : 13
+[INFO] 12:12:53 PM   : Return value is: 25px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.dimensionValues.lineHeight : 25
+[INFO] 12:12:53 PM   : Return value is: #333333 typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.dimensionValues.color : #333333
+[INFO] 12:12:53 PM   : Return value is: CalibriBold, CalibriBold_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.dimensionValues.family : CalibriBold, CalibriBold_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.dimensionValues.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: bold typeof = string
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.dimensionValues.size : 14
+[INFO] 12:12:53 PM   : Return value is: 21px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.sectionHeaderControls.lineHeight : 21
+[INFO] 12:12:53 PM   : Return value is: #333333 typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.sectionHeaderControls.color : #333333
+[INFO] 12:12:53 PM   : Return value is: CalibriRegular, CalibriRegular_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.sectionHeaderControls.family : CalibriRegular, CalibriRegular_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.sectionHeaderControls.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: 14px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.sectionHeaderControls.size : 14
+[INFO] 12:12:53 PM   : Return value is: 18px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.ugcName.lineHeight : 18
+[INFO] 12:12:53 PM   : Return value is: #333333 typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.ugcName.color : #333333
+[INFO] 12:12:53 PM   : Return value is: CalibriRegular, CalibriRegular_sub, Arial, sans-serif typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.ugcName.family : CalibriRegular, CalibriRegular_sub, Arial, sans-serif
+[INFO] 12:12:53 PM   : Return value is: none typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.ugcName.textTransform : none
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: normal typeof = string
+[INFO] 12:12:53 PM   : Return value is: 13px typeof = string
+[INFO] 12:12:53 PM   : Modified: configuredStyles.fonts.ugcName.size : 13
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-primary.bottom.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-primary.bottom.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-primary.bottom.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-primary.left.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-primary.left.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-primary.left.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-primary.right.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-primary.right.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-primary.right.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-primary.top.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-primary.top.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-primary.top.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.prs-container.bottom.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.prs-container.bottom.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.prs-container.bottom.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.prs-container.left.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.prs-container.left.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.prs-container.left.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.prs-container.right.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.prs-container.right.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.prs-container.right.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.prs-container.top.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.prs-container.top.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.prs-container.top.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-secondary.bottom.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-secondary.bottom.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-secondary.bottom.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-secondary.left.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-secondary.left.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-secondary.left.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-secondary.right.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-secondary.right.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-secondary.right.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-secondary.top.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-secondary.top.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.button-secondary.top.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-summary.bottom.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-summary.bottom.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-summary.bottom.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-summary.left.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-summary.left.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-summary.left.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-summary.right.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-summary.right.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-summary.right.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-summary.top.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-summary.top.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-summary.top.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-item.bottom.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-item.bottom.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-item.bottom.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-item.left.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-item.left.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-item.left.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-item.right.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-item.right.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-item.right.width : 0
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-item.top.style : none
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-item.top.color : transparent
+[INFO] 12:12:53 PM   : Return value is: undefined typeof = undefined
+[INFO] 12:12:53 PM   : Modified: configuredStyles.borders.content-item.top.width : 0
+[INFO] 12:12:53 PM   : Running value = #367C2B; type = string
+[INFO] 12:12:53 PM   : Running value = #CBCBCB; type = string
+[INFO] 12:12:53 PM   : Running value = #367C2B; type = string
+[INFO] 12:12:53 PM   : Running value = #FFFFFF; type = string
+[INFO] 12:12:53 PM   : Running value = #367C2B; type = string
+[INFO] 12:12:53 PM   : Running value = #CBCBCB; type = string
+[INFO] 12:12:53 PM   : Running value = #DADADA; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = #367C2B; type = string
+[INFO] 12:12:53 PM   : Running value = #367C2B; type = string
+[INFO] 12:12:53 PM   : Running value = #367C2B; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = #FFFFFF; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = false; type = boolean
+[INFO] 12:12:53 PM   : Running value = false; type = boolean
+[INFO] 12:12:53 PM   : Running value = false; type = boolean
+[INFO] 12:12:53 PM   : Running value = false; type = boolean
+[INFO] 12:12:53 PM   : Running value = false; type = boolean
+[INFO] 12:12:53 PM   : Running value = false; type = boolean
+[INFO] 12:12:53 PM   : Running value = false; type = boolean
+[INFO] 12:12:53 PM   : Running value = false; type = boolean
+[INFO] 12:12:53 PM   : Running value = #333333; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriRegular, CalibriRegular_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = #FFFFFF; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriRegular, CalibriRegular_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = #FFFFFF; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriRegular, CalibriRegular_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = uppercase; type = string
+[INFO] 12:12:53 PM   : Running value = #FFFFFF; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriRegular, CalibriRegular_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = uppercase; type = string
+[INFO] 12:12:53 PM   : Running value = #FFFFFF; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriRegular, CalibriRegular_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = uppercase; type = string
+[INFO] 12:12:53 PM   : Replacing line-height value by configuredStyles.fonts.pageHeader.size
+[INFO] 12:12:53 PM   : Running value = #333333; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriBold, CalibriBold_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = #A6A6A6; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriRegular, CalibriRegular_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Replacing line-height value by configuredStyles.fonts.sectionHeader.size
+[INFO] 12:12:53 PM   : Running value = #333333; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriBold, CalibriBold_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = uppercase; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriRegular, CalibriRegular_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = #367C2B; type = string
+[INFO] 12:12:53 PM   : Running value = Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = #367C2B; type = string
+[INFO] 12:12:53 PM   : Running value = Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = #367C2B; type = string
+[INFO] 12:12:53 PM   : Running value = Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = #367C2B; type = string
+[INFO] 12:12:53 PM   : Running value = Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = #333333; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriBold, CalibriBold_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = #333333; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriBold, CalibriBold_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = #333333; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriRegular, CalibriRegular_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = #333333; type = string
+[INFO] 12:12:53 PM   : Running value = CalibriRegular, CalibriRegular_sub, Arial, sans-serif; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = true; type = boolean
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = false; type = boolean
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = false; type = boolean
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = false; type = boolean
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Running value = false; type = boolean
+[INFO] 12:12:53 PM   : Running value = none; type = string
+[INFO] 12:12:53 PM   : Running value = transparent; type = string
+[INFO] 12:12:53 PM   : Data is saved into the file: /home/andriy/GitRepo/Tools/bv/tools/../data/styles/JohnDeere.update

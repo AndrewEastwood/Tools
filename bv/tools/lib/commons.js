@@ -12,3 +12,7 @@ exports.extend = function (target /*, args...*/) {
     }
     return target;
 }
+
+exports.isNumber = function(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}

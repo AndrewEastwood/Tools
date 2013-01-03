@@ -13,7 +13,9 @@
         pageFormat : "noscript",
         resourceFolder : phantom.libraryPath + "/../data/styles/",
         //outputFmt : "",
-        docID : ""
+        docID : "",
+        theme : 1,
+        digest : ""
     };
     var documents = {
         elementsMap_bhive : {},
@@ -166,13 +168,44 @@
         for (var i = 1; i < args.length; i+=2)
             kvArgs[args[i].substr(1)] = args[i + 1];
 
-        //innerLog(kvArgs, "info");
+        //innerLog(kvArgs.digest, "info");
 
         extend(settingsPublic, kvArgs);
 
-        documents.elementsMap_bhive = loadDocument(phantom.libraryPath + "/../docs/customerBhiveTheme.js");
+        //innerLog("Data Passed With Digest Variable: ", "info");
+        //innerLog(settingsPublic.digest, "info");
+        //innerLog("--------------------------------------", "info");
+
+        if (settingsPublic.digest.length != 0 && settingsPublic.clientName.length == 0)
+            updateSettingsWithDigest();
+
+        innerLog("Using theme file : " + (settingsPublic.theme || 1), "info");
+        documents.elementsMap_bhive = loadDocument(phantom.libraryPath + "/../docs/customerBhiveTheme" + (settingsPublic.theme || 1) + ".js");
 
         return this;
+    }
+
+    function updateSettingsWithDigest() {
+        var lines = settingsPublic.digest.split('\n');
+        var map = {};
+        for (var i = 0; i < lines.length; i++) {
+            //innerLog("Digest Variable Is = " + lines[i], "info");
+            var kv = /^(.*):(.*)$/.exec(lines[i]);
+            //innerLog(kv, "info");
+            if (kv)
+                map[kv[1].replace(/ /g, '')] = kv[2].trim();
+        }
+
+        settingsPublic.digest = map;
+
+        // update settings
+        settingsPublic.displayCode = map.DisplayCode;
+        settingsPublic.clientName = map.ClientName;
+        if (!!map.APIHostname)
+            settingsPublic.host = map.APIHostname;
+        else
+            settingsPublic.host = map.BVHostname;
+        //innerLog("Display Code = " + map.DisplayCode, "info");
     }
     
     bvSG.init = function (config) {
@@ -574,8 +607,8 @@
                 fileName = settingsPublic.resourceFolder + getHostName(pageObj.getUrl());
             else
                 fileName = settingsPublic.resourceFolder + pageObj.clientName;
-            saveIntoFile(fileName + ".json", JSON.stringify(allData));
-            saveIntoFile(fileName + ".bhive", linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive, "inline"));
+            //saveIntoFile(fileName + ".json", JSON.stringify(allData));
+            //saveIntoFile(fileName + ".bhive", linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive, "inline"));
             saveIntoFile(fileName + ".update", linkJsonValuesToBhiveDoc(allData, documents.elementsMap_bhive, "update"));
             saveIntoFile(fileName + ".log", logCache);
             // exit
@@ -628,11 +661,11 @@
                         if (typeof(_tmpVal) === "undefined" || _tmpVal == "none" || _tmpVal == "normal" || _arr.indexOf(_tmpVal) >= 0)
                             continue;
                         else
-                            _arr.push('"' + _tmpVal + '"');
+                            _arr.push(_tmpVal);
                     }
                     else
-                        _arr.push('"' + bhiveListOfKeysValues[key][i] + '"');
-                bhiveListOfKeysValues[key] = '[' + _arr.join(',') + ']';
+                        _arr.push(bhiveListOfKeysValues[key][i]);
+                bhiveListOfKeysValues[key] = _arr;//'[' + _arr.join(',') + ']';
             }
             else if (typeof(bhiveListOfKeysValues[key]) === "string" && bhiveListOfKeysValues[key][0] === '@') {
                 _tmpVal = getValueByKey(bhiveListOfKeysValues[key], dataListOfKeysValues);
@@ -654,13 +687,7 @@
             case "update" : {
                 output = "";
                 for (var key in bhiveListOfKeysValues)
-                    if (bhiveListOfKeysValues[key][0] == '[') {
-                        if (bhiveListOfKeysValues[key].length == 4)
-                            output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = []; \n";
-                        else
-                            output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = "+ bhiveListOfKeysValues[key] + "; \n";
-                    } else
-                        output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = '" + bhiveListOfKeysValues[key] + "'; \n";
+                    output += "data." + getCompatibleUnderscoreDocumentKey(key) + " = " + convertValueToNativeType(bhiveListOfKeysValues[key], false, key, bhiveListOfKeysValues) + "; ";
                 break;
             }
             case "raw" : {
@@ -674,6 +701,37 @@
         }
         // return updated document
         return output;
+    }
+
+    function convertValueToNativeType (value, inArray, valueKey, keyValMap) {
+
+        if (typeof(value) === "undefined")
+            return value;
+
+        if (Array.isArray(value)) {
+            for (var i = 0; i < value.length; i++)
+                value[i] = convertValueToNativeType(value[i], true);
+            return '[' + value.join(',') + ']';
+        }
+
+        //
+        var propLineHeight = /^(.*)(lineHeight)$/.exec(valueKey);
+        if (propLineHeight && !stringIsNumber(value)) {
+            innerLog('Replacing line-height value by ' + propLineHeight[1] + 'size', "info");
+            value = keyValMap[propLineHeight[1] + 'size'];
+        }
+
+        if (stringIsNumber(value))
+            return value;
+
+        if (inArray)
+            return '\"' + value + '\"';
+
+        innerLog("Running value = " + value + "; type = " + typeof(value), "info");
+        if (typeof(value) === "boolean" || (value.toLowerCase() == "false" || value.toLowerCase() == "true"))
+            return value;
+
+        return '"' + value + '"';
     }
 
     function getValueByKey(key, data, defValue) {
@@ -697,7 +755,17 @@
             return getValueByKey("@none", data, "PLEASE CHECK THIS LINE!!! PROVIDE DEFAULT VALUE");
         }
 
-        return data[key.substr(1)] || defValue;
+        var ret = data[key.substr(1)] || defValue;
+        innerLog('Return value is: ' + ret + " typeof = " + typeof(ret), "info");
+        if (typeof(ret) === "string") {
+            ret = ret.replace(/\'/g,"");
+            // remove 'px' from 16px ==> will be '16' 
+            var pxNum = /^(\d+)(px)$/.exec(ret.toLowerCase());
+            if (pxNum != null && pxNum.length == 3 && pxNum[2] == "px" && pxNum[1] != "")
+                ret = parseInt(pxNum[1]);
+        }
+
+        return ret;
     }
 
     function getCompatibleUnderscoreDocumentKey (key) {
@@ -719,6 +787,10 @@
     function getHostName (url) {
         // simple hostname parser
         return url.split('/')[2].replace(/\./g, '_');
+    }
+
+    function getDigestValue () {
+
     }
 
     function jsonToKeypathValue (jsonObject, runningKey, list) {
@@ -751,9 +823,14 @@
         return list;
     }
 
+    function stringIsNumber(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
     // is taken from http://haacked.com/archive/2009/12/29/convert-rgb-to-hex.aspx
     function colorToHex(color) {
-        console.log("colorToHex: translating "  + color + " to hex");
+
+        var retColor = color.toUpperCase();
 
         if (color.substr(0, 1) === '#') {
             return color;
@@ -781,8 +858,16 @@
         var green = parseInt(digits[1]);
         var blue = parseInt(digits[2]);
 
-        var rgb = blue | (green << 8) | (red << 16);
-        return '#' + lpad(rgb.toString(16), "0", 6);
+        if (digits.length == 4 && typeof(digits[3]) !== "undefined" && parseInt(digits[3]) === 0)
+            retColor = "transparent";
+        else {
+            var rgb = blue | (green << 8) | (red << 16);
+            retColor = '#' + lpad(rgb.toString(16), "0", 6).toUpperCase();
+        }
+
+
+        console.log("colorToHex: translating "  + color + " to hex >> " + retColor);
+        return retColor;
     };
 
     // inject into window object
@@ -800,6 +885,7 @@ var sys = require("system");
 // 4 - productExternalID
 // 5 - testEnvironment
 // 6 - host
+
 if (sys.args.length == 2) {
     if (sys.args[1] == '?' || sys.args[1] == 'help') {
         console.log('Style Grabber Usage:');

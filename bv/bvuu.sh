@@ -3,37 +3,52 @@
 showHelp () {
 	echo "Usage:"
 	echo ""
-	echo "bvUpgradeUtils <script> <args>"
+	echo "bvUpgradeUtils <script> <command> <clientName>"
 	echo ""
 	echo "avaialble scripts:"
-	echo " 1) styling"
+	echo " 1) styling [update|grab]"
 	echo " 2) clientcards"
 	echo " 3) xmlparser"
 	echo ""
 	echo "Run '<script> help' to get more information"
 }
 
+SCRIPT=$1
+COMMAND=$2
+CLIENTNAME=$3
+
 TOOLS_HOME="/home/andriy/GitRepo/Tools/bv"
 TOOLDIR="$TOOLS_HOME/tools"
-SCRIPTPATH="$TOOLDIR/$1.js"
+SCRIPTPATH="$TOOLDIR/$SCRIPT.js"
 
-if [ ! -z "$1" ]
+if [ ! -z "$SCRIPT" ]
 then
 
-	if [ "$1" = "?" ] || [ "$1" = "help" ]  || [ "$1" = "--help" ]
+	if [ "$SCRIPT" = "?" ] || [ "$SCRIPT" = "help" ]  || [ "$SCRIPT" = "--help" ]
 	then
 		showHelp
 	else
 
-		case $1 in 
+		if [ -z "$ARGS" ]
+		then
+			ARGS=$COMMAND
+		fi
+
+		case "$SCRIPT" in 
 			styling)
-				phantomjs $SCRIPTPATH $2
+				DIGEST=`getDigest.sh $CLIENTNAME`
+				phantomjs $SCRIPTPATH -digest "$DIGEST"
+				
+				if [ "$COMMAND" = "update" ]
+				then
+					modifyImplementation.sh $CLIENTNAME file "$TOOLS_HOME/data/styles/$CLIENTNAME.update"
+				fi
 				;;
 			xmlparser)
-				node $SCRIPTPATH $2
+				node $SCRIPTPATH $ARGS
 				;;
 			clientcards)
-				node $SCRIPTPATH $2
+				node $SCRIPTPATH $ARGS
 				;;
 			*)
 				echo "Wrong script name"
@@ -43,3 +58,5 @@ then
 else
 	showHelp
 fi
+
+echo "DONE"
