@@ -1,0 +1,35 @@
+{
+  "name": "my-test-grunt",
+  "description": "just for testing grunt",
+  "version": "0.0.1",
+  "homepage": "https://github.com/AndrewEastwood/Tools",
+  "author": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AndrewEastwood/Tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AndrewEastwood/Tools/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/AndrewEastwood/Tools/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/my-test-grunt",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-watch": "~0.2.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.2.0"
+  },
+  "keywords": []
+}
